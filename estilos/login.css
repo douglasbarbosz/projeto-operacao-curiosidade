@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: rgb(245, 240, 240);
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+section#container {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 15px;
+    text-align: center;
+    width: 569px;
+    height: 543px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#logo {
+    background-color: #D9D9D9;
+    ;
+    width: 163px;
+    height: 163px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    padding: 10px;
+}
+
+div#logo > h1 {
+    font-weight: bolder;
+    font-size: 40px;
+    line-height: 48.41px;
+}
+
+div#logo > h2 {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15.73px;
+}
+
+div#form > input {
+    border: 2px solid black;
+    margin: 20px;
+    width: 343px;
+    height: 52px;
+}
+
+div#form > input::placeholder {
+    padding: 17px;
+    font-size: 15px;
+    line-height: 17.58px;
+    opacity: 70%;
+}
+
+div#form > input[type=button] {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
