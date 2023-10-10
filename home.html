@@ -10,18 +10,51 @@
 <body>
     <header>
         <div id="logo">
-            <h1>Oc</h1>
-            <h2>Operação Curiosidade</h2>
+            <span id="titulo">Oc</span>
+            <span id="subtitulo">Operação Curiosidade</span>
         </div>
 
         <nav>
-            <span class="material-icons">home</span>
-            <a href="home.html">Home</a>
-            <span class="material-icons">group_add</span>
-            <a href="cadastro.html">Cadastro</a>
-            <span class="material-icons">insert_chart</span>
-            <a href="relatorios.html">Relatórios</a>
+            <div>
+                <span class="material-icons">home</span>
+                <a href="home.html">Home</a>
+            </div> <hr>
+            <div>
+                <span class="material-icons">group_add</span>
+                <a href="cadastro.html">Cadastro</a>
+            </div> <hr>
+            <div>
+                <span class="material-icons">insert_chart</span>
+                <a href="relatorios.html">Relatórios</a>
+            </div>
         </nav>
     </header>
+    <main>
+        <section id="menu-topo">
+            <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
+            <div>
+                <div id="foto-perfil"></div>
+                <span id="nome">Luciano Henrique</span>
+                <div id="linha"></div>
+                <a href="#">Sair</a>
+            </div>
+        </section>
+
+        <section id="caixas">
+            <div id="caixa1">
+                <p class="valor">100</p>
+                <span class="subtitulo">Total de Cadastros</span>
+            </div>
+            <div id="caixa2">
+                <p class="valor">10</p>
+                <span class="subtitulo">Cadastros no último mês</span>
+            </div>
+            <div id="caixa3">
+                <p class="valor">10</p>
+                <span class="subtitulo">Cadastros com pendência de revisão</span>
+            </div>
+        </section>
+        <section id="ultimos-cadastros"></section>
+    </main>
 </body>
 </html>

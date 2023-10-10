@@ -46,13 +46,13 @@ div#logo {
     padding: 10px;
 }
 
-div#logo > h1 {
+div#logo > span#titulo {
     font-weight: bolder;
     font-size: 40px;
     line-height: 48.41px;
 }
 
-div#logo > h2 {
+div#logo > span#subtitulo {
     font-weight: normal;
     font-size: 13px;
     line-height: 15.73px;
