@@ -58,21 +58,21 @@ div#logo > h2 {
     line-height: 15.73px;
 }
 
-div#form > input {
+form#form > input {
     border: 2px solid black;
     margin: 20px;
     width: 343px;
     height: 52px;
 }
 
-div#form > input::placeholder {
+form#form > input::placeholder {
     padding: 17px;
     font-size: 15px;
     line-height: 17.58px;
-    opacity: 70%;
+    opacity: 60%;
 }
 
-div#form > input[type=button] {
+form#form > input[type=button] {
     background-color: black;
     color: white;
     text-transform: uppercase;
