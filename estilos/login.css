@@ -64,13 +64,14 @@ form#form > input {
     margin: 20px;
     width: 343px;
     height: 52px;
+    text-indent: 17px;
 }
 
 form#form > input::placeholder {
-    padding: 17px;
     font-size: 15px;
     line-height: 17.58px;
     opacity: 60%;
+    margin-left: 17px;
 }
 
 form#form > input[type=submit] {

@@ -1,29 +1,34 @@
-function carregar() {
-    window.location.href = 'home.html'
+function logar() {
+    let email = document.getElementById('email').value
+    let senha = document.getElementById('senha').value
+
+    if (email == "admin@admin" && senha == "admin") {
+        location.href = 'home.html'
+    }
 }
 
 function listarUsuarios() {
-    window.location.href = 'lista-usuarios.html'
+    location.href = 'lista-usuarios.html'
 }
 
 function sair() {
-    window.location.href = 'index.html'
+    location.href = 'index.html'
 }
 
 function abrirHome() {
-    window.location.href = 'home.html'
+    location.href = 'home.html'
 }
 
 function abrirCadastros() {
-    window.location.href = 'cadastro.html'
+    location.href = 'cadastro.html'
 }
 
 function abrirRelatorios() {
-    window.location.href = 'relatorios.html'
+    location.href = 'relatorios.html'
 }
 
 function abrirCadastrar() {
-    window.location.href = 'pagina-cadastro.html'
+    location.href = 'pagina-cadastro.html'
 }
 
 function imprimir() {
