@@ -1,0 +1,52 @@
+#relatorios {
+    margin-top: 20px;
+    background-color: white;
+    padding: 30px 0px 0px 10px;
+    width: 73vw;
+}
+
+#relatorios > p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    opacity: 50%;
+}
+
+#tabela {
+    height: 490px;
+    margin-top: 40px;
+}
+
+#tabela th {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    opacity: 70%;
+    text-transform: uppercase;
+}
+
+#tabela tr {
+    width: 70vw;
+    border: 1px solid #D9D9D9;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#botao {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: #4E4E4E;
+    cursor: pointer;
+}
