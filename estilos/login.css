@@ -50,6 +50,7 @@ div#logo > span#titulo {
     font-weight: bolder;
     font-size: 40px;
     line-height: 48.41px;
+    text-transform: uppercase;
 }
 
 div#logo > span#subtitulo {
@@ -72,7 +73,7 @@ form#form > input::placeholder {
     opacity: 60%;
 }
 
-form#form > input[type=button] {
+form#form > input[type=submit] {
     background-color: black;
     color: white;
     text-transform: uppercase;
