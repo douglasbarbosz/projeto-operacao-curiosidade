@@ -22,6 +22,10 @@ function abrirRelatorios() {
     window.location.href = 'relatorios.html'
 }
 
+function abrirCadastrar() {
+    window.location.href = 'pagina-cadastro.html'
+}
+
 function imprimir() {
 
 }

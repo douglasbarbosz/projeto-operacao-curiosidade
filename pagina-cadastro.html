@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/pagina-cadastro.css">
+    <link rel="stylesheet" href="estilos/tabelas.css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <span id="titulo">Oc</span>
+            <span id="subtitulo">Operação Curiosidade</span>
+        </div>
+
+        <nav>
+            <div>
+                <span class="material-icons">home</span>
+                <input type="button" value="Home" onclick="abrirHome()">
+            </div>
+            <div>
+                <span class="material-icons">group_add</span>
+                <input type="button" value="Cadastro" onclick="abrirCadastros()">
+            </div>
+            <div>
+                <span class="material-icons">insert_chart</span>
+                <input type="button" value="Relatórios" onclick="abrirRelatorios()">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="menu-topo">
+            <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
+            <div>
+                <div id="foto-perfil"></div>
+                <span id="nome">Luciano Henrique</span>
+                <div id="linha"></div>
+                <input type="button" value="Sair" onclick="sair()">
+            </div>
+        </section>
+
+        <section id="formulario">
+            <div id="topo">
+                <span>Novo cadastro</span>
+                <div>
+                    <input type="radio" name="ativo" id="ativo">
+                    <label for="ativo">Ativo</label>
+                </div>
+            </div>
+            <form>
+                <div id="fatos-dados">
+                    <span>1° Fatos e Dados</span>
+                    <hr>
+
+                    <div>
+                        <label for="nome">Nome</label> <br>
+                        <input type="text" name="nome" id="nome" required>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="idade">Idade</label> <br>
+                            <input type="number" name="idadde" id="idade" min="18" step="1" required>
+                        </div> 
+                        <div>
+                            <label for="email">E-mail</label> <br>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        <div>
+                            <label for="endereco">Endereço</label> <br>
+                            <input type="text" name="endereco" id="endereco">
+                        </div>
+                        <div>
+                            <label for="info">Outras informações</label> <br>
+                            <input type="text" name="info" id="info">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span>2° Interesses</span> <hr>
+                    <input type="text" name="interesses" id="interesses">
+                </div>
+
+                <div>
+                    <span>3° Sentimentos</span> <hr>
+                    <input type="text" name="sentimentos" id="sentimentos">
+                </div>
+
+                <div>
+                    <span>4° Valores</span> <br>
+                    <input type="text" name="valores" id="valores">
+                </div>
+
+                <input type="button" value="Gravar" onclick="gravar()">
+            </form>
+        </section>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
