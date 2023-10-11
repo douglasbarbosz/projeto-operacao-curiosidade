@@ -5,8 +5,10 @@
 
 #topo {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding-right: 15px;
+    margin-bottom: 30px;
 }
 
 #topo span {
@@ -26,12 +28,97 @@
     width: 15px;
     height: 15px;
     color: #807B7B;
+    margin-right: 10px;
 }
 
 #topo > div > label {
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
-    letter-spacing: 0em;
     text-align: left;
+}
+
+#formulario > form {
+    padding-left: 10px;
+}
+
+#formulario > form > div > span {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+}
+
+hr {
+    border: 1px solid #CFCFCF
+}
+
+#fatos-dados > div, #fatos-dados > div > div {
+    margin-top: 10px;
+}
+
+#fatos-dados label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+#fatos-dados input {
+    height: 36px;
+    border: 1px solid #EEEBEB;
+    background-color: #FCFCFC;
+}
+
+#fatos-dados #nome {
+    width: 70vw;
+}
+
+#idade-email {
+    display: flex;
+    justify-content: space-between;
+}
+
+#idade {
+    width: 20vw;
+}
+
+#email {
+    width: 48vw;
+}
+
+#endereco {
+    width: 70vw;
+}
+
+#fatos-dados #info {
+    height: 52px;
+    width: 70vw;
+}
+
+.interesses, .sentimentos, .valores {
+    margin-top: 15px;
+}
+
+.interesses > input, .sentimentos > input, .valores > input {
+    margin-top: 10px;
+    width: 70vw;
+    height: 85px;
+    border: 1px solid #EEEBEB;
+    background-color: #FCFCFC;
+}
+
+#botao {
+    text-align: center;
+}
+
+input#botao-gravar {
+    width: 239px;
+    height: 39px;
+    margin-top: 35px;
+    background-color: #61A057;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    text-transform: uppercase;
 }
