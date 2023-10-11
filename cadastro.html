@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Cadastros</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/home.css">
     <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/cadastro.css">
     <link rel="stylesheet" href="estilos/tabelas.css">
 </head>
 <body>
@@ -31,6 +31,7 @@
             </div>
         </nav>
     </header>
+
     <main>
         <section id="menu-topo">
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
@@ -42,23 +43,11 @@
             </div>
         </section>
 
-        <section id="caixas">
-            <div id="caixa1">
-                <p class="valor">100</p>
-                <span class="subtitulo">Total de Cadastros</span>
+        <section id="relatorio">
+            <div>
+                <p>Cadastros</p>
+                <input id="novo-cadastro" type="button" value="Novo cadastro" onclick="imprimir()">
             </div>
-            <div id="caixa2">
-                <p class="valor">10</p>
-                <span class="subtitulo">Cadastros no último mês</span>
-            </div>
-            <div id="caixa3">
-                <p class="valor">10</p>
-                <span class="subtitulo">Cadastros com pendência de revisão</span>
-            </div>
-        </section>
-        
-        <section id="ultimos-cadastros">
-            <p>Últimos cadastros</p>
 
             <table id="tabela">
                 <thead>
@@ -97,8 +86,8 @@
                 </tbody>
             </table>
         </section>
-    </main>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
+    </main>
 </body>
 </html>

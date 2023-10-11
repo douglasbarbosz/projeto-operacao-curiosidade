@@ -10,6 +10,18 @@ function sair() {
     window.location.href = 'index.html'
 }
 
+function abrirHome() {
+    window.location.href = 'home.html'
+}
+
+function abrirCadastros() {
+    window.location.href = 'cadastro.html'
+}
+
+function abrirRelatorios() {
+    window.location.href = 'relatorios.html'
+}
+
 function imprimir() {
-    
+
 }

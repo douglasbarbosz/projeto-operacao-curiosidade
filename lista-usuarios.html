@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatórios</title>
+    <title>Lista de Usuários</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="estilos/geral.css">
     <link rel="stylesheet" href="estilos/lista-relatorios.css">
+    <link rel="stylesheet" href="estilos/tabelas.css">
 </head>
 <body>
     <header>
@@ -18,15 +19,15 @@
         <nav>
             <div>
                 <span class="material-icons">home</span>
-                <a href="home.html">Home</a>
+                <input type="button" value="Home" onclick="abrirHome()">
             </div>
             <div>
                 <span class="material-icons">group_add</span>
-                <a href="cadastro.html">Cadastro</a>
+                <input type="button" value="Cadastro" onclick="abrirCadastros()">
             </div>
             <div>
                 <span class="material-icons">insert_chart</span>
-                <a href="relatorios.html">Relatórios</a>
+                <input type="button" value="Relatórios" onclick="abrirRelatorios()">
             </div>
         </nav>
     </header>

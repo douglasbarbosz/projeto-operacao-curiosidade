@@ -65,7 +65,7 @@ nav > div > span {
     color: #736E6E;
 }
 
-div > a {
+nav > div > input {
     font-size: 18px;
     font-weight: 400;
     line-height: 21px;
@@ -73,7 +73,10 @@ div > a {
     text-align: left;
     text-decoration: none;
     color: #242323;
-    margin-left: 10px
+    margin-left: 10px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }
 
 main {
