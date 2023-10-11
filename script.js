@@ -4,6 +4,8 @@ function logar() {
 
     if (email == "admin@admin" && senha == "admin") {
         location.href = 'home.html'
+    } else {
+        document.getElementById('senha').value = ''
     }
 }
 

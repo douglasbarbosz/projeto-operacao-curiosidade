@@ -100,10 +100,10 @@ section#menu-topo > input {
     background-color: white;
     border: none;
     margin-left: 15px;
+    text-indent: 17px;
 }
 
 section#menu-topo > input::placeholder {
-    padding: 17px;
     font-size: 15px;
     line-height: 17.58px;
     opacity: 60%;

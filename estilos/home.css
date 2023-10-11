@@ -15,6 +15,10 @@ section#caixas > div {
     justify-content: space-evenly;
 }
 
+#caixas abbr {
+    text-decoration: none;
+}
+
 .valor {
     font-size: 64px;
     font-weight: 400;
