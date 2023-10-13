@@ -54,7 +54,8 @@ hr {
     border: 1px solid #CFCFCF
 }
 
-#fatos-dados > div, #fatos-dados > div > div {
+#fatos-dados > div, 
+#fatos-dados > div > div {
     margin-top: 10px;
 }
 
@@ -62,6 +63,10 @@ hr {
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+}
+
+input {
+    text-indent: 10px;
 }
 
 #fatos-dados input {
@@ -96,16 +101,22 @@ hr {
     width: 69.2vw;
 }
 
-.interesses, .sentimentos, .valores {
+.interesses, 
+.sentimentos, 
+.valores {
     margin-top: 15px;
 }
 
-.interesses > input, .sentimentos > input, .valores > input {
+.interesses > textarea, 
+.sentimentos > textarea, 
+.valores > textarea {
+    resize: none;
     margin-top: 10px;
     width: 69.2vw;
     height: 85px;
     border: 1px solid #EEEBEB;
     background-color: #FCFCFC;
+    text-indent: 5px;
 }
 
 #botao {
