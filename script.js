@@ -35,15 +35,12 @@ function abrirCadastrar() {
     location.href = 'pagina-cadastro.html'
 }
 
-function gravar() {
-    const nome = document.getElementsById('nome').value
-    const idade = document.getElementsById('idade').value
-    const email = document.getElementsById('email').value
-    const endereco = document.getElementsById('endereco').value
-    const valores = document.getElementsById('valores').value
-    const status = document.getElementsByName('status').checked
+function cadastrar() {
+    const nome = document.getElementById('inome').value
+    const email = document.getElementById('email').value
+    const status = document.getElementById('status').checked
 
-    if (nome && idade && email && endereco && valores) {
+    if (nome && email) {
         const tabela = document.querySelector('#tabela>tbody')
 
         const novaLinha = document.createElement('tr')
@@ -56,7 +53,7 @@ function gravar() {
         novoStatus.classList.add('status')
 
         novoNome.text = nome
-        novoNome.text = status
+        novoEmail.text = email
         novoStatus.text = status ? 'Ativo' : 'Inativo'
 
         tabela.appendChild(novaLinha)

@@ -72,7 +72,7 @@ hr {
     line-height: 16px;
 }
 
-input {
+main input {
     text-indent: 10px;
 }
 
@@ -82,7 +82,7 @@ input {
     background-color: #FCFCFC;
 }
 
-#fatos-dados #nome {
+#fatos-dados #inome {
     width: 69.2vw;
 }
 
@@ -130,7 +130,7 @@ input {
     text-align: center;
 }
 
-input#botao-gravar {
+button#botao-gravar {
     width: 239px;
     height: 39px;
     margin-top: 35px;
@@ -144,6 +144,6 @@ input#botao-gravar {
     cursor: pointer;
 }
 
-input#botao-gravar:hover {
+button#botao-gravar:hover {
     background-color: #487742;
 }

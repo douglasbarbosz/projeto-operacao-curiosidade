@@ -116,7 +116,7 @@ section#menu-topo > div {
     justify-content: space-around;
 }
 
-div#foto-perfil {
+img#foto-perfil {
     width: 43px;
     height: 43px;
     background-color: #D9D9D9;

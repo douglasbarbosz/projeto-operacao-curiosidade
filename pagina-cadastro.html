@@ -36,8 +36,7 @@
         <section id="menu-topo">
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
-                <div id="foto-perfil"></div>
-                <span id="nome">Luciano Henrique</span>
+                <span id="nome">Douglas Barbosa</span>
                 <div id="linha"></div>
                 <input type="submit" value="Sair" onclick="sair()">
             </div>
@@ -55,9 +54,9 @@
                 <div id="fatos-dados">
                     <span>1° Fatos e Dados</span> <hr>
                     <div>
-                        <label for="nome" class="obrigatorio">Nome</label> <br>
-                        <input type="text" name="nome" id="nome" required>
-                    </div>
+                        <label for="inome" class="obrigatorio">Nome</label> <br>
+                        <input type="text" name="nome" id="inome" required>
+                    </div>                    
                     <div id="idade-email">
                         <div>
                             <label for="idade" class="obrigatorio">Idade</label> <br>
@@ -65,7 +64,7 @@
                         </div> 
                         <div>
                             <label for="email" class="obrigatorio">E-mail</label> <br>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" autocomplete="email" required>
                         </div>
                     </div>
                     <div>
@@ -89,12 +88,12 @@
                 </div>
 
                 <div class="valores">
-                    <span class="obrigatorio">4° Valores</span> <hr>
+                    <span>4° Valores</span> <hr>
                     <textarea name="valores" id="valores"></textarea>
                 </div>
 
                 <div id="botao">
-                    <input id="botao-gravar" type="submit" value="Gravar" onclick="gravar()">
+                    <button id="botao-gravar" type="submit" onclick="cadastrar(); return false">Cadastrar</button>
                 </div>
             </form>
         </section>

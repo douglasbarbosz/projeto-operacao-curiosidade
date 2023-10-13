@@ -80,15 +80,18 @@ form#form > input::placeholder {
     margin-left: 17px;
 }
 
-input[type=submit] {
+button[type=submit] {
     background-color: black;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    border: none;
+    width: 343px;
+    height: 52px;
 }
 
-form#form input[type=submit]:hover {
+form#form button[type=submit]:hover {
     background-color: #d3d3d3;
     border: 1px solid gray;
     color: black;
