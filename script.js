@@ -5,7 +5,9 @@ function logar() {
     if (email == "admin@admin" && senha == "admin") {
         location.href = 'home.html'
     } else {
+        alert('E-mail ou senha incorreta. Por favor, tente novamente.')
         document.getElementById('senha').value = ''
+        return false
     }
 }
 
