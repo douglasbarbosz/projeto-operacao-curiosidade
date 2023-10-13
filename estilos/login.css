@@ -84,6 +84,7 @@ input[type=submit] {
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: 600;
 }
 
 form#form input[type=submit]:hover {

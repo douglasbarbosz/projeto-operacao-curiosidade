@@ -22,25 +22,37 @@
 
 #tabela {
     margin-top: 15px;
-}
-
-#tabela th {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: left;
-    opacity: 70%;
-    text-transform: uppercase;
-}
-
-#tabela tr {
     width: 70vw;
+}
+
+#tabela thead tr, #tabela tbody tr {
+    width: 70vw;
+    box-sizing: border-box;
     border: 1px solid #D9D9D9;
     border-top: none;
     border-left: none;
     border-right: none;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+}
+
+#tabela th {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    opacity: 0.7;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.nome {
+    width: 50vw;
+}
+
+.email {
+    width: 50vw;
+}
+
+td.email, td.status {
+    margin-right: 8px;
 }
