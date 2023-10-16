@@ -54,6 +54,10 @@ nav > div {
     width: 30%;
 }
 
+nav span {
+    background-color: transparent;
+}
+
 nav > div:nth-child(even) {
     border: 1px solid #D9D9D9; 
     border-left: none;
@@ -83,6 +87,7 @@ nav > div > input, #nome {
     background-image: url('../imagens/minha_foto.png');
     background-size: cover;
     display: inline-block;
+    border-radius: 50%;
 }
 
 #sair {
