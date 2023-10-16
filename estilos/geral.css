@@ -98,14 +98,22 @@ nav > div > input, #nome {
     background-color: transparent;
 }
 
-@media screen and (min-width: 768px) {
-    span#menu-burguer {
-        display: none;
-    }
+#caixa-pesquisar {
+    text-align: center;
+}
 
-    nav > div {
-        display: block;
-    }
+#pesquisar {
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    margin-left: 15px;
+    text-indent: 20px;
+    border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    
 }
 
 @media screen and (min-width: 1200px ){ 

@@ -4,20 +4,6 @@ main {
     margin: 10px auto;
 }
 
-#caixa-pesquisar {
-    text-align: center;
-}
-
-#pesquisar {
-    width: 404px;
-    height: 40px;
-    background-color: white;
-    border: none;
-    margin-left: 15px;
-    text-indent: 17px;
-    border-radius: 15px;
-}
-
 #caixa1, #caixa2, #caixa3 {
     margin: 20px auto;
     width: 200px;
