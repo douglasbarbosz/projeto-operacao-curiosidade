@@ -8,69 +8,67 @@
     font-family: Inter, sans-serif;
 }
 
-body {
-    display: flex;
-    overflow-x: hidden;
-}
-
 header {
-    width: 22%;
-    height: 100vh;
     padding: 20px 20px 20px 10px;
 }
 
-header > div#logo {
-    display: flex;
-    align-items: center;
-    background-color:#EFF4FC;
-    width: 297px;
-    height: 62px;
-    margin-bottom: 40px;
+div#logo {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+    z-index: 2;
 }
 
 div#logo > span#titulo {
-    font-size: 40px;
+    background-color: #EFF4FC;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
     font-weight: 700;
-    line-height: 48px;
-    letter-spacing: 0em;
-    text-align: center;
+    line-height: 50px;
     text-transform: uppercase;
-    margin: 0px 20px 0px 15px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-div#logo > span#subtitulo {
-    font-family: Inter;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: center;
+span#subtitulo {
+    display: none;
+}
+
+#itens {
+    display: none;
 }
 
 nav > div {
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    margin: 10px 10px;
+    width: 30%;
 }
 
-nav > div:nth-child(2) {
+nav > div:nth-child(even) {
     border: 1px solid #D9D9D9; 
     border-left: none;
     border-right: none;
     padding: 5px 0px;
 }
 
-nav > div > span {
+nav > div > span, 
+span#menu-burguer {
     color: #736E6E;
 }
 
-nav > div > input {
-    font-size: 18px;
-    font-weight: 400;
+nav > div > input, #nome {
+    font-size: 16px;
     line-height: 21px;
-    letter-spacing: 0em;
-    text-align: left;
-    text-decoration: none;
     color: #242323;
     margin-left: 10px;
     border: none;
@@ -78,76 +76,175 @@ nav > div > input {
     cursor: pointer;
 }
 
-main {
-    background-color: rgb(245, 240, 240);
-    flex: 2;
-    padding: 15px;
-}
-
-section#menu-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #EDEDED;
-    height: 62px;
-    border-radius: 5px;
-    width: 73vw;
-}
-
-section#menu-topo > input {
-    width: 404px;
-    height: 40px;
-    background-color: white;
-    border: none;
-    margin-left: 15px;
-    text-indent: 17px;
-}
-
-section#menu-topo > input::placeholder {
-    font-size: 15px;
-    line-height: 17.58px;
-    opacity: 60%;
-}
-
-section#menu-topo > div {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-div#foto-perfil {
-    width: 43px;
-    height: 43px;
+#foto-perfil::before {
+    content: '';
+    width: 25px;
+    height: 25px;
     background-image: url('../imagens/minha_foto.png');
     background-size: cover;
-    border-radius: 50%;
-    margin: 15px;
+    display: inline-block;
 }
 
-div > span#nome {
+#sair {
     font-size: 16px;
-    font-weight: 400;
     line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #4B4949;
-}
-
-div > div#linha {
-    border: 1px solid#C1C0C0;
-    width: 30.15px;
-    rotate: -90deg;
-    margin: 0px 20px;
-}
-
-section#menu-topo > div > input {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0em;
-    text-align: left;
-    text-transform: uppercase;
     border: none;
     cursor: pointer;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+    span#menu-burguer {
+        display: none;
+    }
+
+    nav > div {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1200px ){ 
+
+    /* body {
+        display: flex;
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 22%;
+        height: 100vh;
+        padding: 20px 20px 20px 10px;
+    }
+
+    header > div#logo {
+        display: flex;
+        align-items: center;
+        background-color:#EFF4FC;
+        width: 297px;
+        height: 62px;
+        margin-bottom: 40px;
+    }
+
+    div#logo > span#titulo {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        letter-spacing: 0em;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0px 20px 0px 15px;
+    }
+
+    div#logo > span#subtitulo {
+        font-family: Inter;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+    }
+
+    nav > div {
+        display: flex;
+        align-items: center;
+        margin: 10px 10px;
+    }
+
+    nav > div:nth-child(2) {
+        border: 1px solid #D9D9D9; 
+        border-left: none;
+        border-right: none;
+        padding: 5px 0px;
+    }
+
+    nav > div > span {
+        color: #736E6E;
+    }
+
+    nav > div > input {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: none;
+        color: #242323;
+        margin-left: 10px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    main {
+        background-color: rgb(245, 240, 240);
+        flex: 2;
+        padding: 15px;
+    }
+
+    section#menu-topo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #EDEDED;
+        height: 62px;
+        border-radius: 5px;
+        width: 73vw;
+    }
+
+    section#menu-topo > input {
+        width: 404px;
+        height: 40px;
+        background-color: white;
+        border: none;
+        margin-left: 15px;
+        text-indent: 17px;
+    }
+
+    section#menu-topo > input::placeholder {
+        font-size: 15px;
+        line-height: 17.58px;
+        opacity: 60%;
+    }
+
+    section#menu-topo > div {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    div#foto-perfil {
+        width: 43px;
+        height: 43px;
+        background-image: url('../imagens/minha_foto.png');
+        background-size: cover;
+        border-radius: 50%;
+        margin: 15px;
+    }
+
+    div > span#nome {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #4B4949;
+    }
+
+    div > div#linha {
+        border: 1px solid#C1C0C0;
+        width: 30.15px;
+        rotate: -90deg;
+        margin: 0px 20px;
+    }
+
+    section#menu-topo > div > input {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+    } */
 }

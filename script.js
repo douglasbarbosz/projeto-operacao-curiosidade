@@ -11,6 +11,35 @@ function logar() {
     }
 }
 
+function abrirMenu() {
+    if (itens.style.display == 'block') {
+        itens.style.display = 'none'
+    } else {
+        itens.style.display = 'block'
+    }
+}
+
+function mudouTamanho() {
+    if (window.innerWidth >= 768) {
+        itens.style.display = 'block'
+        perfil.style.display = 'block'
+    } else {
+        itens.style.display = 'none'
+        perfil.style.display = 'none'
+    }
+}
+
+function abrirMenuPerfil() {
+    if (perfil.style.display == 'block') {
+        perfil.style.display = 'none'
+        perfil.style.position = 'relative'
+        perfil.style.top = '0'
+        perfil.style.left = '0'
+    } else {
+        perfil.style.display = 'block'
+    }
+}
+
 function listarUsuarios() {
     location.href = 'lista-usuarios.html'
 }
