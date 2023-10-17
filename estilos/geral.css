@@ -14,14 +14,15 @@ body, html {
 
 header {
     padding: 20px 20px 20px 10px;
+    margin-top: 5px;
 }
 
 div#logo {
-    position: fixed;
-    top: 0;
+    position: relative;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 5px;
+    margin-top: 5px; 
 }
 
 div#logo > span#titulo {
@@ -57,7 +58,7 @@ nav > div {
     width: 30%;
 }
 
-nav span {
+nav > div > span {
     background-color: transparent;
 }
 
@@ -129,33 +130,15 @@ nav > div > input, .pessoa {
     #itens {
         display: block;
     }
-}
-
-@media screen and (min-width: 1200px) { 
-    body {
-        display: grid;
-        grid-template-areas: 
-            "header barra barra"
-            "header main main"
-            "header main main";
-        overflow-x: hidden;
-    }
-
     header {
-        grid-area: header;
-        width: 22%;
-        height: 100vh;
-        padding: 20px 20px 20px 10px;
         display: flex;
+        text-align: center;
+        align-items: center;
         flex-direction: column;
+        width: 100vw;
     }
-
-    .perfil-menu {
-        display: none;
-    }
-
     div#logo {
-        position: static;
+        position: static;  
         display: flex;
         align-items: center;
         background-color:#EFF4FC;
@@ -181,22 +164,106 @@ nav > div > input, .pessoa {
 
     div#logo > span#subtitulo {
         display: block;
-        font-family: Inter;
         font-size: 13px;
-        font-weight: 400;
+        line-height: 16px;
+        text-align: center;
+    }
+    nav > div {
+        display: inline;
+    }
+    .atalho {
+        text-transform: uppercase;
+        padding: 15px 15px;
+    }
+    .atalho:hover {
+        background-color: lightgray;
+    }
+    nav > div:nth-child(even) {
+        border: none;
+    }
+    .material-icons {
+        display: none;
+    }
+    div#foto-perfil {
+        display: none;
+    }
+    #pesquisar {
+        width: 500px;
+        transition: '.5';
+    }
+}
+
+@media screen and (min-width: 1200px) { 
+    body {
+        display: grid;
+        grid-template-areas: 
+            "header barra barra"
+            "header main main"
+            "header main main";
+        overflow-x: hidden;
+    }
+
+    header {
+        grid-area: header;
+        width: 22%;
+        height: 100vh;
+        padding: 20px 20px 20px 10px;
+        display: block;
+    }
+
+    .perfil-menu {
+        display: none;
+    }
+
+    div#logo {
+        margin-top: -10px;
+    }
+
+    div#logo span#titulo {
+        background-color: transparent;
+        border-radius: 0px;
+        font-size: 40px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0px 20px 0px 15px;
+        position: initial;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    div#logo > span#subtitulo {
+        display: block;
+        font-size: 13px;
         line-height: 16px;
         text-align: center;
     }
 
     nav > div {
-        margin: 10px 10px;
+        display: flex;
         width: 390%;
     }
     
+    nav > div:nth-child(even) {
+        border: 1px solid #D9D9D9; 
+        border-left: none;
+        border-right: none;
+        padding: 5px 0px;
+    }
+
+    .material-icons {
+        display: block;
+        border: none;
+        padding: 0;
+    }
+
     nav > div > input {
         font-size: 18px;
         line-height: 21px;
         margin-left: 10px;
+        text-transform: none;
+        padding: 0;
     }
 
     main {
@@ -212,16 +279,20 @@ nav > div > input, .pessoa {
         align-items: center;
         text-align: center;
         background-color: #EDEDED;
+        height: 62px;
     }
 
     #pesquisar{
         width: 40%;
-        border-radius: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     #perfil {
         display: flex;
-        width: 40%;
+        width: 33%;
         justify-content: space-evenly;
         align-items: center;
         margin-right: 10px;
@@ -230,6 +301,7 @@ nav > div > input, .pessoa {
     #foto-nome {
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
 
     .perfil {
@@ -247,6 +319,7 @@ nav > div > input, .pessoa {
     }
 
     div#foto-perfil {
+        display: block;
         margin: 15px;
     }
 
@@ -256,7 +329,7 @@ nav > div > input, .pessoa {
         color: #4B4949;
     }
 
-    div > div#linha {
+    #linha {
         border: 1px solid#C1C0C0;
         width: 30.15px;
         rotate: -90deg;
