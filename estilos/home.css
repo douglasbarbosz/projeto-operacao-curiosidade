@@ -18,7 +18,6 @@ main {
 
 #caixas .valor {
     font-size: 2em;
-    position: absolute;
 }
 
 .valor abbr {
@@ -27,7 +26,6 @@ main {
 
 #caixas .subtitulo {
     font-size: .8em;
-    margin-top: 70px;
     opacity: .6;
 }
 
@@ -39,27 +37,22 @@ main {
     #caixa1, #caixa2, #caixa3 {
         width: 250px;
         height: 150px;
-        text-align: center;
         justify-content: space-evenly;
         transition: .3s;
     }
 }
 @media screen and (min-width:992px) {
-    section#caixas {
+    
+    #caixas {
     display: flex;
-    justify-content: space-around;
     margin-top: 20px;
-    width: 73vw;
+    margin: auto;
     }
 
-    section#caixas > div {
-        width: 322px;
+    #caixa1, #caixa2, #caixa3 {
+        width: 300px;
         height: 200px;
-        background-color: white;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        transition: .2s;
     }
 
     #caixas abbr {
@@ -67,6 +60,7 @@ main {
     }
 
     .valor {
+        grid-area: valor;
         font-size: 64px;
         font-weight: 400;
         line-height: 75px;
@@ -75,6 +69,7 @@ main {
     }
 
     .subtitulo {
+        grid-area: subtitulo;
         font-size: 16px;
         font-weight: 400;
         line-height: 18.45px;
@@ -105,5 +100,11 @@ main {
 
     #tabela {
         padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #caixas {
+        flex-wrap: nowrap;
     }
 }
