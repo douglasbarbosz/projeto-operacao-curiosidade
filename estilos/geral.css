@@ -22,7 +22,6 @@ div#logo {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 5px;
-    z-index: 2;
 }
 
 div#logo > span#titulo {
@@ -80,8 +79,11 @@ nav > div > input, #nome {
     color: #242323;
     margin-left: 10px;
     border: none;
-    background-color: white;
     cursor: pointer;
+}
+
+.perfil {
+    display: none;
 }
 
 #foto-perfil::before {
@@ -117,42 +119,64 @@ nav > div > input, #nome {
 }
 
 @media screen and (min-width: 768px) {
-    
+    #menu-burguer {
+        display: none;
+    }
+    #itens {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1200px ){ 
-
-    /* body {
-        display: flex;
+    body {
+        display: grid;
+        grid-template-areas: 
+            "header barra barra"
+            "header main main"
+            "header main main";
         overflow-x: hidden;
     }
 
     header {
+        grid-area: header;
         width: 22%;
         height: 100vh;
         padding: 20px 20px 20px 10px;
+        display: flex;
+        flex-direction: column;
     }
 
-    header > div#logo {
+    .perfil-menu {
+        display: none;
+    }
+
+    div#logo {
+        position: static;
         display: flex;
         align-items: center;
         background-color:#EFF4FC;
         width: 297px;
         height: 62px;
         margin-bottom: 40px;
+        transform: translate(0);
     }
 
-    div#logo > span#titulo {
+    div#logo span#titulo {
+        background-color: transparent;
+        border-radius: 0px;
         font-size: 40px;
         font-weight: 700;
-        line-height: 48px;
-        letter-spacing: 0em;
         text-align: center;
         text-transform: uppercase;
         margin: 0px 20px 0px 15px;
+        position: initial;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
     }
 
     div#logo > span#subtitulo {
+        display: block;
         font-family: Inter;
         font-size: 13px;
         font-weight: 400;
@@ -192,9 +216,49 @@ nav > div > input, #nome {
     }
 
     main {
+        grid-area: main;
         background-color: rgb(245, 240, 240);
-        flex: 2;
-        padding: 15px;
+        margin: 0;
+    }
+
+    #caixa-pesquisar {
+        grid-area: barra;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        background-color: #EDEDED;
+    }
+
+    #pesquisar{
+        width: 40%;
+        border-radius: 0px;
+    }
+
+    #perfil {
+        display: flex;
+        width: 40%;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-right: 10px;
+    }
+
+    #foto-nome {
+        display: flex;
+        align-items: center;
+    }
+
+    .perfil {
+        display: block;
+    }
+
+    #foto-perfil::before {
+        width: 40px;
+        height: 40px;
+    }
+
+    #sair {
+        
     }
 
     section#menu-topo {
@@ -240,10 +304,7 @@ nav > div > input, #nome {
 
     div > span#nome {
         font-size: 16px;
-        font-weight: 400;
         line-height: 19px;
-        letter-spacing: 0em;
-        text-align: left;
         color: #4B4949;
     }
 
@@ -263,5 +324,5 @@ nav > div > input, #nome {
         text-transform: uppercase;
         border: none;
         cursor: pointer;
-    } */
+    }
 }

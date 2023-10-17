@@ -11,6 +11,10 @@
 </head>
 <body onresize="mudouTamanho()">
     <header>
+        <div id="logo">
+            <span id="titulo">Oc</span>
+            <span id="subtitulo">Operação Curiosidade</span>
+        </div>
         <section id="menu-atalhos">
             <span id="menu-burguer" class="material-icons" onclick="abrirMenu()">menu</span>
             <nav id="itens">
@@ -26,26 +30,29 @@
                     <span class="material-icons">insert_chart</span>
                     <input type="submit" value="Relatórios" onclick="abrirRelatorios()">
                 </div>
-                <div>
-                    <div id="foto-perfil" onclick="abrirMenuPerfil()"></div>
+                <div class="perfil-menu">
+                    <div id="foto-perfil"></div>
                     <span id="nome">Douglas Barbosa</span>
                 </div>
-                <div>
+                <div class="perfil-menu">
                     <span class="material-icons">logout</span>
                     <input id="sair" type="submit" value="Sair" onclick="sair()">
                 </div>
             </nav>
         </section>
-        
-        <div id="logo">
-            <span id="titulo">Oc</span>
-            <span id="subtitulo">Operação Curiosidade</span>
-        </div>
     </header>
 
     <main>
         <section id="caixa-pesquisar">
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
+            <div id="perfil">
+                <div id="foto-nome">
+                    <div class="perfil" id="foto-perfil"></div>
+                    <span class="perfil" id="nome">Douglas Barbosa</span>
+                </div>
+                <div id="linha"></div>
+                <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
+            </div>
         </section>
 
         <section id="caixas">
