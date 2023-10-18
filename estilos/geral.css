@@ -244,6 +244,11 @@ nav > div > input, .pessoa {
         display: flex;
         width: 390%;
     }
+
+    .atalho {
+        text-transform: none;
+        padding: 0px;
+    }
     
     nav > div:nth-child(even) {
         border: 1px solid #D9D9D9; 
