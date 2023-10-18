@@ -1,13 +1,40 @@
+const usuarios = [
+    {
+        login: 'admin', 
+        senha: 'admin'
+    }, 
+    {
+        login: 'douglas',
+        senha: 'douglas'
+    }
+]
+    
 function logar() {
-    let email = document.getElementById('email').value
-    let senha = document.getElementById('senha').value
+    let pegaEmail = document.getElementById('email').value
+    let pegaSenha = document.getElementById('senha').value
+    let validaLogin = false
+    let campoVazio = false
 
-    if (email == "admin@admin" && senha == "admin") {
+    for (let i in usuarios) {
+
+        if (pegaEmail == '' || pegaSenha == '') {
+            campoVazio = true
+        }
+
+        if (pegaEmail == usuarios[i].login && pegaSenha == usuarios[i].senha) {
+            validaLogin = true
+            break
+        }
+    }
+
+    if (validaLogin) {
         location.href = 'home.html'
     } else {
-        alert('E-mail ou senha incorreta. Por favor, tente novamente.')
-        document.getElementById('senha').value = ''
-        return false
+        if (campoVazio) {
+            alert('Preencha todos os campos')
+        } else {
+            alert('E-mail ou senha inconrreta. Tente novamente.')
+        }
     }
 }
 
@@ -66,30 +93,26 @@ function abrirCadastrar() {
 
 function cadastrar() {
     const nome = document.getElementById('inome').value
+    const idade = document.getElementById('idade').value
     const email = document.getElementById('email').value
     const status = document.getElementById('status').checked
+    const endereco = document.getElementById('endereco').value
+    const info = document.getElementById('info').value
+    
 
-    if (nome && email) {
-        const tabela = document.querySelector('#tabela>tbody')
+    
+}
 
-        const novaLinha = document.createElement('tr')
-        const novoNome = document.createElement('td')
-        const novoEmail = document.createElement('td')
-        const novoStatus = document.createElement('td')
+function isEmailValid(email) {
+    const emailRegex = new RegExp(
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+[a-zA-z]{2,}$/
+    )
 
-        novoNome.classList.add('nome')
-        novoEmail.classList.add('email')
-        novoStatus.classList.add('status')
-
-        novoNome.text = nome
-        novoEmail.text = email
-        novoStatus.text = status ? 'Ativo' : 'Inativo'
-
-        tabela.appendChild(novaLinha)
-        novaLinha.appendChild(novoNome)
-        novaLinha.appendChild(novoEmail)
-        novaLinha.appendChild(novoStatus)
+    if (emailRegex.test(email)) {
+        return true
     }
+    
+    return false
 }
 
 function imprimir() {
