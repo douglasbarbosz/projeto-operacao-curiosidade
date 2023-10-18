@@ -1,8 +1,8 @@
 #formulario {
-    margin-top: 20px;
     background-color: white;
     padding: 20px;
     width: 70vw;
+    margin: 20px auto;
 }
 
 #topo {
@@ -17,7 +17,6 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
-    letter-spacing: 0em;
     text-align: left;
     opacity: 50%;
 }
@@ -82,7 +81,9 @@ main input {
     background-color: #FCFCFC;
 }
 
-#fatos-dados #inome {
+#inome,
+#endereco,
+#senha {
     width: 69.2vw;
 }
 
@@ -96,16 +97,7 @@ main input {
 }
 
 #email {
-    width: 48vw;
-}
-
-#endereco {
-    width: 69.2vw;
-}
-
-#fatos-dados #info {
-    height: 52px;
-    width: 69.2vw;
+    width: 47vw;
 }
 
 .interesses, 
@@ -114,9 +106,7 @@ main input {
     margin-top: 15px;
 }
 
-.interesses > textarea, 
-.sentimentos > textarea, 
-.valores > textarea {
+textarea {
     resize: none;
     margin-top: 10px;
     width: 69.2vw;
