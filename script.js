@@ -38,6 +38,17 @@ function logar() {
     }
 }
 
+window.onload = function() {
+    totalCadastros()
+}
+
+function totalCadastros() {
+    let valor1 = document.querySelector('#caixa1>p')
+
+    valor1.style.color = '#415996'
+}
+
+
 function abrirMenu() {
     if (itens.style.display == 'block') {
         itens.style.display = 'none'
@@ -97,8 +108,8 @@ function cadastrar() {
     const email = document.getElementById('email').value
     const status = document.getElementById('status').checked
     const endereco = document.getElementById('endereco').value
-    const info = document.getElementById('info').value
-    
+    const senha = document.getElementById('senha').value
+
 
     
 }

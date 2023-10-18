@@ -10,7 +10,7 @@
     background-color: white;
 }
 
-#caixas .valor {
+.valor {
     font-size: 2em;
 }
 
@@ -66,11 +66,8 @@
     }
 
     .valor {
-        grid-area: valor;
-        font-size: 64px;
-        font-weight: 400;
+        font-size: 60px;
         line-height: 75px;
-        text-align: left;
         margin-top: 50px;
     }
 
