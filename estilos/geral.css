@@ -125,16 +125,20 @@ nav > div > input, .pessoa {
     #menu-burguer {
         display: none;
     }
+
     #itens {
         display: block;
     }
+
     header {
         display: flex;
         text-align: center;
         align-items: center;
         flex-direction: column;
         width: 100vw;
+        height: 130px;
     }
+
     div#logo {
         position: static;  
         display: flex;
@@ -166,25 +170,33 @@ nav > div > input, .pessoa {
         line-height: 16px;
         text-align: center;
     }
+
     nav > div {
         display: inline;
     }
-    .atalho {
+
+    .atalho, .pessoa {
         text-transform: uppercase;
         padding: 15px 15px;
     }
-    .atalho:hover {
-        background-color: lightgray;
+
+    .atalho:hover, .pessoa:hover {
+        background-image: linear-gradient(to left, #6e6a6a, #C3C3C3);
+        text-decoration: underline;
     }
+
     nav > div:nth-child(even) {
         border: none;
     }
+
     .material-icons {
         display: none;
     }
+    
     div#foto-perfil {
         display: none;
     }
+
     #pesquisar {
         width: 500px;
         transition: '.5';
