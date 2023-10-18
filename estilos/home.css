@@ -29,6 +29,18 @@ main {
     opacity: .6;
 }
 
+#ultimos-cadastros {
+    background-color: white;
+    padding: 10px;
+}
+
+#ultimos-cadastros > p {
+    font-size: 18px;
+    line-height: 21px;
+    opacity: .7;
+    padding: 20px 20px 0px 10px;
+}
+
 @media screen and (min-width: 600px) and (max-width: 992px) { 
     #caixas {
         display: flex;
@@ -41,6 +53,7 @@ main {
         transition: .3s;
     }
 }
+
 @media screen and (min-width:992px) {
     
     #caixas {
@@ -82,19 +95,11 @@ main {
 
     section#ultimos-cadastros {
         margin-top: 20px;
-        background-color: white;
         height: 350px;
         width: 73vw;
     }
 
     section#ultimos-cadastros > p {
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 21px;
-        letter-spacing: 0em;
-        text-align: left;
-        font-weight: normal;
-        opacity: 70%;
         padding: 20px 20px 0px 20px;
     }
 
