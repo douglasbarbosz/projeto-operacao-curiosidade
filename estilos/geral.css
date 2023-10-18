@@ -17,6 +17,12 @@ header {
     margin-top: 5px;
 }
 
+main {
+    background-color: rgb(241, 241, 241);
+    padding: 15px;
+    margin: 10px auto;
+}
+
 div#logo {
     position: relative;
     top: -20px;
@@ -99,14 +105,6 @@ nav > div > input, .pessoa {
     background-size: cover;
     display: inline-block;
     border-radius: 50%;
-}
-
-#sair {
-    font-size: 16px;
-    line-height: 19px;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
 }
 
 #caixa-pesquisar {
@@ -197,7 +195,7 @@ nav > div > input, .pessoa {
     body {
         display: grid;
         grid-template-areas: 
-            "header barra barra"
+            "header main main"
             "header main main"
             "header main main";
         overflow-x: hidden;
@@ -243,11 +241,16 @@ nav > div > input, .pessoa {
     nav > div {
         display: flex;
         width: 390%;
+        margin-left: 10px;
     }
 
     .atalho {
         text-transform: none;
         padding: 0px;
+    }
+
+    .atalho:hover {
+        background-color: transparent;
     }
     
     nav > div:nth-child(even) {
@@ -275,10 +278,10 @@ nav > div > input, .pessoa {
         grid-area: main;
         background-color: rgb(245, 240, 240);
         margin: 0;
+        padding: 15px;
     }
 
     #caixa-pesquisar {
-        grid-area: barra;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -321,6 +324,15 @@ nav > div > input, .pessoa {
     #sair {
         color: #6F6B6B;
         text-transform: uppercase;
+        border: none;
+        font-size: 16px;
+        line-height: 19px;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    #sair:hover {
+        font-size: 18px;
     }
 
     div#foto-perfil {

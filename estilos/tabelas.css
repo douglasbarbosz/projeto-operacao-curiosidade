@@ -1,8 +1,31 @@
+#relatorio {
+    background-color: white;
+    margin-top: 20px;
+}
+
+#relatorio > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#relatorio > div > p {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    opacity: .5;
+}
+
 #tabela {
     margin-top: 15px;
-    width: 90vw;
-    background-color: white;
+    padding: 10px;
+    width: 100%;
 } 
+
+#relatorio > #tabela {
+    padding: 10px;
+}
 
  #tabela thead tr, #tabela tbody tr {
     width: 86vw;
@@ -83,14 +106,12 @@ td.email, td.status {
         font-size: 18px;
         font-weight: 700;
         line-height: 21px;
-        letter-spacing: 0em;
         text-align: left;
-        opacity: 50%;
+        opacity: .5;
     }
     
     #tabela {
         margin-top: 15px;
-        width: 70vw;
     }
     
     #tabela thead tr, #tabela tbody tr {
@@ -110,9 +131,5 @@ td.email, td.status {
     
     .email {
         width: 50vw;
-    }
-    
-    td.email, td.status {
-        margin-right: 8px;
     }
 }

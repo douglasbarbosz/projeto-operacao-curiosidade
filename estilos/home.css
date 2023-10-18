@@ -1,9 +1,3 @@
-main {
-    background-color: rgb(241, 241, 241);
-    padding: 15px;
-    margin: 10px auto;
-}
-
 #caixa1, #caixa2, #caixa3 {
     margin: 20px auto;
     width: 200px;
@@ -31,7 +25,6 @@ main {
 
 #ultimos-cadastros {
     background-color: white;
-    padding: 10px;
 }
 
 #ultimos-cadastros > p {
@@ -55,7 +48,7 @@ main {
 }
 
 @media screen and (min-width:992px) {
-    
+
     #caixas {
     display: flex;
     margin-top: 20px;
