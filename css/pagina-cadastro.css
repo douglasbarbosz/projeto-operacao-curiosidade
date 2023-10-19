@@ -1,8 +1,19 @@
+:root {
+    --verde-escuro: #012402;
+    --cor-fundo-caixas: #eef7ed;
+    --cor-botao: #8DFA48;
+    --cor-fundo-input: #c4f7bd;
+    --cor-botao-hover: #19FA1F;
+    --cor-bordas-hover: #1bbd21;
+    --cor-bordas: #053807;
+}
+
 #formulario {
-    background-color: white;
+    background-color: var(--cor-fundo-caixas);
     padding: 20px;
-    width: 70vw;
     margin: 20px auto;
+    width: 70vw;
+    box-sizing: initial;
 }
 
 #topo {
@@ -17,8 +28,8 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
-    text-align: left;
-    opacity: 50%;
+    color: var(--verde-escuro);
+    opacity: .8;
 }
 
 #topo > div {
@@ -28,7 +39,7 @@
 #topo > div > input {
     width: 15px;
     height: 15px;
-    color: #807B7B;
+    color: var(--verde-escuro);
     margin-right: 10px;
 }
 
@@ -57,7 +68,7 @@ span.obrigatorio::after {
 }
 
 hr {
-    border: 1px solid #CFCFCF
+    border: 1px solid var(--verde-escuro);
 }
 
 #fatos-dados > div, 
@@ -77,8 +88,12 @@ main input {
 
 #fatos-dados input {
     height: 36px;
-    border: 1px solid #EEEBEB;
-    background-color: #FCFCFC;
+    border: 1px solid var(--cor-bordas);
+    background-color: var(--cor-fundo-input);
+}
+
+#fatos-dados input:hover, textarea:hover {
+    border: 1px solid var(--cor-bordas-hover);
 }
 
 #inome,
@@ -94,6 +109,7 @@ main input {
 
 #idade {
     width: 20vw;
+    margin-right: 10px;
 }
 
 #email {
@@ -111,8 +127,8 @@ textarea {
     margin-top: 10px;
     width: 69.2vw;
     height: 85px;
-    border: 1px solid #EEEBEB;
-    background-color: #FCFCFC;
+    border: 1px solid var(--cor-bordas);
+    background-color: var(--cor-fundo-input);
     text-indent: 5px;
 }
 
@@ -124,16 +140,16 @@ button#botao-gravar {
     width: 239px;
     height: 39px;
     margin-top: 35px;
-    background-color: #61A057;
+    background-color: var(--cor-botao);
     border-radius: 5px;
     border: none;
     font-size: 16px;
     line-height: 19px;
-    color: white;
+    font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
 }
 
 button#botao-gravar:hover {
-    background-color: #487742;
+    background-color: var(--cor-botao-hover);
 }
