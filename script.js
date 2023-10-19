@@ -62,7 +62,6 @@ function cadastrosComPendencia() {
     valor3.style.color = '#C15959'
 }
 
-
 function abrirMenu() {
     if (itens.style.display == 'block') {
         itens.style.display = 'none'

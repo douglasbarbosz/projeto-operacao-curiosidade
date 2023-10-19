@@ -1,18 +1,22 @@
-body {
-    overflow: hidden;
+:root {
+    --cor-botao: #8DFA48;
+    --cor-botao-hover: #19FA1F;
 }
 
 #botao-imprimir {
     width: 234px;
     height: 39px;
     border-radius: 5px;
-    background-color: #5763A0;
+    background-color: var(--cor-botao);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 19px;
-    letter-spacing: 0em;
-    color: white;
     border: none;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+#botao-imprimir:hover {
+    transition: .4s;
+    background-color: var(--cor-botao-hover);
 }

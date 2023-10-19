@@ -365,6 +365,7 @@ nav > div > input, .pessoa {
     }
 
     #sair:hover {
+        transition: .3s;
         font-size: 18px;
     }
 

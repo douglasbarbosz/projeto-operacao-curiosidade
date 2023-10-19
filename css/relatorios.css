@@ -1,6 +1,12 @@
+:root {
+    --cor-fundo-caixas: #eef7ed;
+    --cor-bordas-hover: #1bbd21;
+    --cor-texto: #012402;
+}
+
 #relatorios {
     margin-top: 20px;
-    background-color: white;
+    background-color: var(--cor-fundo-caixas);
     padding: 30px 10px 0px 10px;
 }
 
@@ -8,7 +14,9 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
-    opacity: .5;
+    padding-left: 15px;
+    opacity: .8;
+    color: var(--cor-texto);
 }
 
 #tabela {
@@ -22,7 +30,6 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    letter-spacing: 0em;
-    color: #4E4E4E;
+    color: var(--cor-texto);
     cursor: pointer;
 }
