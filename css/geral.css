@@ -113,7 +113,7 @@ nav > div > input, .pessoa {
     display: none;
 }
 
-#foto-perfil::before {
+.foto-perfil::before {
     content: '';
     width: 25px;
     height: 25px;
@@ -225,7 +225,7 @@ nav > div > input, .pessoa {
     }
 }
 
-@media screen and (min-width: 1200px) { 
+@media screen and (min-width: 1300px) { 
     body {
         display: grid;
         grid-template-areas: 
@@ -274,7 +274,7 @@ nav > div > input, .pessoa {
 
     nav > div {
         display: flex;
-        width: 390%;
+        width: 20vw;
         margin-left: 10px;
     }
 
@@ -316,44 +316,42 @@ nav > div > input, .pessoa {
 
     #caixa-pesquisar {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        text-align: center;
+        justify-content: space-between;
         background-color: var(--cor-fundo-header);
         height: 62px;
         border-radius: 10px;
     }
 
     #pesquisar{
-        width: 40%;
+        display: inline;
+        width: 50%;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        margin-right: 50px;
     }
 
-    #perfil {
+    #caixa-pesquisar > div {
+        margin-right: 10px;
+        width: 30%;
         display: flex;
-        width: 33%;
         justify-content: space-evenly;
         align-items: center;
-        margin-right: 10px;
-        color: var(--verde-escuro);
     }
 
-    #foto-nome {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+    #foto {
+        background-image: url('../imagens/minha_foto.png');
+        width: 30px;
+        height: 30px;
+        padding: 20px;
+        border-radius: 50%;
+        background-size: cover;
     }
 
     .perfil {
         display: block;
-    }
-
-    #foto-perfil::before {
-        width: 40px;
-        height: 40px;
     }
 
     #sair {
@@ -379,5 +377,6 @@ nav > div > input, .pessoa {
         border: 1px solid var(--verde-escuro);
         width: 30.15px;
         rotate: -90deg;
+        margin-left: 10px;
     }
 }

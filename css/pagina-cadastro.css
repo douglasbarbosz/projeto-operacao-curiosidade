@@ -96,6 +96,10 @@ main input {
     border: 1px solid var(--cor-bordas-hover);
 }
 
+input[type="radio"]:checked {
+    background-color: #053807;
+}
+
 #inome,
 #endereco,
 #senha {
