@@ -113,7 +113,7 @@ nav > div > input, .pessoa {
     display: none;
 }
 
-.foto-perfil::before {
+#foto-perfil::before {
     content: '';
     width: 25px;
     height: 25px;

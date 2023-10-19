@@ -32,7 +32,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 380px;
     height: 500px;
     border-radius: 10px;
     text-align: center;
@@ -142,14 +142,15 @@ hr {
     }
     
     section#container {
+        transition: .3s;
         padding-top: 15px;
-        width: 570px;
-        height: 600px;
+        width: 580px;
+        height: 540px;
     }
     
     div#logo {
-        width: 163px;
-        height: 163px;
+        width: 120px;
+        height: 120px;
         margin: auto;
     }
 
