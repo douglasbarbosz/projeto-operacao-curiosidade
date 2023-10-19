@@ -354,6 +354,10 @@ nav > div > input, .pessoa {
         display: block;
     }
 
+    #nome {
+        cursor: pointer;
+    }
+
     #sair {
         color: var(--verde-escuro);
         text-transform: uppercase;

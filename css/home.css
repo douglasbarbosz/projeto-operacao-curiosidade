@@ -37,6 +37,7 @@
 
 #ultimos-cadastros {
     background-color: var(--cor-fundo-caixas);
+    margin: 0 auto;
 }
 
 #ultimos-cadastros > p {

@@ -8,6 +8,7 @@
 #relatorio {
     background-color: var(--cor-fundo-caixas);
     margin-top: 20px;
+    margin: 20px auto;
 }
 
 #relatorio > div {
@@ -27,8 +28,8 @@
 
 #tabela {
     margin-top: 15px;
+    margin: 15px auto;
     padding: 10px;
-    width: 100%;
 } 
 
 #relatorio > #tabela {
@@ -37,7 +38,6 @@
 
  #tabela thead tr, #tabela tbody tr {
     width: 86vw;
-    box-sizing: border-box;
     border: 1px solid var(--cor-bordas);
     border-top: none;
     border-left: none;
@@ -85,26 +85,28 @@ td.email, td.status {
     margin-right: 8px;
 }
 
-@media screen and (min-width: 550px) and (max-width: 702px) {
-    #tabela {
-        width: 100vw;
-    }
+@media screen and (min-width: 400px) and (max-width: 702px) {
     #tabela thead tr, #tabela tbody tr {
-        width: 89vw;
-        transform: .5s;
+        width: 75vw;
     }
     .nome {
         transition: .5s;
         width: 35vw;
     }
+    .email {
+        width: 30vw;
+    }
 }
 
-@media screen and (min-width: 702px) {
+@media screen and (min-width: 702px) and (max-width: 750px) {
     #tabela thead tr, #tabela tbody tr {
-        width: 91vw;
+        width: 70vw;
     }
     .nome {
-        width: 40vw;
+        width: 20vw;
+    }
+    .email {
+        width: 20vw;
     }
 }
 
