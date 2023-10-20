@@ -50,8 +50,7 @@
     text-align: left;
 }
 
-label.obrigatorio::after, 
-span.obrigatorio::after {
+label.obrigatorio::after {
     content: ' *';
     color: red;
     font-weight: normal;
@@ -61,7 +60,11 @@ span.obrigatorio::after {
     padding-left: 10px;
 }
 
-#formulario > form > div > span {
+#labelInteresses,
+#labelSentimentos,
+#labelValores, 
+#labelFatos,
+#spanFatos {
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
@@ -105,7 +108,7 @@ input[type="radio"]:checked {
 
 #inome,
 #endereco,
-#senha {
+#bloco-senhas {
     width: 69.2vw;
 }
 
@@ -129,6 +132,19 @@ input[type="radio"]:checked {
     margin-top: 15px;
 }
 
+#bloco-senhas {
+    display: flex;
+    justify-content: space-between;
+}
+
+#senha {
+    margin-right: 20px;
+}
+
+#senha, #confirmarSenha {
+    width: 32vw;
+}
+
 textarea {
     resize: none;
     margin-top: 10px;
@@ -139,24 +155,27 @@ textarea {
     text-indent: 5px;
 }
 
+#msgErro,
+#msgSucesso {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#msgErro {
+    background-color: rgb(226, 122, 122);
+}
+
+#msgSucesso {
+    background-color: rgb(83, 199, 83);
+}
+
 #botao {
     text-align: center;
 }
 
 button#botao-gravar {
-    width: 239px;
-    height: 39px;
     margin-top: 35px;
-    background-color: var(--cor-botao);
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-button#botao-gravar:hover {
-    background-color: var(--cor-botao-hover);
 }

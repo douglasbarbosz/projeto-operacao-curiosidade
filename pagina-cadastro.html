@@ -59,50 +59,59 @@
                 <span>Novo cadastro</span>
                 <div>
                     <input type="radio" name="ativo" id="ativo">
-                    <label for="ativo">Ativo</label>
+                    <label id="status" for="ativo">Ativo</label>
                 </div>
             </div>
             <form>
                 <div id="fatos-dados">
-                    <span>1° Fatos e Dados</span> <hr>
+                    <span id="spanFatos">1° Fatos e Dados</span> <hr>
                     <div>
-                        <label for="inome" class="obrigatorio">Nome</label> <br>
+                        <label id="labelNome" for="inome" class="obrigatorio">Nome</label> <br>
                         <input type="text" name="nome" id="inome" required>
                     </div>                    
                     <div id="idade-email">
                         <div>
-                            <label for="idade" class="obrigatorio">Idade</label> <br>
+                            <label id="labelIdade" for="idade" class="obrigatorio">Idade</label> <br>
                             <input type="number" name="idade" id="idade" min="18" step="1" required>
                         </div> 
                         <div>
-                            <label for="email" class="obrigatorio">E-mail</label> <br>
+                            <label id="labelEmail" for="email" class="obrigatorio">E-mail</label> <br>
                             <input type="email" name="email" id="email" autocomplete="email" required>
                         </div>
                     </div>
                     <div>
-                        <label for="endereco" class="obrigatorio">Endereço</label> <br>
+                        <label id="labelEndereco" for="endereco" class="obrigatorio">Endereço</label> <br>
                         <input type="text" name="endereco" id="endereco">
                     </div>
-                    <div>
-                        <label class="obrigatorio" for="senha">Senha</label> <br>
-                        <input type="password" name="senha" id="senha" autocomplete="new-password">
+                    <div id="bloco-senhas">
+                        <div>
+                            <label id="labelSenha" class="obrigatorio" for="senha">Senha</label> <br>
+                            <input type="password" name="senha" id="senha" autocomplete="new-password">
+                        </div>
+                        <div>
+                            <label id="labelConfirmarSenha" class="obrigatorio" for="confirmarSenha">Confirmar senha</label> <br>
+                            <input type="password" name="confirmarSenha" id="confirmarSenha">
+                        </div>
                     </div>
                 </div>
 
                 <div class="interesses">
-                    <span>2° Interesses</span> <hr>
+                    <label id="labelInteresses" class="obrigatorio" for="interesses">2° Interesses</label> <hr>
                     <textarea name="interesses" id="interesses"></textarea>
                 </div>
 
                 <div class="sentimentos">
-                    <span>3° Sentimentos</span> <hr>
+                    <label id="labelSentimentos" class="obrigatorio" for="sentimentos">3° Sentimentos</label> <hr>
                     <textarea name="sentimentos" id="sentimentos"></textarea>
                 </div>
 
                 <div class="valores">
-                    <span>4° Valores</span> <hr>
+                    <label id="labelValores" class="obrigatorio" for="valores">4° Valores</label> <hr>
                     <textarea name="valores" id="valores"></textarea>
                 </div>
+
+                <div id="msgErro"></div>
+                <div id="msgSucesso"></div>
 
                 <div id="botao">
                     <button id="botao-gravar" type="submit" onclick="cadastrar(); return false">Cadastrar</button>
@@ -111,6 +120,6 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/script.js" refer></script>
 </body>
 </html>

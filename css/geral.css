@@ -9,8 +9,9 @@
     --cor-logo: #55ca80;
     --cor-bordas: #053807;
     --cor-icones: #117915;
-    --cor-botao-hover: #19FA1F;
     --verde-escuro: #012402;
+    --cor-botao: #8DFA48;
+    --cor-botao-hover: #19FA1F;
 }
 
 * {
@@ -67,6 +68,10 @@ div#logo > span#titulo {
 span#subtitulo {
     display: none;
     color: var(--verde-escuro);
+}
+
+#subtitulo:hover {
+    color: var(--cor-pesquisar);
 }
 
 #itens {
@@ -144,6 +149,28 @@ nav > div > input, .pessoa {
 #pesquisar::placeholder {
     color: var(--verde-escuro);
     opacity: .8;
+}
+
+#novo-cadastro,
+#botao-imprimir,
+#botao-gravar {
+    width: 239px;
+    height: 39px;
+    background-color: var(--cor-botao);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+}
+
+#novo-cadastro:hover,
+#botao-imprimir:hover,
+#botao-gravar:hover {
+    transition: .3s;
+    background-color: var(--cor-botao-hover);
 }
 
 @media screen and (min-width: 768px) {
