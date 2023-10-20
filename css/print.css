@@ -1,13 +1,13 @@
 @media print {
-    header {
+    header,
+    p,
+    #caixas,
+    #caixa-pesquisar,
+    #relatorio p,
+    #relatorio input {
         display: none;
     }
-    #caixa-pesquisar {
-        display: none;
-    }
-    #relatorio p, #relatorio input {
-        display: none;
-    }
+
     nav > div:nth-child(even) {
         border: 1px solid rgb(0, 19, 0);
     }

@@ -43,8 +43,9 @@ div#logo {
     position: relative;
     top: -20px;
     left: 50%;
-    transform: translateX(-50%);
     margin-top: 5px; 
+    transition: .5s;
+    transform: translateX(-50%);
 }
 
 div#logo > span#titulo {
@@ -191,6 +192,7 @@ nav > div > input, .pessoa {
     }
 
     div#logo {
+        transition: .5s;
         position: static;  
         display: flex;
         align-items: center;

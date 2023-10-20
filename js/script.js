@@ -132,10 +132,10 @@ valores.addEventListener('keyup', () => {
     }
 })
 
+let usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
+
 function cadastrar() {
     if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores) {
-        let usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
-
         usuarios.push({
             nome: nome.value, 
             idade: idade.value,
@@ -167,31 +167,26 @@ function cadastrar() {
 }
 
 function logar() {
-    let pegaEmail = document.getElementById('email').value
-    let pegaSenha = document.getElementById('senha').value
+    campoVazio = false
+    let pegaEmail = document.querySelector('#emailLogin')
+    let pegaSenha = document.querySelector('#senhaLogin')
     let validaLogin = false
-    let campoVazio = false
 
-    for (let i in usuarios) {
-
-        if (pegaEmail == '' || pegaSenha == '') {
-            campoVazio = true
-        }
-
-        if (pegaEmail == usuarios[i].login && pegaSenha == usuarios[i].senha) {
-            validaLogin = true
-            break
+    if (pegaEmail.value == '' || pegaSenha.value == '') {
+        campoVazio = true
+    } else {
+        for (let i in usuarios) {
+            if (pegaEmail == usuarios[i].email && pegaSenha == usuarios[i].senha) {
+                validaLogin = true
+                break
+            }
         }
     }
 
     if (validaLogin) {
-        location.href = 'home.html'
+        location.href = '../home.html'
     } else {
-        if (campoVazio) {
-            alert('Preencha todos os campos')
-        } else {
-            alert('E-mail ou senha inconrreta. Tente novamente.')
-        }
+        alert('E-mail ou senha inconrreta. Tente novamente.')
     }
 }
 
