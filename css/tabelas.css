@@ -7,7 +7,7 @@
 
 #relatorio {
     background-color: var(--cor-fundo-caixas);
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
 #relatorio > div {
@@ -26,19 +26,18 @@
 }
 
 #tabela {
-    margin-top: 15px;
-    margin: 15px auto;
+    margin: 15px 15px 15px 0px;
     padding: 10px;
 }
 
- #tabela thead tr, #tabela tbody tr {
-    width: 86vw;
+#tabela thead tr, #tabela tbody tr {
     border: 1px solid var(--cor-bordas);
     border-top: none;
     border-left: none;
     border-right: none;
     padding: 10px;
     display: flex;
+    justify-content: space-between;
 }
 
 #tabela thead tr:hover, #tabela tbody tr:hover {
@@ -64,58 +63,31 @@
     opacity: .8;
 }
 
-#tabela td:hover {
-    opacity: 1;
-}
-
 .nome {
-    width: 25vw;
+    width: 150px;
 }
 
 .email {
-    width: 50vw;
+    width: 150px;
+    margin-right: 50px;
 }
 
-td.email, td.status {
-    margin-right: 8px;
+.status {
+    width: 60px;
+    text-align: center;
 }
 
-@media screen and (min-width: 550px) and (max-width: 702px) {
-    .nome {
-        transition: .5s;
-        margin-right: 20px;
-    }
-}
-
-@media screen and (min-width: 702px) and (max-width: 750px) {
-    .nome {
-        width: 35vw;
-    }
-    .email {
-        width: 30vw;
-    }
-}
-
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 550px) {
     #tabela thead tr, #tabela tbody tr {
         width: 70vw;
+    }
+    #relatorio {
+        width: 73vw;
     }
 }
 
 @media screen and (min-width: 1200px)  {
     #relatorio {
         height: 490px;
-    }
-    
-    #tabela thead tr, #tabela tbody tr {
-        width: 70vw;
-    }
-    
-    .nome {
-        width: 50vw;
-    }
-    
-    .email {
-        width: 50vw;
     }
 }

@@ -99,7 +99,7 @@ main input {
     border: 1px solid var(--cor-bordas-hover);
 }
 
-input[type="radio"]:checked {
+input[type="checkbox"]:checked {
     appearance: none;
     background-color: rgb(45, 235, 45);
     border-radius: 50%;

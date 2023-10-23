@@ -40,7 +40,13 @@ let validValores = false
 let caixaErro = document.querySelector('#msgErro')
 let caixaSucesso = document.querySelector('#msgSucesso')
 
-nome.addEventListener('keyup', () => {
+statusRes = document.querySelector('#status')
+
+if (statusRes) {
+    statusResposta = statusRes.checked ? 'Ativo' : 'Inativo'
+}
+
+document.addEventListener('keyup', () => {
     if (nome.value.length <= 2) {
         labelNome.innerHTML = 'Nome (Digite no minímo 3 caracteres)'
         labelNome.setAttribute('style', 'color: red')
@@ -51,7 +57,7 @@ nome.addEventListener('keyup', () => {
     }
 })
 
-idade.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (idade.value <= 17) {
         labelIdade.innerHTML = 'Apenas maiores de idade'
         labelIdade.setAttribute('style', 'color: red')
@@ -62,7 +68,7 @@ idade.addEventListener('keyup', () => {
     }
 })
 
-email.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (!isEmailValid(email.value)) {
         labelEmail.innerHTML = 'E-mail inválido'
         labelEmail.setAttribute('style', 'color: red')
@@ -73,7 +79,7 @@ email.addEventListener('keyup', () => {
     }
 })
 
-endereco.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (endereco.value.length <= 3) {
         labelEndereco.setAttribute('style', 'color: red')
     } else {
@@ -83,7 +89,7 @@ endereco.addEventListener('keyup', () => {
     }
 })
 
-senha.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (!isSenhaValid(senha.value)) {
         labelSenha.innerHTML = 'Senha inválida'
         labelSenha.setAttribute('style', 'color: red')
@@ -94,7 +100,7 @@ senha.addEventListener('keyup', () => {
     }
 })
 
-confirmarSenha.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (senha.value != confirmarSenha.value) {
         labelConfirmarSenha.innerHTML = 'Senhas não conferem'
         labelConfirmarSenha.setAttribute('style', 'color: red')
@@ -105,7 +111,7 @@ confirmarSenha.addEventListener('keyup', () => {
     }
 })
 
-interesses.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (interesses.value.length <= 5) {
         labelInteresses.setAttribute('style', 'color: red')
     } else {
@@ -114,7 +120,7 @@ interesses.addEventListener('keyup', () => {
     }
 })
 
-sentimentos.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (sentimentos.value.length <= 5) {
         labelSentimentos.setAttribute('style', 'color: red')
     } else {
@@ -123,7 +129,7 @@ sentimentos.addEventListener('keyup', () => {
     }
 })
 
-valores.addEventListener('keyup', () => {
+document.addEventListener('keyup', () => {
     if (valores.value.length <= 5) {
         labelValores.setAttribute('style', 'color: red')
     } else {
@@ -135,7 +141,8 @@ valores.addEventListener('keyup', () => {
 let usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
 
 function cadastrar() {
-    if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores) {
+
+    if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores && statusResposta) {
         usuarios.push({
             nome: nome.value, 
             idade: idade.value,
@@ -144,7 +151,8 @@ function cadastrar() {
             senha: senha.value,
             interesses: interesses.value,
             sentimentos: sentimentos.value,
-            valores: valores.value
+            valores: valores.value,
+            statusCad: statusResposta
         })
 
         localStorage.setItem('usuarios', JSON.stringify(usuarios))
@@ -163,7 +171,6 @@ function cadastrar() {
         caixaSucesso.setAttribute('style', 'display: none')
         caixaSucesso.innerHTML = ''
     }
-    
 }
 
 function logar() {
@@ -176,7 +183,7 @@ function logar() {
         campoVazio = true
     } else {
         for (let i in usuarios) {
-            if (pegaEmail == usuarios[i].email && pegaSenha == usuarios[i].senha) {
+            if (pegaEmail.value == usuarios[i].email && pegaSenha.value == usuarios[i].senha) {
                 validaLogin = true
                 break
             }
@@ -190,6 +197,55 @@ function logar() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    addTabela();
+});
+
+function addTabela () {
+    let tbody = document.querySelector('#tbody');
+    tbody.innerText = ''
+
+    for (let i in usuarios) {
+        let tr = tbody.insertRow()
+
+        let tdNome = tr.insertCell()
+        let tdEmail = tr.insertCell()
+        let tdStatus = tr.insertCell()
+
+        tdNome.classList.add('nome')
+        tdEmail.classList.add('email')
+        tdStatus.classList.add('status')
+
+        tdNome.textContent = usuarios[i].nome
+        tdEmail.textContent = usuarios[i].email
+        tdStatus.textContent = usuarios[i].statusCad
+    }    
+}
+
+function totalCadastros() {
+    let valor1 = document.querySelector('#caixa1>p')
+    let cont = 0
+
+    for (let i in usuarios) {
+        cont += 1
+    }
+
+    valor1.style.color = '#415996'
+    valor1.innerHTML = cont
+}
+
+function totalCadastrosUltimoMes() {
+    let valor2 = document.querySelector('#caixa2>p')
+
+    valor2.style.color = '#3F9D2F'
+}
+
+function cadastrosComPendencia() {
+    let valor3 = document.querySelector('#caixa3>p')
+
+    valor3.style.color = '#C15959'
+}
+
 function abrirMenu() {
     if (itens.style.display == 'block') {
         itens.style.display = 'none'
@@ -201,21 +257,8 @@ function abrirMenu() {
 function mudouTamanho() {
     if (window.innerWidth >= 768) {
         itens.style.display = 'block'
-        perfil.style.display = 'block'
     } else {
         itens.style.display = 'none'
-        perfil.style.display = 'none'
-    }
-}
-
-function abrirMenuPerfil() {
-    if (perfil.style.display == 'block') {
-        perfil.style.display = 'none'
-        perfil.style.position = 'relative'
-        perfil.style.top = '0'
-        perfil.style.left = '0'
-    } else {
-        perfil.style.display = 'block'
     }
 }
 

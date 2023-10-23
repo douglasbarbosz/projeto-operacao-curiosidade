@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/script.js" refer></script>
 </head>
 <body>
     <main>
@@ -18,11 +17,13 @@
             <form id="form">
                 <input type="email" name="emailLogin" id="emailLogin" required placeholder="Email" autocomplete="email"> <br>
                 <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Senha" required autocomplete="current-password"> <br>
-                <button type="submit" id="botao-login" onclick="logar()">Entrar</button>
+                <button type="button" id="botao-login" onclick="logar()">Entrar</button>
             </form>
             <p id="esqueceu">Esqueceu a senha?</p> <hr>
             <p id="nova-conta" onclick="abrirCadastrar()">Criar nova conta</p>
         </section>
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

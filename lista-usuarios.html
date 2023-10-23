@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/tabelas.css">
     <link rel="stylesheet" href="css/print.css">
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <div id="logo">
             <span id="titulo">Oc</span>
@@ -69,32 +69,8 @@
                         <th scope="col" class="status">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td class="nome">Stephanie Nichols</td>
-                        <td class="email">stephanienichols@gmail.com</td>
-                        <td class="status">Ativo</td>
-                    </tr>
-                    <tr>
-                        <td class="nome">Stephanie Nichols</td>
-                        <td class="email">stephanienichols@gmail.com</td>
-                        <td class="status">Ativo</td>
-                    </tr>
-                    <tr>
-                        <td class="nome">Stephanie Nichols</td>
-                        <td class="email">stephanienichols@gmail.com</td>
-                        <td class="status">Ativo</td>
-                    </tr>
-                    <tr>
-                        <td class="nome">Stephanie Nichols</td>
-                        <td class="email">stephanienichols@gmail.com</td>
-                        <td class="status">Ativo</td>
-                    </tr>
-                    <tr>
-                        <td class="nome">Stephanie Nichols</td>
-                        <td class="email">stephanienichols@gmail.com</td>
-                        <td class="status">Ativo</td>
-                    </tr>
+                <tbody id="tbody">
+                    
                 </tbody>
             </table>
         </section>

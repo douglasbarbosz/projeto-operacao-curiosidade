@@ -86,7 +86,7 @@ form#form > input::placeholder {
     opacity: .8;
 }
 
-button[type=submit] {
+button[type=button] {
     background-color: var(--cor-botao);
     text-transform: uppercase;
     cursor: pointer;
@@ -96,7 +96,7 @@ button[type=submit] {
     height: 40px;
 }
 
-form#form button[type=submit]:hover {
+form#form button[type=button]:hover {
     transition: .3s;
     background-color: var(--cor-botao-hover);
 }
@@ -171,7 +171,7 @@ hr {
         margin-left: 17px;
     }
     
-    button[type=submit] {
+    button[type=button] {
         width: 343px;
         height: 52px;
     }

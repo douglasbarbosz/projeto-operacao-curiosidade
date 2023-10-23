@@ -5,9 +5,7 @@
 }
 
 #relatorios {
-    margin-top: 20px;
     background-color: var(--cor-fundo-caixas);
-    padding: 30px 10px 0px 10px;
 }
 
 #relatorios > p {
@@ -17,11 +15,6 @@
     padding-left: 15px;
     opacity: .8;
     color: var(--cor-texto);
-}
-
-#tabela {
-    height: 490px;
-    margin-top: 40px;
 }
 
 #botao {
