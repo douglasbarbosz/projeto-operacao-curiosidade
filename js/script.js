@@ -40,108 +40,131 @@ let validValores = false
 let caixaErro = document.querySelector('#msgErro')
 let caixaSucesso = document.querySelector('#msgSucesso')
 
-statusRes = document.querySelector('#status')
+let statusRes = document.querySelector('#status')
+let statusResposta = ''
 
 if (statusRes) {
-    statusResposta = statusRes.checked ? 'Ativo' : 'Inativo'
+    if (statusRes.checked) {
+        statusResposta = 'Ativo'
+    } else {
+        statusResposta = 'Inativo'
+    }
 }
 
-document.addEventListener('keyup', () => {
-    if (nome.value.length <= 2) {
-        labelNome.innerHTML = 'Nome (Digite no minímo 3 caracteres)'
-        labelNome.setAttribute('style', 'color: red')
-    } else {
-        labelNome.innerHTML = 'Nome'
-        labelNome.setAttribute('style', 'color: green')
-        validNome = true
-    }
-})
+if (nome) {
+    nome.addEventListener('keyup', () => {
+        if (nome.value.length <= 2) {
+            labelNome.innerHTML = 'Nome (Digite no minímo 3 caracteres)'
+            labelNome.setAttribute('style', 'color: red')
+        } else {
+            labelNome.innerHTML = 'Nome'
+            labelNome.setAttribute('style', 'color: green')
+            validNome = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (idade.value <= 17) {
-        labelIdade.innerHTML = 'Apenas maiores de idade'
-        labelIdade.setAttribute('style', 'color: red')
-    } else {
-        labelIdade.innerHTML = 'Idade'
-        labelIdade.setAttribute('style', 'color: green')
-        validIdade = true
-    }
-})
+if (idade) {
+    idade.addEventListener('keyup', () => {
+        if (idade.value <= 17) {
+            labelIdade.innerHTML = 'Apenas maiores de idade'
+            labelIdade.setAttribute('style', 'color: red')
+        } else {
+            labelIdade.innerHTML = 'Idade'
+            labelIdade.setAttribute('style', 'color: green')
+            validIdade = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (!isEmailValid(email.value)) {
-        labelEmail.innerHTML = 'E-mail inválido'
-        labelEmail.setAttribute('style', 'color: red')
-    } else {
-        labelEmail.innerHTML = 'E-mail válido'
-        labelEmail.setAttribute('style', 'color: green')
-        validEmail = true
-    }
-})
+if (email) {
+    email.addEventListener('keyup', () => {
+        if (!isEmailValid(email.value)) {
+            labelEmail.innerHTML = 'E-mail inválido'
+            labelEmail.setAttribute('style', 'color: red')
+        } else {
+            labelEmail.innerHTML = 'E-mail válido'
+            labelEmail.setAttribute('style', 'color: green')
+            validEmail = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (endereco.value.length <= 3) {
-        labelEndereco.setAttribute('style', 'color: red')
-    } else {
-        labelEndereco.innerHTML = 'Endereço válido'
-        labelEndereco.setAttribute('style', 'color: green')
-        validEndereco = true
-    }
-})
+if (endereco) {
+    endereco.addEventListener('keyup', () => {
+        if (endereco.value.length <= 3) {
+            labelEndereco.setAttribute('style', 'color: red')
+        } else {
+            labelEndereco.innerHTML = 'Endereço válido'
+            labelEndereco.setAttribute('style', 'color: green')
+            validEndereco = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (!isSenhaValid(senha.value)) {
-        labelSenha.innerHTML = 'Senha inválida'
-        labelSenha.setAttribute('style', 'color: red')
-    } else {
-        labelSenha.innerHTML = 'Senha válida'
-        labelSenha.setAttribute('style', 'color: green')
-        validSenha = true
-    }
-})
+if (senha) {
+    senha.addEventListener('keyup', () => {
+        if (!isSenhaValid(senha.value)) {
+            labelSenha.innerHTML = 'Senha inválida'
+            labelSenha.setAttribute('style', 'color: red')
+        } else {
+            labelSenha.innerHTML = 'Senha válida'
+            labelSenha.setAttribute('style', 'color: green')
+            validSenha = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (senha.value != confirmarSenha.value) {
-        labelConfirmarSenha.innerHTML = 'Senhas não conferem'
-        labelConfirmarSenha.setAttribute('style', 'color: red')
-    } else {
-        labelConfirmarSenha.innerHTML = 'Senhas iguais'
-        labelConfirmarSenha.setAttribute('style', 'color: green')
-        validConfirmarSenha = true
-    }
-})
+if (confirmarSenha) {
+    confirmarSenha.addEventListener('keyup', () => {
+        if (senha.value != confirmarSenha.value) {
+            labelConfirmarSenha.innerHTML = 'Senhas não conferem'
+            labelConfirmarSenha.setAttribute('style', 'color: red')
+        } else {
+            labelConfirmarSenha.innerHTML = 'Senhas iguais'
+            labelConfirmarSenha.setAttribute('style', 'color: green')
+            validConfirmarSenha = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (interesses.value.length <= 5) {
-        labelInteresses.setAttribute('style', 'color: red')
-    } else {
-        labelInteresses.setAttribute('style', 'color: green')
-        validInteresses = true
-    }
-})
+if (interesses) {
+    interesses.addEventListener('keyup', () => {
+        if (interesses.value.length <= 5) {
+            labelInteresses.setAttribute('style', 'color: red')
+        } else {
+            labelInteresses.setAttribute('style', 'color: green')
+            validInteresses = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (sentimentos.value.length <= 5) {
-        labelSentimentos.setAttribute('style', 'color: red')
-    } else {
-        labelSentimentos.setAttribute('style', 'color: green')
-        validSentimentos = true
-    }
-})
+if (sentimentos) {
+    sentimentos.addEventListener('keyup', () => {
+        if (sentimentos.value.length <= 5) {
+            labelSentimentos.setAttribute('style', 'color: red')
+        } else {
+            labelSentimentos.setAttribute('style', 'color: green')
+            validSentimentos = true
+        }
+    })
+}
 
-document.addEventListener('keyup', () => {
-    if (valores.value.length <= 5) {
-        labelValores.setAttribute('style', 'color: red')
-    } else {
-        labelValores.setAttribute('style', 'color: green')
-        validValores = true
-    }
-})
+if (valores) {
+    valores.addEventListener('keyup', () => {
+        if (valores.value.length <= 5) {
+            labelValores.setAttribute('style', 'color: red')
+        } else {
+            labelValores.setAttribute('style', 'color: green')
+            validValores = true
+        }
+    })
+}
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
 
 function cadastrar() {
-
+    let data = new Date()
     if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores && statusResposta) {
         usuarios.push({
             nome: nome.value, 
@@ -152,7 +175,8 @@ function cadastrar() {
             interesses: interesses.value,
             sentimentos: sentimentos.value,
             valores: valores.value,
-            statusCad: statusResposta
+            statusCad: statusResposta,
+            dataCad: data
         })
 
         localStorage.setItem('usuarios', JSON.stringify(usuarios))
@@ -185,6 +209,7 @@ function logar() {
         for (let i in usuarios) {
             if (pegaEmail.value == usuarios[i].email && pegaSenha.value == usuarios[i].senha) {
                 validaLogin = true
+                nomeCompleto = usuarios[i].nome
                 break
             }
         }
@@ -193,33 +218,41 @@ function logar() {
     if (validaLogin) {
         location.href = '../home.html'
     } else {
-        alert('E-mail ou senha inconrreta. Tente novamente.')
+        if (campoVazio) {
+            alert('Preencha todos os campos.')
+        } else {
+            alert('E-mail ou senha inconrreta. Tente novamente.')
+        }
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    addTabela();
-});
+    addTabela()
+})
 
 function addTabela () {
-    let tbody = document.querySelector('#tbody');
-    tbody.innerText = ''
+    let tbody = document.querySelector('#tbody')
 
-    for (let i in usuarios) {
-        let tr = tbody.insertRow()
+    if (tbody) {
+        tbody.innerText = ''
 
-        let tdNome = tr.insertCell()
-        let tdEmail = tr.insertCell()
-        let tdStatus = tr.insertCell()
+        for (let i in usuarios) {
+            let tr = tbody.insertRow()
 
-        tdNome.classList.add('nome')
-        tdEmail.classList.add('email')
-        tdStatus.classList.add('status')
+            let tdNome = tr.insertCell()
+            let tdEmail = tr.insertCell()
+            let tdStatus = tr.insertCell()
 
-        tdNome.textContent = usuarios[i].nome
-        tdEmail.textContent = usuarios[i].email
-        tdStatus.textContent = usuarios[i].statusCad
-    }    
+            tdNome.classList.add('nome')
+            tdNome.classList.add('nomePesquisar')
+            tdEmail.classList.add('email')
+            tdStatus.classList.add('status')
+
+            tdNome.textContent = usuarios[i].nome
+            tdEmail.textContent = usuarios[i].email
+            tdStatus.textContent = usuarios[i].statusCad
+        }
+    }  
 }
 
 function totalCadastros() {
@@ -237,13 +270,45 @@ function totalCadastros() {
 function totalCadastrosUltimoMes() {
     let valor2 = document.querySelector('#caixa2>p')
 
+    let dataAtual = new Date()
+    let dataMesPassado = new Date(dataAtual)
+    dataMesPassado.setMonth(dataMesPassado.getMonth() - 1)
+
+    let cont = 0
+    for (let i in usuarios) {
+        if (usuarios[i].data && usuarios[i].data instanceof Date) {
+            if (usuarios[i].data.getMonth() === dataMesPassado.getMonth() && usuarios[i].data.getFullYear() === dataMesPassado.getFullYear()) {
+                cont += 1
+            }
+        }
+    }
+
     valor2.style.color = '#3F9D2F'
+    valor2.innerHTML = cont
 }
+
 
 function cadastrosComPendencia() {
     let valor3 = document.querySelector('#caixa3>p')
 
     valor3.style.color = '#C15959'
+    valor3.innerHTML = 0
+}
+
+document.addEventListener('keyup', function () {
+    pesquisar()
+})
+
+function pesquisar() {
+    let inputPesquisar = document.querySelector('#pesquisar')
+    inputPesquisar = inputPesquisar.value.toLowerCase()
+    let nome = document.getElementsByClassName('nomePesquisar')
+
+    for (i = 0; i < nome.length; i++) {
+        if (nome[i].innerHTML.toLocaleLowerCase().includes(inputPesquisar)) {
+            nome[i].style.color = 'red'
+        }
+    }
 }
 
 function abrirMenu() {

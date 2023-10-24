@@ -38,13 +38,14 @@
 #ultimos-cadastros {
     background-color: var(--cor-fundo-caixas);
     margin: auto;
+    height: 1000px;
 }
 
 #ultimos-cadastros > p {
     font-size: 18px;
     line-height: 21px;
     opacity: .7;
-    padding: 20px 20px 0px 10px;
+    padding: 20px 0px 0px 10px;
 }
 
 @media screen and (min-width: 550px) and (max-width: 992px) { 
@@ -98,13 +99,12 @@
         margin-top: 30px;
     }
 
-    section#ultimos-cadastros {
+    #ultimos-cadastros {
         margin-top: 20px;
-        height: 350px;
         width: 73vw;
     }
 
-    section#ultimos-cadastros > p {
+    #ultimos-cadastros > p {
         padding: 20px 20px 0px 20px;
     }
 

@@ -8,6 +8,7 @@
 #relatorio {
     background-color: var(--cor-fundo-caixas);
     margin: 15px auto;
+    height: 1000px;
 }
 
 #relatorio > div {
@@ -28,6 +29,7 @@
 #tabela {
     margin: 15px 15px 15px 0px;
     padding: 10px;
+    width: 100%;
 }
 
 #tabela thead tr, #tabela tbody tr {
@@ -37,7 +39,6 @@
     border-right: none;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
 }
 
 #tabela thead tr:hover, #tabela tbody tr:hover {
@@ -48,7 +49,7 @@
 }
 
 #tabela th {
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 16px;
     opacity: 0.7;
@@ -57,37 +58,39 @@
 }
 
 #tabela td {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 18.17px;
     color: var(--verde-escuro);
     opacity: .8;
+    width: 33.3%;
+    display: block;
+    box-sizing: border-box;
 }
 
-.nome {
-    width: 150px;
-}
-
-.email {
-    width: 150px;
-    margin-right: 50px;
-}
-
-.status {
-    width: 60px;
+#tabela th:nth-child(3),
+#tabela td:nth-child(3) {
     text-align: center;
+    width: 10%;
+}
+
+@media screen and (min-width: 300px) {
+    #tabela th,
+    #tabela td {
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 550px) {
     #tabela thead tr, #tabela tbody tr {
         width: 70vw;
     }
+    #tabela th {
+        font-size: 14px;
+    }
+    #tabela td {
+        font-size: 16px;
+    }
     #relatorio {
         width: 73vw;
-    }
-}
-
-@media screen and (min-width: 1200px)  {
-    #relatorio {
-        height: 490px;
     }
 }
