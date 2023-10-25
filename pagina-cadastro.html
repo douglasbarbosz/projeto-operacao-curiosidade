@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <title>Cadastros</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/geral.css">
@@ -15,29 +16,28 @@
             <span id="titulo">Oc</span>
             <span id="subtitulo">Operação Curiosidade</span>
         </div>
-        
         <section id="menu-atalhos">
             <span id="menu-burguer" class="material-icons" onclick="abrirMenu()">menu</span>
             <nav id="itens">
                 <div>
                     <span class="material-icons">home</span>
-                    <input class="atalho" type="submit" value="Home" onclick="abrirHome()">
+                    <input class="atalho" type="button" value="Home" onclick="abrirHome()">
                 </div>
                 <div>
                     <span class="material-icons">group_add</span>
-                    <input class="atalho" type="submit" value="Cadastro" onclick="abrirCadastros()">
+                    <input class="atalho" type="button" value="Cadastro" onclick="abrirCadastros()">
                 </div>
                 <div>
                     <span class="material-icons">insert_chart</span>
-                    <input class="atalho" type="submit" value="Relatórios" onclick="abrirRelatorios()">
+                    <input class="atalho" type="button" value="Relatórios" onclick="abrirRelatorios()">
                 </div>
                 <div class="perfil-menu">
                     <div id="foto-perfil"></div>
-                    <span id="nameCompleto" class="pessoa" class="atalho">Douglas Barbosa</span>
+                    <span id="nameCompleto" class="pessoa atalho">Meu Perfil</span>
                 </div>
                 <div class="perfil-menu">
                     <span class="material-icons">logout</span>
-                    <input id="sair" class="atalho" type="submit" value="Sair" onclick="sair()">
+                    <input id="sair" class="atalho" type="button" value="Sair" onclick="sair()">
                 </div>
             </nav>
         </section>
@@ -48,18 +48,17 @@
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
                 <div id="foto"></div>
-                <span class="perfil" id="nome">Douglas Barbosa</span>
+                <span class="perfil" id="nome">Meu Perfil</span>
                 <div id="linha"></div>
                 <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
             </div>
         </section>
-
         <section id="formulario">
             <div id="topo">
                 <span>Novo cadastro</span>
                 <div>
-                    <input type="checkbox" name="ativo" id="status" checked>
-                    <label id="ativo" for="ativo">Ativo</label>
+                    <input type="checkbox" name="status" id="status" checked>
+                    <label for="status">Ativo</label>
                 </div>
             </div>
             <form>
@@ -86,33 +85,34 @@
                     <div id="bloco-senhas">
                         <div>
                             <label id="labelSenha" class="obrigatorio" for="senha">Senha</label> <br>
-                            <input type="password" name="senha" id="senha" autocomplete="new-password">
+                            <div class="campo-senha">
+                                <input type="password" name="senha" id="senhaCad" autocomplete="new-password">
+                                <span class="material-icons icone" id="iconeSenha">visibility</span>
+                            </div>
                         </div>
                         <div>
                             <label id="labelConfirmarSenha" class="obrigatorio" for="confirmarSenha">Confirmar senha</label> <br>
-                            <input type="password" name="confirmarSenha" id="confirmarSenha">
+                            <div class="campo-senha">
+                                <input type="password" name="confirmarSenha" id="confirmarSenha">
+                                <span class="material-icons icone" id="iconeConfirmSenha">visibility</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="interesses">
                     <label id="labelInteresses" class="obrigatorio" for="interesses">2° Interesses</label> <hr>
                     <textarea name="interesses" id="interesses"></textarea>
                 </div>
-
                 <div class="sentimentos">
                     <label id="labelSentimentos" class="obrigatorio" for="sentimentos">3° Sentimentos</label> <hr>
                     <textarea name="sentimentos" id="sentimentos"></textarea>
                 </div>
-
                 <div class="valores">
                     <label id="labelValores" class="obrigatorio" for="valores">4° Valores</label> <hr>
                     <textarea name="valores" id="valores"></textarea>
                 </div>
-
                 <div id="msgErro"></div>
                 <div id="msgSucesso"></div>
-
                 <div id="botao">
                     <button id="botao-gravar" type="submit" onclick="cadastrar(); return false">Cadastrar</button>
                 </div>
@@ -121,5 +121,6 @@
     </main>
 
     <script src="js/script.js" refer></script>
+    <script src="js/cadastro.js"></script>
 </body>
 </html>

@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
 
 :root {
-    --cor-fundo: #d2f8cc;
-    --cor-fundo-input: #c4f7bd;
-    --cor-logo: #55ca80;
-    --cor-botao: #8DFA48;
-    --cor-botao-hover: #19FA1F;
-    --cor-bordas: #053807;
-    --cor-bordas-hover: #1bbd21;
-    --verde-escuro: #012402;
+    --cor-fundo: #f8cccc;
+    --cor-fundo-input: #f7bdbd;
+    --cor-logo: #ca5555;
+    --cor-botao: #fa4848;
+    --cor-botao-hover: #fa1919;
+    --cor-bordas: #380505;
+    --cor-bordas-hover: #bd1b1b;
+    --vermelho-escuro: #240101;
 }
 
 * {
@@ -33,7 +33,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 380px;
-    height: 500px;
+    height: 530px;
     border-radius: 10px;
     text-align: center;
     transition: .1s;
@@ -67,7 +67,7 @@ div#logo > span#subtitulo {
     text-align: center;
 }
 
-form#form > input {
+form#form input {
     background-color: var(--cor-fundo-input);
     border: 2px solid var(--cor-bordas);
     margin: 15px;
@@ -76,14 +76,28 @@ form#form > input {
     text-indent: 17px;
 }
 
-form#form > input:hover {
+form#form input:hover {
     border: 2px solid var(--cor-bordas-hover);
 }
 
-form#form > input::placeholder {
+form#form input::placeholder {
     line-height: 17.58px;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     opacity: .8;
+}
+
+#campo-senha {
+    position: relative;
+}
+
+.material-icons {
+    color: var(--cor-bordas-hover);
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
 }
 
 button[type=button] {
@@ -122,12 +136,12 @@ hr {
     cursor: pointer;
     color: white;
     margin: 15px;
-    background-color: #26e91f;
+    background-color: #e91f1f;
     border-radius: 30px;
 }
 
 #nova-conta:hover {
-    background-color:#1ab115;
+    background-color:#b11515;
 }
 
 @media screen and (min-width: 600px) {
@@ -145,7 +159,7 @@ hr {
         transition: .3s;
         padding-top: 15px;
         width: 580px;
-        height: 540px;
+        height: 560px;
     }
     
     div#logo {
@@ -154,14 +168,14 @@ hr {
         margin: auto;
     }
 
-    form#form > input {
+    form#form input {
         margin: 20px;
         width: 343px;
         height: 52px;
     }
     
     form#form > input:hover {
-        background-color: rgb(245, 240, 240);
+        background-color: rgba(255, 176, 176, 0.575);
     }
     
     form#form > input::placeholder {
@@ -171,6 +185,10 @@ hr {
         margin-left: 17px;
     }
     
+    .material-icons {
+        right: 130px;
+    }
+
     button[type=button] {
         width: 343px;
         height: 52px;

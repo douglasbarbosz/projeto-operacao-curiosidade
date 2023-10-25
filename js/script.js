@@ -43,13 +43,16 @@ let caixaSucesso = document.querySelector('#msgSucesso')
 let statusRes = document.querySelector('#status')
 let statusResposta = ''
 
-if (statusRes) {
-    if (statusRes.checked) {
-        statusResposta = 'Ativo'
-    } else {
-        statusResposta = 'Inativo'
+document.addEventListener("DOMContentLoaded", function () {  
+    if (statusRes) {
+      if (statusRes.checked) {
+        statusResposta = 'Ativo';
+      } else {
+        statusResposta = 'Inativo';
+      }
     }
-}
+});
+  
 
 if (nome) {
     nome.addEventListener('keyup', () => {
@@ -182,7 +185,7 @@ function cadastrar() {
         localStorage.setItem('usuarios', JSON.stringify(usuarios))
 
         setTimeout(() => {
-            window.location.href = 'home.html'
+            window.location.href = 'index.html'
         }, 1500)
 
         caixaSucesso.setAttribute('style', 'display: block')
@@ -209,7 +212,6 @@ function logar() {
         for (let i in usuarios) {
             if (pegaEmail.value == usuarios[i].email && pegaSenha.value == usuarios[i].senha) {
                 validaLogin = true
-                nomeCompleto = usuarios[i].nome
                 break
             }
         }
@@ -244,7 +246,6 @@ function addTabela () {
             let tdStatus = tr.insertCell()
 
             tdNome.classList.add('nome')
-            tdNome.classList.add('nomePesquisar')
             tdEmail.classList.add('email')
             tdStatus.classList.add('status')
 
@@ -254,6 +255,27 @@ function addTabela () {
         }
     }  
 }
+
+let barPesquisa = document.querySelector('#pesquisar')
+let tabela = document.querySelector('#tabela')
+
+barPesquisa.addEventListener('input', () => {
+    let campoPesquisa = barPesquisa.value.toLowerCase()
+    let linhasTab = tabela.querySelectorAll('tr')
+
+    linhasTab.forEach(function (linha) {
+        let nomeItem = linha.querySelector('td:first-child')
+        
+        if (nomeItem) {
+            let nome = nomeItem.textContent.toLowerCase()
+            if (nome.includes(campoPesquisa)) {
+                linha.style.backgroundColor = 'red'
+            } else {
+                linha.style.display = 'none'
+            }
+        }
+    })
+})
 
 function totalCadastros() {
     let valor1 = document.querySelector('#caixa1>p')
@@ -287,28 +309,11 @@ function totalCadastrosUltimoMes() {
     valor2.innerHTML = cont
 }
 
-
 function cadastrosComPendencia() {
     let valor3 = document.querySelector('#caixa3>p')
 
     valor3.style.color = '#C15959'
     valor3.innerHTML = 0
-}
-
-document.addEventListener('keyup', function () {
-    pesquisar()
-})
-
-function pesquisar() {
-    let inputPesquisar = document.querySelector('#pesquisar')
-    inputPesquisar = inputPesquisar.value.toLowerCase()
-    let nome = document.getElementsByClassName('nomePesquisar')
-
-    for (i = 0; i < nome.length; i++) {
-        if (nome[i].innerHTML.toLocaleLowerCase().includes(inputPesquisar)) {
-            nome[i].style.color = 'red'
-        }
-    }
 }
 
 function abrirMenu() {
@@ -332,7 +337,7 @@ function listarUsuarios() {
 }
 
 function sair() {
-    location.href = 'index.html'
+    location.replace('index.html')
 }
 
 function abrirHome() {

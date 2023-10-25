@@ -1,11 +1,11 @@
 :root {
-    --verde-escuro: #012402;
-    --cor-fundo-caixas: #eef7ed;
-    --cor-botao: #8DFA48;
-    --cor-fundo-input: #c4f7bd;
-    --cor-botao-hover: #19FA1F;
-    --cor-bordas-hover: #1bbd21;
-    --cor-bordas: #053807;
+    --vermelho-escuro: #240101;
+    --cor-fundo-caixas: #f7eded;
+    --cor-botao: #fa4848;
+    --cor-fundo-input: #f7bdbd;
+    --cor-botao-hover: #fa1919;
+    --cor-bordas-hover: #bd1b1b;
+    --cor-bordas: #380505;
 }
 
 #formulario {
@@ -28,7 +28,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     opacity: .8;
 }
 
@@ -39,7 +39,7 @@
 #topo > div > input {
     width: 15px;
     height: 15px;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     margin-right: 10px;
 }
 
@@ -71,7 +71,7 @@ label.obrigatorio::after {
 }
 
 hr {
-    border: 1px solid var(--verde-escuro);
+    border: 1px solid var(--vermelho-escuro);
 }
 
 #fatos-dados > div, 
@@ -101,9 +101,9 @@ main input {
 
 input[type="checkbox"]:checked {
     appearance: none;
-    background-color: rgb(45, 235, 45);
+    background-color: rgb(235, 45, 45);
     border-radius: 50%;
-    border: 1px solid green;
+    border: 1px solid rgb(128, 0, 0);
   }
 
 #inome,
@@ -141,11 +141,36 @@ input[type="checkbox"]:checked {
     justify-content: space-between;
 }
 
-#senha {
+.campo-senha {
+    position: relative;
+    display: flex;
+}
+
+.campo-senha input {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.icone {
+    color: #bd1b1b;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.campo-senha #iconeSenha {
+    right: 27px;
+}
+
+#senhaCad {
     margin-right: 20px;
 }
 
-#senha, #confirmarSenha {
+#senhaCad, #confirmarSenha {
     border-radius: 10px;
     width: 32vw;
 }

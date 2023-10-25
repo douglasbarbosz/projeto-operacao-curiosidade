@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
 
 :root {
-    --cor-fundo-main: #d2f8cc;
-    --cor-fundo-header: #EEFFE8;
-    --cor-pesquisar: #b3f5a8;
-    --cor-logo: #55ca80;
-    --cor-bordas: #053807;
-    --cor-icones: #117915;
-    --verde-escuro: #012402;
-    --cor-botao: #8DFA48;
-    --cor-botao-hover: #19FA1F;
+    --cor-fundo-main: #f8d3cc;
+    --cor-fundo-header: #ffe8e8;
+    --cor-pesquisar: #f5a8a8;
+    --cor-logo: #ca5555;
+    --cor-bordas: #380505;
+    --cor-icones: #791111;
+    --vermelho-escuro: #240101;
+    --cor-botao: #fa4848;
+    --cor-botao-hover: #fa1919;
 }
 
 * {
@@ -50,7 +50,7 @@ div#logo {
 
 div#logo > span#titulo {
     background-color: var(--cor-logo);
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -68,7 +68,7 @@ div#logo > span#titulo {
 
 span#subtitulo {
     display: none;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
 }
 
 #subtitulo:hover {
@@ -106,10 +106,11 @@ nav > div > input {
     background-color: transparent;
 }
 
-nav > div > input, .pessoa {
+nav > div > input,
+.pessoa {
     font-size: 16px;
     line-height: 21px;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     margin-left: 10px;
     border: none;
     cursor: pointer;
@@ -123,8 +124,7 @@ nav > div > input, .pessoa {
     content: '';
     width: 25px;
     height: 25px;
-    background-image: url('../imagens/minha_foto.png');
-    background-size: cover;
+    background-color: rgb(224, 108, 108);
     display: inline-block;
     border-radius: 50%;
 }
@@ -148,7 +148,7 @@ nav > div > input, .pessoa {
 }
 
 #pesquisar::placeholder {
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     opacity: .8;
 }
 
@@ -227,12 +227,12 @@ nav > div > input, .pessoa {
         display: inline;
     }
 
-    .atalho, .pessoa {
+    .atalho {
         text-transform: uppercase;
         padding: 15px 15px;
     }
 
-    .atalho:hover, .pessoa:hover {
+    .pessoa:hover {
         text-decoration: underline;
     }
 
@@ -268,7 +268,6 @@ nav > div > input, .pessoa {
         grid-area: header;
         width: 22%;
         height: 100vh;
-        padding: 20px 20px 20px 10px;
         display: block;
     }
 
@@ -284,9 +283,6 @@ nav > div > input, .pessoa {
         background-color: transparent;
         border-radius: 0px;
         font-size: 40px;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
         margin: 0px 20px 0px 15px;
         position: initial;
         top: 0;
@@ -317,7 +313,7 @@ nav > div > input, .pessoa {
     }
     
     nav > div:nth-child(even) {
-        border: 1px solid #D9D9D9; 
+        border: 1px solid var(--cor-bordas); 
         border-left: none;
         border-right: none;
         padding: 5px 0px;
@@ -371,12 +367,11 @@ nav > div > input, .pessoa {
     }
 
     #foto {
-        background-image: url('../imagens/minha_foto.png');
+        background-color: rgb(224, 108, 108);
         width: 30px;
         height: 30px;
         padding: 20px;
         border-radius: 50%;
-        background-size: cover;
     }
 
     .perfil {
@@ -388,7 +383,7 @@ nav > div > input, .pessoa {
     }
 
     #sair {
-        color: var(--verde-escuro);
+        color: var(--vermelho-escuro);
         text-transform: uppercase;
         border: none;
         font-size: 16px;
@@ -408,7 +403,7 @@ nav > div > input, .pessoa {
     }
 
     #linha {
-        border: 1px solid var(--verde-escuro);
+        border: 1px solid var(--vermelho-escuro);
         width: 30.15px;
         rotate: -90deg;
         margin-left: 10px;

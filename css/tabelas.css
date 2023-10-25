@@ -1,8 +1,8 @@
 :root {
-    --cor-fundo-caixas: #eef7ed;
-    --cor-bordas-hover: #053807;
-    --cor-bordas: #1bbd21;
-    --verde-escuro: #012402;
+    --cor-fundo-caixas: #f7eded;
+    --cor-bordas-hover: #380505;
+    --cor-bordas: #bd1b1b;
+    --vermelho-escuro: #240101;
 }
 
 #relatorio {
@@ -23,7 +23,7 @@
     font-weight: 700;
     line-height: 21px;
     opacity: .8;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
 }
 
 #tabela {
@@ -33,17 +33,20 @@
 }
 
 #tabela thead tr, #tabela tbody tr {
-    border: 1px solid var(--cor-bordas);
-    border-top: none;
-    border-left: none;
-    border-right: none;
     padding: 10px;
     display: flex;
+    box-sizing: border-box;
+    border: none;
 }
 
-#tabela thead tr:hover, #tabela tbody tr:hover {
+#tabela tbody tr:nth-child(odd) {
+    border: 1px solid var(--cor-bordas);
+    border-left: none;
+    border-right: none;
+}
+
+#tabela tbody tr:hover {
     border: 1px solid var(--cor-bordas-hover);
-    border-top: none;
     border-left: none;
     border-right: none;
 }
@@ -60,7 +63,7 @@
 #tabela td {
     font-size: 12px;
     line-height: 18.17px;
-    color: var(--verde-escuro);
+    color: var(--vermelho-escuro);
     opacity: .8;
     width: 33.3%;
     display: block;

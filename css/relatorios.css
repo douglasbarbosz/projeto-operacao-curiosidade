@@ -9,6 +9,9 @@
     margin-top: 15px;
     height: 100vh;
 }
+#relatorios td {
+    width: 100%;
+}
 
 #relatorios > p {
     font-size: 18px;

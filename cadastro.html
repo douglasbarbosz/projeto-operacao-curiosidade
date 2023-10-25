@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <title>Cadastros</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/geral.css">
@@ -15,29 +16,28 @@
             <span id="titulo">Oc</span>
             <span id="subtitulo">Operação Curiosidade</span>
         </div>
-        
         <section id="menu-atalhos">
             <span id="menu-burguer" class="material-icons" onclick="abrirMenu()">menu</span>
             <nav id="itens">
                 <div>
                     <span class="material-icons">home</span>
-                    <input class="atalho" type="submit" value="Home" onclick="abrirHome()">
+                    <input class="atalho" type="button" value="Home" onclick="abrirHome()">
                 </div>
                 <div>
                     <span class="material-icons">group_add</span>
-                    <input class="atalho" type="submit" value="Cadastro" onclick="abrirCadastros()">
+                    <input class="atalho" type="button" value="Cadastro" onclick="abrirCadastros()">
                 </div>
                 <div>
                     <span class="material-icons">insert_chart</span>
-                    <input class="atalho" type="submit" value="Relatórios" onclick="abrirRelatorios()">
+                    <input class="atalho" type="button" value="Relatórios" onclick="abrirRelatorios()">
                 </div>
                 <div class="perfil-menu">
                     <div id="foto-perfil"></div>
-                    <span id="nameCompleto" class="pessoa" class="atalho">Douglas Barbosa</span>
+                    <span id="nameCompleto" class="pessoa atalho">Meu Perfil</span>
                 </div>
                 <div class="perfil-menu">
                     <span class="material-icons">logout</span>
-                    <input id="sair" class="atalho" type="submit" value="Sair" onclick="sair()">
+                    <input id="sair" class="atalho" type="button" value="Sair" onclick="sair()">
                 </div>
             </nav>
         </section>
@@ -48,18 +48,17 @@
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
                 <div id="foto"></div>
-                <span class="perfil" id="nome">Douglas Barbosa</span>
+                <span class="perfil" id="nome">Meu Perfil</span>
                 <div id="linha"></div>
                 <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
             </div>
         </section>
-
+        
         <section id="relatorio">
             <div>
                 <p>Cadastros</p>
                 <input id="novo-cadastro" type="submit" value="Novo cadastro" onclick="abrirCadastrar()">
             </div>
-
             <table id="tabela">
                 <thead>
                     <tr>
@@ -68,13 +67,11 @@
                         <th scope="col" class="status">Status</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-                    
-                </tbody>
+                <tbody id="tbody"></tbody>
             </table>
         </section>
-
-        <script src="js/script.js"></script>
     </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
