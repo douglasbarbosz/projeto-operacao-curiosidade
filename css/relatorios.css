@@ -1,7 +1,9 @@
 #relatorios {
-    background-color: var(--cor-fundo-caixas);
+    background-color: var(--cor-fundo-header);
+    border: var(--borda-caixas);
+    border-radius: 5px;
     margin-top: 15px;
-    height: 100vh;
+    height: 50vh;
 }
 #relatorios td {
     width: 100%;
@@ -13,6 +15,7 @@
     line-height: 21px;
     padding: 15px;
     color: var(--vermelho-escuro);
+    display: inline-block;
 }
 
 #relatorios > p:hover {

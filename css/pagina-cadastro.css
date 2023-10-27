@@ -4,6 +4,7 @@
 
 #formulario {
     background-color: var(--cor-fundo-header);
+    border-radius: 5px;
     padding: 20px;
     margin: 20px auto;
     width: 70vw;

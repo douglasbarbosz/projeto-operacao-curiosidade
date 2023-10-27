@@ -3,7 +3,9 @@
 }
 
 #relatorio {
-    background-color: var(--cor-fundo-caixas);
+    background-color: var(--cor-fundo-header);
+    border: var(--borda-caixas);
+    border-radius: 5px;
     margin: 15px auto;
     height: 1000px;
 }

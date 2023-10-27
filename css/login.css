@@ -75,6 +75,7 @@ div#logo > span#titulo {
     font-size: 40px;
     line-height: 48.41px;
     text-transform: uppercase;
+    color: white;
 }
 
 div#logo > span#subtitulo {
@@ -82,6 +83,7 @@ div#logo > span#subtitulo {
     font-size: 13px;
     line-height: 15.73px;
     text-align: center;
+    color: white;
 }
 
 form#form input {
@@ -139,6 +141,8 @@ button[type=button] {
 
 form#form button[type=button]:hover {
     background-color: var(--cor-botao-hover);
+    color: white;
+    transform: scale(1.05);
     transition: .6s;
     box-shadow: var(--sombra);
 }
@@ -171,6 +175,8 @@ hr {
 #nova-conta:hover {
     background-color:#b11515;
     box-shadow: var(--sombra);
+    transform: scale(1.10);
+    transition: .6s;
 }
 
 @media screen and (min-width: 600px) {

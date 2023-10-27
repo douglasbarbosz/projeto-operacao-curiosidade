@@ -79,8 +79,12 @@ if (nome) {
 
 if (idade) {
     idade.addEventListener('keyup', () => {
-        if (idade.value <= 17) {
-            labelIdade.innerHTML = 'Somente maiores'
+        if (idade.value <= 17 || idade.value >= 110) {
+            if (idade.value <= 17) {
+                labelIdade.innerHTML = 'Somente maiores'
+            } else {
+                labelIdade.innerHTML = 'Idade inválida.'
+            }
             labelIdade.setAttribute('style', 'color: red')
         } else {
             labelIdade.innerHTML = 'Idade'

@@ -13,6 +13,7 @@
     --vermelho-botao: #f52e2e;
     --cor-botao-hover: #fa1919;
     --cor-botao: #fa4848;
+    --borda-caixas: 1px solid pink;
 }
 
 * {
@@ -25,6 +26,18 @@
 body, html {
     overflow-x: hidden;
     background-color: var(--cor-fundo-header);
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--cor-fundo-main);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--cor-logo);
 }
 
 header {
@@ -71,7 +84,7 @@ main {
 
 #titulo {
     background-color: var(--cor-logo);
-    color: var(--vermelho-escuro);
+    color: white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -89,7 +102,7 @@ main {
 
 #subtitulo {
     display: none;
-    color: var(--vermelho-escuro);
+    color: white;
 }
 
 #subtitulo:hover {
@@ -152,6 +165,7 @@ nav > div:nth-child(even) {
 
 #caixa-pesquisar {
     text-align: center;
+    border: var(--borda-caixas);
 }
 
 #pesquisar {
@@ -164,9 +178,8 @@ nav > div:nth-child(even) {
     border-radius: 15px;
 }
 
-#pesquisar:focus,
-#pesquisar:active{
-    border: none;
+#pesquisar:focus{
+    outline: none;
 }
 
 #pesquisar:hover {
@@ -198,6 +211,7 @@ nav > div:nth-child(even) {
 #botao-gravar:hover {
     transition: .3s;
     background-color: var(--cor-botao-hover);
+    color: white;
     transform: scale(1.05);
     box-shadow: var(--sombra);
     transition: .6s;
@@ -402,8 +416,9 @@ nav > div:nth-child(even) {
     }
 
     #sair:hover {
-        transition: .3s;
         font-size: 18px;
+        transform: scale(1);
+        transition: .6s;
     }
 
     #foto-perfil {

@@ -10,6 +10,8 @@
     text-align:center;
     flex-direction: column;
     background-color: var(--cor-fundo-header);
+    border: var(--borda-caixas);
+    border-radius: 10px;
 }
 
 #caixa1:hover, 
@@ -17,16 +19,12 @@
 #caixa3:hover {
     border: 1px solid var(--vermelho-claro);
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.10);
     transition: .6s;
 }
 
 .valor {
     font-size: 2em;
-}
-
-.valor abbr {
-    text-decoration: none;
 }
 
 #caixas .subtitulo {
@@ -37,15 +35,24 @@
 
 #ultimos-cadastros {
     background-color: var(--cor-fundo-header);
+    border: var(--borda-caixas);
+    border-radius: 5px;
     margin: auto;
-    height: 1000px;
+    height: 100vh;
 }
 
-#ultimos-cadastros > p {
+#ultimos-cadastros p {
     font-size: 18px;
+    font-weight: 700;
     line-height: 21px;
     opacity: .7;
     padding: 20px 0px 0px 10px;
+    color: var(--vermelho-escuro);
+    display: inline-block;
+}
+
+#ultimos-cadastros p:hover {
+    color: var(--vermelho-claro);
 }
 
 @media screen and (min-width: 550px) and (max-width: 992px) { 
@@ -104,7 +111,7 @@
         width: 73vw;
     }
 
-    #ultimos-cadastros > p {
+    #ultimos-cadastros p {
         padding: 20px 20px 0px 20px;
     }
 
