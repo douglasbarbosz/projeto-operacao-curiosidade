@@ -364,7 +364,7 @@ function totalCadastros() {
         cont += 1
     }
 
-    valor1.style.color = '#415996'
+    valor1.style.color = '#ff1414'
     valor1.innerHTML = cont
 }
 
@@ -384,14 +384,14 @@ function totalCadastrosUltimoMes() {
         }
     }
 
-    valor2.style.color = '#3F9D2F'
+    valor2.style.color = '#ca5555'
     valor2.innerHTML = cont
 }
 
 function cadastrosComPendencia() {
     let valor3 = document.querySelector('#caixa3>p')
 
-    valor3.style.color = '#C15959'
+    valor3.style.color = '#e00371'
     valor3.innerHTML = 0
 }
 
@@ -416,11 +416,11 @@ function listarUsuarios() {
 }
 
 function sair() {
-    location.replace('index.html')
+    location.replace('login.html')
 }
 
 function abrirHome() {
-    location.href = 'home.html'
+    location.href = 'index.html'
 }
 
 function abrirCadastros() {

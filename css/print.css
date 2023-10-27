@@ -7,6 +7,9 @@
     #relatorio input {
         display: none;
     }
+    #relatorio {
+        border: none;
+    }
     nav > div:nth-child(odd) {
         border: 1px solid #bd1b1b;
     }
