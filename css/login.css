@@ -142,7 +142,7 @@ button[type=button] {
 form#form button[type=button]:hover {
     background-color: var(--cor-botao-hover);
     color: white;
-    transform: scale(1.05);
+    transform: scale(1.01);
     transition: .6s;
     box-shadow: var(--sombra);
 }
