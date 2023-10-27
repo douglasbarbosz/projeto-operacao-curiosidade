@@ -25,9 +25,19 @@ body {
     background-color: pink;
 }
 
+#img-fundo {
+    background-image: url("../imagens/fundo.jpg");
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #container {
     box-shadow: var(--sombra);
-    background-color: var(--cor-fundo);
+    background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -168,12 +178,12 @@ hr {
     cursor: pointer;
     color: white;
     margin: 15px;
-    background-color: #e91f1f;
+    background-color: var(--cor-botao-hover);
     border-radius: 30px;
 }
 
 #nova-conta:hover {
-    background-color:#b11515;
+    background-color: var(--cor-botao);
     box-shadow: var(--sombra);
     transform: scale(1.10);
     transition: .6s;
@@ -209,7 +219,7 @@ hr {
         height: 52px;
     }
     
-    form#form > input:hover {
+    form#form input:hover {
         background-color: rgba(255, 176, 176, 0.575);
     }
     
