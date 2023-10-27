@@ -8,9 +8,10 @@
     --cor-logo: #ca5555;
     --cor-botao: #fa4848;
     --cor-botao-hover: #fa1919;
-    --cor-bordas: #380505;
-    --cor-bordas-hover: #bd1b1b;
+    --cor-bordas-hover: #380505;
+    --cor-bordas: #bd1b1b;
     --vermelho-escuro: #240101;
+    --sombra: 0px 15px 20px rgba(0,0,0,0.25)
 }
 
 * {
@@ -21,27 +22,24 @@
 }
 
 body {
-    background-color: var(--cor-fundo);
+    background-color: pink;
 }
 
 #container {
-    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.315);
-    background-color: rgb(238, 255, 232);
-    border: 1px solid var(--cor-bordas);
+    box-shadow: var(--sombra);
+    background-color: var(--cor-fundo);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 380px;
-    height: 530px;
+    height: 570px;
     border-radius: 10px;
     text-align: center;
     transition: .1s;
 }
 
 div#logo {
-    background-color: var(--cor-logo);
-    ;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -51,6 +49,25 @@ div#logo {
     align-items: center;
     padding: 10px;
     margin: 15px auto;
+    background-image: linear-gradient(45deg, #ca5555, #fa4848);
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    animation: cores 10s linear infinite;
+}
+
+@keyframes cores {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+div#logo:hover {
+    box-shadow: var(--sombra);
+    transform: scale(1.05);
+    transition: .6s;
 }
 
 div#logo > span#titulo {
@@ -69,15 +86,11 @@ div#logo > span#subtitulo {
 
 form#form input {
     background-color: var(--cor-fundo-input);
-    border: 2px solid var(--cor-bordas);
+    border: none;
     margin: 15px;
     width: 300px;
     height: 40px;
     text-indent: 17px;
-}
-
-form#form input:hover {
-    border: 2px solid var(--cor-bordas-hover);
 }
 
 form#form input::placeholder {
@@ -86,12 +99,26 @@ form#form input::placeholder {
     opacity: .8;
 }
 
+input:focus {
+    outline: 0;
+} 
+
+#mensagem {
+    color: #bd1b1b;
+    font-size: 12px;
+    padding: 0px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: pink;
+}
+
 #campo-senha {
     position: relative;
 }
 
 .material-icons {
-    color: var(--cor-bordas-hover);
+    color: #bd1b1b;
     position: absolute;
     top: 50%;
     right: 50px;
@@ -111,8 +138,9 @@ button[type=button] {
 }
 
 form#form button[type=button]:hover {
-    transition: .3s;
     background-color: var(--cor-botao-hover);
+    transition: .6s;
+    box-shadow: var(--sombra);
 }
 
 #esqueceu {
@@ -142,6 +170,7 @@ hr {
 
 #nova-conta:hover {
     background-color:#b11515;
+    box-shadow: var(--sombra);
 }
 
 @media screen and (min-width: 600px) {
@@ -183,6 +212,11 @@ hr {
         line-height: 17.58px;
         opacity: .6;
         margin-left: 17px;
+    }
+
+    #mensagem {
+        padding: 5px;
+        background-color: transparent;
     }
     
     .material-icons {

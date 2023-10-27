@@ -1,10 +1,6 @@
-:root {
-    --cor-fundo-caixas: #eef7ed;
-    --cor-bordas-hover: #1bbd21;
-    --cor-subtitulo-caixas: #012402;
-}
-
-#caixa1, #caixa2, #caixa3 {
+#caixa1,
+#caixa2,
+#caixa3 {
     margin: 20px auto;
     width: 200px;
     height: 100px;
@@ -13,12 +9,16 @@
     justify-content: center;
     text-align:center;
     flex-direction: column;
-    background-color: var(--cor-fundo-caixas);
+    background-color: var(--cor-fundo-header);
 }
 
-#caixa1:hover, #caixa2:hover, #caixa3:hover {
-    border: 1px solid var(--cor-bordas-hover);
+#caixa1:hover, 
+#caixa2:hover, 
+#caixa3:hover {
+    border: 1px solid var(--vermelho-claro);
     cursor: pointer;
+    transform: scale(1.05);
+    transition: .6s;
 }
 
 .valor {
@@ -32,11 +32,11 @@
 #caixas .subtitulo {
     font-size: .8em;
     opacity: .8;
-    color: var(--cor-subtitulo-caixas);
+    color: var(--vermelho-escuro);
 }
 
 #ultimos-cadastros {
-    background-color: var(--cor-fundo-caixas);
+    background-color: var(--cor-fundo-header);
     margin: auto;
     height: 1000px;
 }

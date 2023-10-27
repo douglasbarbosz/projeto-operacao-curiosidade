@@ -1,15 +1,9 @@
 :root {
-    --vermelho-escuro: #240101;
-    --cor-fundo-caixas: #f7eded;
-    --cor-botao: #fa4848;
     --cor-fundo-input: #f7bdbd;
-    --cor-botao-hover: #fa1919;
-    --cor-bordas-hover: #bd1b1b;
-    --cor-bordas: #380505;
 }
 
 #formulario {
-    background-color: var(--cor-fundo-caixas);
+    background-color: var(--cor-fundo-header);
     padding: 20px;
     margin: 20px auto;
     width: 70vw;
@@ -24,7 +18,7 @@
     margin-bottom: 30px;
 }
 
-#topo span {
+#topo-titulo {
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
@@ -32,31 +26,35 @@
     opacity: .8;
 }
 
-#topo > div {
+#topo-titulo:hover {
+    color: var(--vermelho-claro);
+}
+
+#check {
     display: flex;
 }
 
-#topo > div > input {
+#status {
     width: 15px;
     height: 15px;
     color: var(--vermelho-escuro);
     margin-right: 10px;
 }
 
-#topo > div > label {
+#check > label {
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
     text-align: left;
 }
 
-label.obrigatorio::after {
+.obrigatorio::after {
     content: ' *';
     color: red;
     font-weight: normal;
 }
 
-#formulario > form {
+#form {
     padding-left: 10px;
 }
 
@@ -68,10 +66,19 @@ label.obrigatorio::after {
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
+    color: var(--vermelho-medio);
+}
+
+#labelInteresses:hover,
+#labelSentimentos:hover,
+#labelValores:hover, 
+#labelFatos:hover,
+#spanFatos:hover {
+    color: var(--vermelho-claro);
 }
 
 hr {
-    border: 1px solid var(--vermelho-escuro);
+    border: 1px solid var(--vermelho-medio);
 }
 
 #fatos-dados > div, 
@@ -91,12 +98,29 @@ main input {
 
 #fatos-dados input {
     height: 36px;
-    border: 1px solid var(--cor-bordas);
+    border: none;
     background-color: var(--cor-fundo-input);
 }
 
-#fatos-dados input:hover, textarea:hover {
-    border: 1px solid var(--cor-bordas-hover);
+textarea {
+    resize: none;
+    margin-top: 10px;
+    width: 69.2vw;
+    height: 85px;
+    border: none;
+    background-color: var(--cor-fundo-input);
+    text-indent: 5px;
+    border-radius: 10px;
+}
+
+textarea:focus, 
+input:focus{
+    outline: 0;
+} 
+
+#fatos-dados input:hover, 
+textarea:hover {
+    border: 1px solid var(--vermelho-escuro);
 }
 
 input[type="checkbox"]:checked {
@@ -175,17 +199,6 @@ input[type="checkbox"]:checked {
     width: 32vw;
 }
 
-textarea {
-    resize: none;
-    margin-top: 10px;
-    width: 69.2vw;
-    height: 85px;
-    border: 1px solid var(--cor-bordas);
-    background-color: var(--cor-fundo-input);
-    text-indent: 5px;
-    border-radius: 10px;
-}
-
 #msgErro,
 #msgSucesso {
     display: none;
@@ -207,6 +220,6 @@ textarea {
     text-align: center;
 }
 
-button#botao-gravar {
-    margin-top: 35px;
+#botao-gravar {
+    margin-top: 30px;
 }

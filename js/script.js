@@ -17,7 +17,7 @@ let endereco = document.querySelector('#endereco')
 let labelEndereco = document.querySelector('#labelEndereco')
 let validEndereco = false
 
-let senha = document.querySelector('#senha')
+let senha = document.querySelector('#senhaCad')
 let labelSenha = document.querySelector('#labelSenha')
 let validSenha = false
 
@@ -46,37 +46,54 @@ let statusResposta = ''
 document.addEventListener("DOMContentLoaded", function () {  
     if (statusRes) {
       if (statusRes.checked) {
-        statusResposta = 'Ativo';
+        statusResposta = 'Ativo'
       } else {
-        statusResposta = 'Inativo';
+        statusResposta = 'Inativo'
       }
     }
-});
-  
+})
 
 if (nome) {
     nome.addEventListener('keyup', () => {
         if (nome.value.length <= 2) {
-            labelNome.innerHTML = 'Nome (Digite no minímo 3 caracteres)'
-            labelNome.setAttribute('style', 'color: red')
+            if (nome.value == '') {
+                labelNome.innerHTML = 'Digite um nome'
+            } else {
+                labelNome.innerHTML = 'Nome (Digite no minímo 3 caracteres)'
+                labelNome.setAttribute('style', 'color: red')
+            }
         } else {
             labelNome.innerHTML = 'Nome'
             labelNome.setAttribute('style', 'color: green')
             validNome = true
         }
+
+        nome.addEventListener('blur', () => {
+            if (nome.value == '') {
+                labelNome.innerHTML = 'Nome'
+                labelNome.style.color = 'black'
+            }
+        });
     })
 }
 
 if (idade) {
     idade.addEventListener('keyup', () => {
         if (idade.value <= 17) {
-            labelIdade.innerHTML = 'Apenas maiores de idade'
+            labelIdade.innerHTML = 'Somente maiores'
             labelIdade.setAttribute('style', 'color: red')
         } else {
             labelIdade.innerHTML = 'Idade'
             labelIdade.setAttribute('style', 'color: green')
             validIdade = true
         }
+
+        idade.addEventListener('blur', () => {
+            if (idade.value == '') {
+                labelIdade.innerHTML = 'Idade'
+                labelIdade.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -90,18 +107,33 @@ if (email) {
             labelEmail.setAttribute('style', 'color: green')
             validEmail = true
         }
+
+        email.addEventListener('blur', () => {
+            if (email.value == '') {
+                labelEmail.innerHTML = 'E-mail'
+                labelEmail.style.color = 'black'
+            }
+        });
     })
 }
 
 if (endereco) {
     endereco.addEventListener('keyup', () => {
         if (endereco.value.length <= 3) {
+            labelEndereco.innerHTML = 'Endereço inválido'
             labelEndereco.setAttribute('style', 'color: red')
         } else {
             labelEndereco.innerHTML = 'Endereço válido'
             labelEndereco.setAttribute('style', 'color: green')
             validEndereco = true
         }
+
+        endereco.addEventListener('blur', () => {
+            if (endereco.value == '') {
+                labelEndereco.innerHTML = 'Endereço'
+                labelEndereco.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -115,19 +147,33 @@ if (senha) {
             labelSenha.setAttribute('style', 'color: green')
             validSenha = true
         }
+
+        senha.addEventListener('blur', () => {
+            if (senha.value == '') {
+                labelSenha.innerHTML = 'Senha'
+                labelSenha.style.color = 'black'
+            }
+        });
     })
 }
 
 if (confirmarSenha) {
     confirmarSenha.addEventListener('keyup', () => {
         if (senha.value != confirmarSenha.value) {
-            labelConfirmarSenha.innerHTML = 'Senhas não conferem'
+            labelConfirmarSenha.innerHTML = 'Senhas diferentes'
             labelConfirmarSenha.setAttribute('style', 'color: red')
         } else {
             labelConfirmarSenha.innerHTML = 'Senhas iguais'
             labelConfirmarSenha.setAttribute('style', 'color: green')
             validConfirmarSenha = true
         }
+
+        confirmarSenha.addEventListener('blur', () => {
+            if (confirmarSenha.value == '') {
+                labelConfirmarSenha.innerHTML = 'Confirmar senha'
+                labelConfirmarSenha.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -139,6 +185,13 @@ if (interesses) {
             labelInteresses.setAttribute('style', 'color: green')
             validInteresses = true
         }
+
+        interesses.addEventListener('blur', () => {
+            if (interesses.value == '') {
+                labelInteresses.innerHTML = 'Interesses'
+                labelInteresses.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -150,6 +203,13 @@ if (sentimentos) {
             labelSentimentos.setAttribute('style', 'color: green')
             validSentimentos = true
         }
+
+        sentimentos.addEventListener('blur', () => {
+            if (sentimentos.value == '') {
+                labelSentimentos.innerHTML = 'Sentimentos'
+                labelSentimentos.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -161,6 +221,13 @@ if (valores) {
             labelValores.setAttribute('style', 'color: green')
             validValores = true
         }
+
+        valores.addEventListener('blur', () => {
+            if (valores.value) {
+                labelValores.innerHTML = 'Valores'
+                labelValores.style.color = 'black'
+            }
+        });
     })
 }
 
@@ -217,13 +284,17 @@ function logar() {
         }
     }
 
+    let msg = document.querySelector('#mensagem')
+
     if (validaLogin) {
-        location.href = '../home.html'
+        setTimeout(() => {
+            location.href = '../home.html'
+        }, 1000) 
     } else {
         if (campoVazio) {
-            alert('Preencha todos os campos.')
+            msg.innerHTML = 'Preencha todos os campos'
         } else {
-            alert('E-mail ou senha inconrreta. Tente novamente.')
+            msg.innerHTML = 'E-mail ou senha inconrreta. Tente novamente.'
         }
     }
 }
@@ -245,6 +316,7 @@ function addTabela () {
             let tdEmail = tr.insertCell()
             let tdStatus = tr.insertCell()
 
+            tr.classList.add('tr')
             tdNome.classList.add('nome')
             tdEmail.classList.add('email')
             tdStatus.classList.add('status')
@@ -259,23 +331,26 @@ function addTabela () {
 let barPesquisa = document.querySelector('#pesquisar')
 let tabela = document.querySelector('#tabela')
 
-barPesquisa.addEventListener('input', () => {
-    let campoPesquisa = barPesquisa.value.toLowerCase()
-    let linhasTab = tabela.querySelectorAll('tr')
-
-    linhasTab.forEach(function (linha) {
-        let nomeItem = linha.querySelector('td:first-child')
-        
-        if (nomeItem) {
-            let nome = nomeItem.textContent.toLowerCase()
-            if (nome.includes(campoPesquisa)) {
-                linha.style.backgroundColor = 'red'
-            } else {
-                linha.style.display = 'none'
+if (barPesquisa) {
+    barPesquisa.addEventListener('input', () => {
+        let campoPesquisa = barPesquisa.value.toLowerCase()
+        let linhasTab = tabela.querySelectorAll('tr')
+    
+        linhasTab.forEach(function (linha) {
+            let nomeItem = linha.querySelector('td:first-child')
+    
+            if (nomeItem) {
+                let nome = nomeItem.textContent.toLowerCase()
+                if (campoPesquisa === '' || nome.includes(campoPesquisa)) {
+                    linha.style.backgroundColor = ''
+                    linha.style.display = ''
+                } else {
+                    linha.style.display = 'none'
+                }
             }
-        }
+        })
     })
-})
+}
 
 function totalCadastros() {
     let valor1 = document.querySelector('#caixa1>p')

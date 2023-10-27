@@ -1,8 +1,5 @@
 :root {
     --cor-fundo-caixas: #f7eded;
-    --cor-bordas-hover: #380505;
-    --cor-bordas: #bd1b1b;
-    --vermelho-escuro: #240101;
 }
 
 #relatorio {
@@ -26,29 +23,45 @@
     color: var(--vermelho-escuro);
 }
 
+#relatorio > div > p:hover {
+    color: var(--vermelho-claro);
+}
+
 #tabela {
     margin: 15px 15px 15px 0px;
     padding: 10px;
     width: 100%;
 }
 
-#tabela thead tr, #tabela tbody tr {
+#tabela thead tr,
+#tabela tbody tr {
     padding: 10px;
     display: flex;
     box-sizing: border-box;
     border: none;
 }
 
-#tabela tbody tr:nth-child(odd) {
-    border: 1px solid var(--cor-bordas);
-    border-left: none;
-    border-right: none;
+#tabela tbody {
+    box-sizing: border-box;
+    border-collapse: collapse;
 }
 
-#tabela tbody tr:hover {
-    border: 1px solid var(--cor-bordas-hover);
+#tabela tbody tr {
+    border: 1px solid var(--vermelho-claro);
     border-left: none;
     border-right: none;
+    border-bottom: none;
+}
+
+#tabela:hover tbody tr {
+    border: 1px solid var(--vermelho-escuro);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+#tabela:hover tr td {
+    color: var(--vermelho-claro);
 }
 
 #tabela th {
@@ -70,6 +83,11 @@
     box-sizing: border-box;
 }
 
+#tabela th:hover {
+    color: var(--vermelho-claro);
+    cursor: pointer;
+}
+
 #tabela th:nth-child(3),
 #tabela td:nth-child(3) {
     text-align: center;
@@ -84,7 +102,8 @@
 }
 
 @media screen and (min-width: 550px) {
-    #tabela thead tr, #tabela tbody tr {
+    #tabela thead tr,
+    #tabela tbody tr {
         width: 70vw;
     }
     #tabela th {
