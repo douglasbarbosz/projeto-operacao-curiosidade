@@ -24,5 +24,5 @@ function addTabela () {
             tdEmail.textContent = usuarios[i].email
             tdStatus.textContent = usuarios[i].statusCad
         }
-    }  
+    }
 }

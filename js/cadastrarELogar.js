@@ -227,7 +227,7 @@ if (valores) {
         }
 
         valores.addEventListener('blur', () => {
-            if (valores.value) {
+            if (valores.value == '') {
                 labelValores.innerHTML = 'Valores'
                 labelValores.style.color = 'black'
             }
@@ -237,10 +237,10 @@ if (valores) {
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]')
 
-function cadastrar() {
+async function cadastrar() {
     let data = new Date()
     if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores && statusResposta) {
-        usuarios.push({
+        const usuario = {
             nome: nome.value, 
             idade: idade.value,
             email: email.value,
@@ -250,19 +250,35 @@ function cadastrar() {
             sentimentos: sentimentos.value,
             valores: valores.value,
             statusCad: statusResposta,
-            dataCad: data
-        })
+            dataCad: data.toISOString()
+        }
 
-        localStorage.setItem('usuarios', JSON.stringify(usuarios))
+        try {
+            const response = await fetch('https://localhost:7132/api/Usuarios/cadastrar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(usuario)
+            });
 
-        setTimeout(() => {
-            window.location.href = 'index.html'
-        }, 1500)
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Usuário cadastrado com sucesso:', data);
 
-        caixaSucesso.setAttribute('style', 'display: block')
-        caixaSucesso.innerHTML = 'Cadastrando novo usuário...'
-        caixaErro.setAttribute('style', 'display: none')
-        caixaErro.innerHTML = ''
+                location.href = 'index.html'
+        
+                caixaSucesso.setAttribute('style', 'display: block')
+                caixaSucesso.innerHTML = 'Usuário cadastrado com sucesso'
+                caixaErro.setAttribute('style', 'display: none')
+                caixaErro.innerHTML = ''
+                
+            } else {
+                console.error('Erro ao cadastrar usuário:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Erro ao fazer a requisição:', error);
+        }
 
     } else {
         caixaErro.innerHTML = 'Preencha todos os campos corretamente'
