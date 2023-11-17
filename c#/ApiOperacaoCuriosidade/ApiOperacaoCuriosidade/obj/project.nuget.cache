@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vAeFBtYe1P117e+Iz7pRfXUQAvk6ndGn+w6XQ+dXWZHdZDkHkWpLEprGm3B0W1wUAhRGhZTdr3Dr51S+9Wl9Rg==",
+  "dgSpecHash": "q2+wYkz2b5eOtAqpus9RNXtremJYgsDhiVheZHH3z5HE2X2OHvz/y4ZDthmGIQaLXx/OmJnQR8uJ90hNKWhsEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
+  "projectFilePath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

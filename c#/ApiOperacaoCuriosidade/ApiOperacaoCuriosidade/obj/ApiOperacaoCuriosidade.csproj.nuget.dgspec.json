@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj": {}
+    "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj": {
+    "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
+        "projectUniqueName": "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
         "projectName": "ApiOperacaoCuriosidade",
-        "projectPath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
+        "projectPath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
         "packagesPath": "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\obj\\",
+        "outputPath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\projeto-operacao-curiosidade\\c#\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

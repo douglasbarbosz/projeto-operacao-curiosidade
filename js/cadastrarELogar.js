@@ -264,22 +264,6 @@ function cadastrar() {
         caixaErro.setAttribute('style', 'display: none')
         caixaErro.innerHTML = ''
 
-        fetch('../Cadastrar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dadosDoFormulario)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            alert(data.mensagem);
-        })
-        .catch(error => {
-            console.error('Erro ao realizar requisição AJAX:', error);
-        });
-
     } else {
         caixaErro.innerHTML = 'Preencha todos os campos corretamente'
         caixaErro.setAttribute('style', 'display: block')
