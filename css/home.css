@@ -72,7 +72,6 @@
 }
 
 @media screen and (min-width:992px) {
-
     #caixas {
     display: flex;
     margin-top: 20px;

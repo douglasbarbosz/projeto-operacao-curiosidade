@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    addTabela()
+    addTabelaUltimosCadastros()
 })
 
-async function addTabela() {
-    let tbody = document.querySelector('#tbody')
+async function addTabelaUltimosCadastros () {
+    let tbody = document.querySelector('.tbodyIndex')
     tbody.innerText = ''
 
     try {
-        const response = await fetch('https://localhost:7132/api/Usuarios/listar')
+        const response = await fetch('https://localhost:7132/api/Usuarios/ultimos-cadastros')
 
         if (response.ok) {
             const usuarios = await response.json()

@@ -1,0 +1,43 @@
+.conjunto-perfil {
+    padding: 15px;
+}
+
+#perfil {
+    display: flex;
+    align-items: center;
+}
+
+#nome {
+    align-items: end;
+}
+
+#fotoPerfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#configuracoes {
+    padding-top: 10px;
+}
+
+#configuracoes a {
+    text-decoration: none;
+    color: var(--vermelho-escuro);
+    font-size: 16px;
+}
+
+#configuracoes a:hover {
+    color: var(--vermelho-claro);
+}
+
+#editarPerfil,
+#configurarPerfil {
+    display: flex;
+    flex-direction: column;
+}
+
+#configuracoes .titulo-lista {
+    font-size: 20px;
+    text-decoration: underline;
+}

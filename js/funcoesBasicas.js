@@ -37,6 +37,10 @@ function mudouTamanho() {
     }
 }
 
+function abrirPerfil() {
+    location.href = 'perfil.html'
+}
+
 function listarUsuarios() {
     location.href = 'lista-usuarios.html'
 }
