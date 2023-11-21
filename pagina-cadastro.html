@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/pagina-cadastro.css">
     <link rel="stylesheet" href="css/tabelas.css">
 </head>
-<body onresize="mudouTamanho()">
+<body>
     <header>
         <div id="logo">
             <span id="titulo">Oc</span>
@@ -25,11 +25,11 @@
                 </div>
                 <div>
                     <span class="material-icons">group_add</span>
-                    <input class="atalho" type="button" value="Cadastro" onclick="abrirCadastros()">
+                    <input class="atalho" type="button" value="Cadastro">
                 </div>
                 <div>
                     <span class="material-icons">insert_chart</span>
-                    <input class="atalho" type="button" value="Relatórios" onclick="abrirRelatorios()">
+                    <input class="atalho" type="button" value="Relatórios">
                 </div>
                 <div class="perfil-menu">
                     <div id="foto-perfil"></div>
@@ -121,10 +121,8 @@
     </main>
 
     <script src="js/cadastro.js"></script>
-    <script src="js/validacoes.js"></script>
+    <script src="js/valid.js"></script>
     <script src="js/funcoesBasicas.js"></script>
-    <script src="js/cadastrarELogar.js"></script>
     <script src="js/mostraSenha.js"></script>
-    <script src="js/tabelas.js"></script>
 </body>
 </html>

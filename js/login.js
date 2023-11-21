@@ -18,8 +18,8 @@ async function logar() {
             pegaSenha.innerHTML = ''
         } else {
             try {
-                const response = await fetch('https://localhost:7132/api/Usuarios/listar', {
-                    method: 'GET',
+                const response = await fetch('https://localhost:7132/api/Usuarios/logar', {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -51,4 +51,8 @@ async function logar() {
             }
         }
     }
+}
+
+function abrirCadastrar() {
+    location.href = 'pagina-cadastro.html'
 }

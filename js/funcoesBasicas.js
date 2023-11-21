@@ -1,6 +1,10 @@
 let barPesquisa = document.querySelector('#pesquisar')
 let tabela = document.querySelector('#tabela')
 
+document.addEventListener('DOMContentLoaded', function() {
+    mudouTamanho()
+})
+
 if (barPesquisa) {
     barPesquisa.addEventListener('input', () => {
         let campoPesquisa = barPesquisa.value.toLowerCase()
@@ -10,7 +14,7 @@ if (barPesquisa) {
             let nomeItem = linha.querySelector('td:first-child')
     
             if (nomeItem) {
-                let nome = nomeItem.textContent.toLowerCase()
+                const nome = nomeItem.textContent.toLowerCase()
                 if (campoPesquisa === '' || nome.includes(campoPesquisa)) {
                     linha.style.display = ''
                 } else {
@@ -46,7 +50,8 @@ function listarUsuarios() {
 }
 
 function sair() {
-    location.replace('login.html')
+    location.href = 'login.html'
+    history.replaceState(null, null, 'login.html')
 }
 
 function abrirHome() {
@@ -59,10 +64,6 @@ function abrirCadastros() {
 
 function abrirRelatorios() {
     location.href = 'relatorios.html'
-}
-
-function abrirCadastrar() {
-    location.href = 'pagina-cadastro.html'
 }
 
 function imprimir() {

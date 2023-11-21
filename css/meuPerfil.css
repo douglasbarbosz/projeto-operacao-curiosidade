@@ -31,6 +31,60 @@
     color: var(--vermelho-claro);
 }
 
+#configuracoes div div {
+    padding-top: 10px;
+    margin-left: 10px;
+    display: none;
+}
+
+#configuracoes div div button {
+    transition: .3s;
+    background-color: var(--cor-botao-hover);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: var(--sombra);
+    transition: .6s;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+#configuracoes div div button {
+    cursor: pointer;
+}
+
+#configuracoes div div label {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0 10px;
+}
+
+#configuracoes div div label:hover {
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--vermelho-medio);
+}
+
+#configuracoes div div input {
+    height: 30px;
+    text-indent: 10px;
+    height: 36px;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    margin: 0 20px;
+    background-color: lightcoral;
+}
+
+#configuracoes div div input:focus {
+    outline: 0;
+}
+
+#configuracoes div div input:hover {
+    border: 1px solid var(--vermelho-escuro);
+}
+
 #editarPerfil,
 #configurarPerfil {
     display: flex;

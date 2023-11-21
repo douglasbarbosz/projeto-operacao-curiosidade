@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/meuPerfil.css">
 </head>
-<body onresize="mudouTamanho()">
+<body>
     <header>
         <div id="logo">
             <span id="titulo">Oc</span>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="perfil-menu">
                     <div id="foto-perfil"></div>
-                    <span id="nameCompleto" class="pessoa atalho">Meu Perfil</span>
+                    <span id="nameCompleto" class="pessoa atalho" onclick="abrirPerfil()">Meu Perfil</span>
                 </div>
                 <div class="perfil-menu">
                     <span class="material-icons">logout</span>
@@ -48,7 +48,7 @@
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
                 <div id="foto"></div>
-                <span class="perfil" id="nome">Meu Perfil</span>
+                <span class="perfil" id="nome" onclick="abrirPerfil()">Meu Perfil</span>
                 <div id="linha"></div>
                 <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
             </div>
@@ -63,17 +63,34 @@
                 <div id="editarPerfil">
                     <p class="titulo-lista">Editar perfil</p>
                     <p><a href="#">Trocar imagem de perfil</a></p>
-                    <p><a href="#">Redefinir Endereço</a></p>
-                    <label id="labelNovoEndereco" for="novoEndereco">Novo endereço</label>
-                    <input type="text" name="novoEndereco" id="inputNovoEndereco">
+                    <p><a href="#" onclick="abrirMenuNovoEndereco()">Redefinir Endereço</a></p>
+                    <div id="blocoNovoEndereco">
+                        <label id="labelNovoEndereco" for="novoEndereco">Novo endereço: </label>
+                        <input type="text" name="novoEnderecoName" id="novoEndereco">
+                        <button>Enviar</button>
+                    </div>
                 </div>
                 <div id="configurarPerfil">
                     <p class="titulo-lista">Configurações</p>
-                    <p><a href="#">Redefinir E-mail</a></p>
-                    <p><a href="#">Redefinir Senha</a></p>
+                    <p><a href="#" onclick="abrirMenuNovoEmail()">Redefinir E-mail</a></p>
+                    <div id="blocoNovoEmail">
+                        <label id="labelNovoEmail" for="novoEmail">Novo e-mail: </label>
+                        <input type="text" name="novoEmailName" id="novoEmail">
+                        <button>Enviar</button>
+                    </div>
+                    <p><a href="#" onclick="abrirMenuNovaSenha()">Redefinir Senha</a></p>
+                    <div id="blocoNovaSenha">
+                        <label id="labelNovaSenha" for="novaSenha">Nova senha: </label>
+                        <input type="password" name="novaSenhaName" id="novaSenha">
+                        <button>Enviar</button>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
+
+    <script src="js/funcoesBasicas.js"></script>
+    <script src="js/perfilFuncoes.js"></script>
+    <script src="js/valid.js"></script>
 </body>
 </html>
