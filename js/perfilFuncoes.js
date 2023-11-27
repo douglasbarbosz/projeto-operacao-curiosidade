@@ -43,12 +43,12 @@ function verificarNovoEndereco() {
             validEndereco = true
         }
 
-        endereco.addEventListener('blur', () => {
+        novoEndereco.addEventListener('blur', () => {
             if (novoEndereco.value == '') {
                 labelNovoEndereco.innerHTML = 'Endereço'
                 labelNovoEndereco.style.color = 'black'
             }
-        });
+        })
     })
 }
 
@@ -72,7 +72,7 @@ function verificarNovoEmail() {
                 labelNovoEmail.innerHTML = 'E-mail'
                 labelNovoEmail.style.color = 'black'
             }
-        });
+        })
     })
 }
 
@@ -96,10 +96,13 @@ function verificarNovaSenha() {
                 labelNovaSenha.innerHTML = 'Senha'
                 labelNovaSenha.style.color = 'black'
             }
-        });
+        })
     })
 }
 
 verificarNovoEndereco()
 verificarNovoEmail()
 verificarNovaSenha()
+
+let nomeNoPerfil = document.querySelector('.nomeLogado')
+nomeNoPerfil.innerHTML = localStorage.getItem('nome')

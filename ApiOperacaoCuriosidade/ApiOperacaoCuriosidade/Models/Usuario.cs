@@ -8,7 +8,7 @@ namespace ApiOperacaoCuriosidade.Models {
         [MaxLength(128)]
         public string? Nome { get; set; }
 
-        public int Idade { get; set; }
+        public int? Idade { get; set; }
 
         [MaxLength(70)]
         public string? Email { get; set; }
@@ -27,7 +27,7 @@ namespace ApiOperacaoCuriosidade.Models {
 
         [MaxLength(300)]
         public string? Valores { get; set; }
-        public StatusUsuarios Status { get; set; } = StatusUsuarios.INATIVO;
-        public DateTime DataCad { get; set; } = DateTime.Now;
+        public StatusUsuarios? Status { get; set; } = StatusUsuarios.INATIVO;
+        public DateTime? DataCad { get; set; } = DateTime.Now;
     }
 }

@@ -66,6 +66,16 @@ function abrirRelatorios() {
     location.href = 'relatorios.html'
 }
 
+function abrirCadastrar() {
+    location.href = 'pagina-cadastro.html'
+}
+
 function imprimir() {
     window.print()
 }
+
+let nomeLogadoResponsivo = document.querySelector('#nameCompleto')
+let nomeLogadoGrande = document.querySelector('#nomeLogado')
+
+nomeLogadoResponsivo.innerHTML = localStorage.getItem('nome')
+nomeLogadoGrande.innerHTML = localStorage.getItem('nome')

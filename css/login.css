@@ -125,7 +125,7 @@ input:focus {
     user-select: none;
 }
 
-button[type=button] {
+button[type=submit] {
     background-color: var(--cor-botao);
     text-transform: uppercase;
     cursor: pointer;
@@ -135,7 +135,7 @@ button[type=button] {
     height: 40px;
 }
 
-form#form button[type=button]:hover {
+form#form button[type=submit]:hover {
     background-color: var(--cor-botao-hover);
     color: white;
     transform: scale(1.01);
@@ -225,7 +225,7 @@ hr {
         right: 130px;
     }
 
-    button[type=button] {
+    button[type=submit] {
         width: 343px;
         height: 52px;
     }

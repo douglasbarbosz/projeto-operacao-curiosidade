@@ -72,19 +72,21 @@ async function cadastrar() {
                 setTimeout(() => {
                     location.href = 'index.html'
                 }, 1000)
-        
+
                 caixaSucesso.setAttribute('style', 'display: block')
                 caixaSucesso.innerHTML = 'Usuário cadastrado com sucesso'
                 caixaErro.setAttribute('style', 'display: none')
                 caixaErro.innerHTML = ''
-                
             } else {
-                console.error('Erro ao cadastrar usuário:', response.statusText)
+                const errorMessage = await response.json()
+                caixaErro.innerHTML = errorMessage.message
+                caixaErro.style.display = 'block'
+                caixaSucesso.style.display = 'none'
+                caixaSucesso.innerHTML = ''
             }
         } catch (error) {
             console.error('Erro ao fazer a requisição:', error)
         }
-
     } else {
         caixaErro.innerHTML = 'Preencha todos os campos corretamente'
         caixaErro.setAttribute('style', 'display: block')

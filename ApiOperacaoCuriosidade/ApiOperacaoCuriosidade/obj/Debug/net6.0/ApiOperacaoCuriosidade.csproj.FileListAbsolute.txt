@@ -289,3 +289,4 @@ C:\Users\DouglasAparecidoBarb\Documents\douglasbarbosa\ApiOperacaoCuriosidade\Ap
 C:\Users\DouglasAparecidoBarb\Documents\douglasbarbosa\ApiOperacaoCuriosidade\ApiOperacaoCuriosidade\obj\Debug\net6.0\ApiOperacaoCuriosidade.pdb
 C:\Users\DouglasAparecidoBarb\Documents\douglasbarbosa\ApiOperacaoCuriosidade\ApiOperacaoCuriosidade\obj\Debug\net6.0\ApiOperacaoCuriosidade.genruntimeconfig.cache
 C:\Users\DouglasAparecidoBarb\Documents\douglasbarbosa\ApiOperacaoCuriosidade\ApiOperacaoCuriosidade\obj\Debug\net6.0\ref\ApiOperacaoCuriosidade.dll
+C:\Users\DouglasAparecidoBarb\Documents\douglasbarbosa\ApiOperacaoCuriosidade\ApiOperacaoCuriosidade\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

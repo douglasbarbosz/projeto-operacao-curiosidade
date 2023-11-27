@@ -4,6 +4,8 @@ using ApiOperacaoCuriosidade.Map;
 
 namespace ApiOperacaoCuriosidade.Context;
 public class UsuariosListaContext : DbContext {
+    public UsuariosListaContext() {
+    }
     public UsuariosListaContext(DbContextOptions<UsuariosListaContext> options) : base(options) { }
 
     public DbSet<Usuario> Usuarios { get; set; }

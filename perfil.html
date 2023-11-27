@@ -33,7 +33,7 @@
                 </div>
                 <div class="perfil-menu">
                     <div id="foto-perfil"></div>
-                    <span id="nameCompleto" class="pessoa atalho" onclick="abrirPerfil()">Meu Perfil</span>
+                    <span id="nameCompleto" class="pessoa atalho  " onclick="abrirPerfil()">Meu Perfil</span>
                 </div>
                 <div class="perfil-menu">
                     <span class="material-icons">logout</span>
@@ -48,7 +48,7 @@
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
                 <div id="foto"></div>
-                <span class="perfil" id="nome" onclick="abrirPerfil()">Meu Perfil</span>
+                <span class="perfil" id="nomeLogado" onclick="abrirPerfil()">Meu Perfil</span>
                 <div id="linha"></div>
                 <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
             </div>
@@ -57,7 +57,7 @@
         <div id="ultimos-cadastros" class="conjunto-perfil">
             <section id="perfil">
                 <img src="imagens/icone-foto-perfil.avif" id="fotoPerfil" alt="Foto Perfil">
-                <p id="nome">Nome</p>
+                <p class="nomeLogado">Nome</p>
             </section>
             <section id="configuracoes">
                 <div id="editarPerfil">
@@ -67,7 +67,8 @@
                     <div id="blocoNovoEndereco">
                         <label id="labelNovoEndereco" for="novoEndereco">Novo endereço: </label>
                         <input type="text" name="novoEnderecoName" id="novoEndereco">
-                        <button>Enviar</button>
+                        <button onclick="atualizaEndereco()">Enviar</button>
+                        <p class="mensagem"></p>
                     </div>
                 </div>
                 <div id="configurarPerfil">
@@ -76,13 +77,15 @@
                     <div id="blocoNovoEmail">
                         <label id="labelNovoEmail" for="novoEmail">Novo e-mail: </label>
                         <input type="text" name="novoEmailName" id="novoEmail">
-                        <button>Enviar</button>
+                        <button onclick="atualizaEndereco()">Enviar</button>
+                        <p class="mensagem"></p>
                     </div>
                     <p><a href="#" onclick="abrirMenuNovaSenha()">Redefinir Senha</a></p>
                     <div id="blocoNovaSenha">
                         <label id="labelNovaSenha" for="novaSenha">Nova senha: </label>
                         <input type="password" name="novaSenhaName" id="novaSenha">
                         <button>Enviar</button>
+                        <p class="mensagem"></p>
                     </div>
                 </div>
             </section>
@@ -91,6 +94,7 @@
 
     <script src="js/funcoesBasicas.js"></script>
     <script src="js/perfilFuncoes.js"></script>
+    <script src="js/atualizaPerfil.js"></script>
     <script src="js/valid.js"></script>
 </body>
 </html>

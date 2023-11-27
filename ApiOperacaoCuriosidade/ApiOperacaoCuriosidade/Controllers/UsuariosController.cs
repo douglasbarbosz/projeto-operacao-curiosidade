@@ -1,5 +1,8 @@
 ﻿using ApiOperacaoCuriosidade.Context;
 using ApiOperacaoCuriosidade.Models;
+using ApiOperacaoCuriosidade.Repository;
+using ApiOperacaoCuriosidade.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -76,6 +79,10 @@ namespace ApiOperacaoCuriosidade.Controllers {
                 return BadRequest();
             }
 
+            if (EmailJaCadastrado(usuario.Email)) {
+                return BadRequest(new { message = "E-mail já cadastrado." });
+            }
+
             _dbContext.Usuarios.Add(usuario);
             _dbContext.SaveChanges();
 
@@ -84,16 +91,25 @@ namespace ApiOperacaoCuriosidade.Controllers {
         }
 
         [HttpPost("logar")]
-        public ActionResult Login(Usuario usuario) {
-            var user = _dbContext.Usuarios
-                .SingleOrDefault(u => u.Email == usuario.Email && u.Senha == usuario.Senha);
+        [AllowAnonymous]
+        public async Task<ActionResult<AutenticacaoResposta>> Autenticacao(string email, string senha) {
+            var user = UsuarioRepositorio.Get(email, senha, _dbContext);
 
-            if (user == null)
-            {
-                return Unauthorized(false);
+            if (user == null) {
+                return BadRequest(new { message = "Credenciais inválidas." });
             }
 
-            return Ok(true);
+            var token = TokenService.GeradorToken(user);
+            user.Senha = "";
+
+            var resposta = new AutenticacaoResposta {
+                Nome = user.Nome,
+                Email = user.Email,
+                Senha = user.Senha ?? "",
+                Token = token
+            };
+
+            return Ok(resposta);
         }
 
         [HttpPut("{id:int}")]
@@ -113,16 +129,17 @@ namespace ApiOperacaoCuriosidade.Controllers {
         }
 
         [HttpPatch("atualizar-endereco")]
-        public ActionResult AtualizarEndereco(int id, Usuario usuario) {
-            var user = _dbContext.Usuarios.Find(id);
+        public ActionResult AtualizarEndereco(string email, string senha, string endereco) {
+            var user = UsuarioRepositorio.Get(email, senha, _dbContext);
 
             if (user == null) {
-                return NotFound("Usuário não encontrado.");
+                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
             }
 
-            user.Endereco = usuario.Endereco;
+            user.Endereco = endereco;
             _dbContext.SaveChanges();
-            return Ok(user);
+
+            return Ok(new { message = "Endereço atualizado com sucesso." });
         }
 
         [HttpPatch("atualizar-email")]
@@ -166,6 +183,13 @@ namespace ApiOperacaoCuriosidade.Controllers {
             _dbContext.SaveChanges();
 
             return Ok(usuario);
+        }
+        private bool EmailJaCadastrado(string email) {
+            if (_dbContext.Usuarios.Any(u => u.Email == email)) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

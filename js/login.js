@@ -1,55 +1,56 @@
 async function logar() {
-    campoVazio = false
-    let pegaEmail = document.querySelector('#emailLogin')
-    let pegaSenha = document.querySelector('#senhaLogin')
-    let msg = document.querySelector('#mensagem')
+    let pegaEmail = document.querySelector('#emailLogin').value
+    let pegaSenha = document.querySelector('#senhaLogin').value
+    let msg = document.querySelector('#mensagem') 
 
-    if (pegaEmail.value == '' || pegaSenha.value == '') {
-        msg.innerHTML = 'Um ou mais campos vazios.'
-        msg.style.color = 'gray'
-    } else {
-        if (!isEmailValid(pegaEmail.value)) {
-            msg.innerHTML = 'E-mail inválido. Tente novamente'
-            msg.style.color = 'red'
-            pegaEmail.innerHTML = ''
-        } else if (!isSenhaValid(pegaSenha.value)) {
-            msg.innerHTML = 'Senha inválida. Tente novamente'
-            msg.style.color = 'red'
-            pegaSenha.innerHTML = ''
+    try {
+        if (pegaEmail === '' || pegaSenha === '') {
+            msg.innerHTML = 'Um ou mais campos vazios.' 
+            msg.style.color = 'gray' 
+        } else if (!isEmailValid(pegaEmail)) {
+            msg.innerHTML = 'E-mail inválido. Tente novamente' 
+            msg.style.color = 'red' 
+            pegaEmail.innerHTML = '' 
+        } else if (!isSenhaValid(pegaSenha)) {
+            msg.innerHTML = 'Senha inválida. Tente novamente' 
+            msg.style.color = 'red' 
+            pegaSenha.innerHTML = '' 
         } else {
-            try {
-                const response = await fetch('https://localhost:7132/api/Usuarios/logar', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: pegaEmail.value,
-                        senha: pegaSenha.value
-                    }),
-                })
+            const usuarioLogin = {
+                email: pegaEmail,
+                senha: pegaSenha
+            }
+            const response = await fetch(`https://localhost:7132/api/Usuarios/logar?email=${pegaEmail}&senha=${pegaSenha} `, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(usuarioLogin),
+            }) 
+            
+            if (response.ok) {
+                const data = await response.json()
+                const nomeUsuario = data.nome
+                const emailUsuario = data.email
+                const senhaUsuario = data.senha
+                
+                localStorage.setItem("nome", nomeUsuario)
+                localStorage.setItem("email", emailUsuario)
+                localStorage.setItem("senha", senhaUsuario)
+                msg.innerHTML = 'Entrando...' 
+                msg.style.color = 'green' 
 
-                if (response.ok) {
-                    const data = await response.json()
-
-                    if (data) {
-                        msg.innerHTML = 'Entrando...'
-                        msg.style.color = 'green'
-
-                        setTimeout(() => {
-                            location.href = 'index.html'
-                        }, 500);
-                    } else {
-                        msg.innerHTML = 'Credenciais inválidas.'
-                    }
-                } else {
-                    msg.innerHTML = 'Erro ao realizar login'
-                }
-            } 
-            catch {
-                console.error('Erro ao realizar requisição.')
+                setTimeout(() => {
+                    location.href = 'index.html' 
+                }, 500)
+            } else {
+                const errorMessage = await response.json()
+                msg.innerHTML = errorMessage.message
+                msg.style.color = 'red' 
             }
         }
+    } catch (error) {
+        console.error('Erro ao realizar requisição:', error) 
     }
 }
 

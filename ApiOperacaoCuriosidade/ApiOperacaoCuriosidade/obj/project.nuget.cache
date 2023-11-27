@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8wShpfnepJUpgU0M5WiPJ9wAtttz4KXZXB2C+bg5gp0DPfoT6oOZkriQ4uJfDF7gxSO9FrQ+4fVh6hZtv4B+1w==",
+  "dgSpecHash": "E5lIyvCHimFestYSeszSYAVs2z41xWMN50XJWV6vjtzZVACdfSnxp0WMhYk4sjPEsErbW3ozQy8g475/9jJnBw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DouglasAparecidoBarb\\Documents\\douglasbarbosa\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade\\ApiOperacaoCuriosidade.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\DouglasAparecidoBarb\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

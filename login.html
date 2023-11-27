@@ -24,7 +24,7 @@
                     <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Senha" required autocomplete="current-password">
                     <span class="material-icons mostrarSenha">visibility</span>
                 </div> <br>
-                <button type="button" id="botao-login" onclick="logar()">Entrar</button>
+                <button type="submit" id="botao-login" onclick="logar(); return false">Entrar</button>
             </form>
             <p id="esqueceu">Esqueceu a senha?</p> <hr>
             <p id="nova-conta" onclick="abrirCadastrar()">Criar nova conta</p>
