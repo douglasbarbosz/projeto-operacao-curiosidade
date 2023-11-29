@@ -21,3 +21,15 @@ function isSenhaValid(senha) {
 
     return false
 }
+
+function isNomeValid(nome) {
+    const nomeRegex =  new RegExp(
+        `^[a-zA-Z ]{3,70}$`
+    )
+    
+    if (nomeRegex.test(nome)) {
+        return true
+    }
+
+    return false
+}

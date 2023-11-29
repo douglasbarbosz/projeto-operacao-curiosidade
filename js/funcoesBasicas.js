@@ -51,7 +51,7 @@ function listarUsuarios() {
 
 function sair() {
     location.href = 'login.html'
-    history.replaceState(null, null, 'login.html')
+    history.pushState(null, '', location.href = 'login.html')
 }
 
 function abrirHome() {

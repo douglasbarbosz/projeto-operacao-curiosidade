@@ -29,5 +29,16 @@ namespace ApiOperacaoCuriosidade.Models {
         public string? Valores { get; set; }
         public StatusUsuarios? Status { get; set; } = StatusUsuarios.INATIVO;
         public DateTime? DataCad { get; set; } = DateTime.Now;
+
+        public Usuario(string email, string senha, string nome) {
+            Email = email;
+            Senha = senha;
+            Nome = nome;
+            Idade = 50;
+            Endereco = "NULL";
+            Interesses = "NULL";
+            Sentimentos = "NULL";
+            Valores = "NULL";
+        }
     }
 }

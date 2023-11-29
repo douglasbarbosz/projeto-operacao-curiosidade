@@ -22,16 +22,36 @@
                 <input type="email" name="emailLogin" id="emailLogin" required placeholder="Email" autocomplete="email"> <br>
                 <div id="campo-senha">
                     <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Senha" required autocomplete="current-password">
-                    <span class="material-icons mostrarSenha">visibility</span>
+                    <span class="material-icons mostrarSenha" onclick="mostrarSenhaLogin()">visibility</span>
                 </div> <br>
                 <button type="submit" id="botao-login" onclick="logar(); return false">Entrar</button>
             </form>
             <p id="esqueceu">Esqueceu a senha?</p> <hr>
-            <p id="nova-conta" onclick="abrirCadastrar()">Criar nova conta</p>
+            <p id="nova-conta" onclick="mudarLoginECadastro()">Criar nova conta</p>
+        </section>
+
+        <section id="container-cadastro">
+            <div id="logo">
+                <span id="titulo">Oc</span>
+                <span id="subtitulo">Operação Curiosidade</span>
+            </div>
+
+            <form id="form-cadastro">
+                <div id="mensagem-cadastro"></div>
+                <input type="email" name="emailCadastro" id="emailCadastro" required placeholder="Email" autocomplete="email"> <br>
+                <div id="campo-senha-cadastro">
+                    <input type="password" name="senhaCadastro" id="senhaCadastro" placeholder="Senha" required autocomplete="new-password">
+                    <span class="material-icons mostrarSenha mostrarSenhaCadastro" onclick="mostrarSenhaCadastro()">visibility</span>
+                </div>
+                <input type="text" name="nomeCadastro" id="nomeCadastro" required placeholder="Nome" autocomplete="name">
+                <button type="submit" id="botao-cadastro" onclick="miniCadastrar(); return false">Cadastrar</button>
+            </form>
+            <p id="nova-conta" onclick="mudarLoginECadastro()">Fazer login</p>
         </section>
     </main>
 
     <script src="js/login.js"></script>
+    <script src="js/miniCadastro.js"></script>
     <script src="js/valid.js"></script>
     <script src="js/mostraSenha.js"></script>
 </body>

@@ -401,7 +401,8 @@ nav > div:nth-child(even) {
         display: block;
     }
 
-    #nome {
+    #nome,
+    #nomeLogado {
         cursor: pointer;
     }
 

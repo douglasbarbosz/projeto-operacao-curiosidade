@@ -1,41 +1,42 @@
-let visibilityLogin = document.querySelector('.material-icons')
+let inputSenhaLogin = document.querySelector('#senhaLogin')
+let inputSenhaCadastro = document.querySelector('#senhaCadastro')
 
-if (visibilityLogin) {
-    visibilityLogin.addEventListener('click', () => {
-        let inputSenha = document.querySelector('#senhaLogin')
-        
-        if (inputSenha.getAttribute('type') == 'password') {
-            inputSenha.setAttribute('type', 'text')
-        } else {
-            inputSenha.setAttribute('type', 'password')
-        }
-    })
+function mostrarSenhaLogin() {
+    if (inputSenhaLogin.getAttribute('type') == 'password') {
+        inputSenhaLogin.setAttribute('type', 'text')
+    } else {
+        inputSenhaLogin.setAttribute('type', 'password')
+    }
 }
+
+function mostrarSenhaCadastro() {
+    if (inputSenhaCadastro.getAttribute('type') == 'password') {
+        inputSenhaCadastro.setAttribute('type', 'text')
+    } else {
+        inputSenhaCadastro.setAttribute('type', 'password')
+    }
+}
+
 
 let iconeSenhaCad = document.querySelector('#iconeSenha')
-
-if (iconeSenhaCad) {
-    iconeSenhaCad.addEventListener('click', () => {
-        let inputSenha = document.querySelector('#senhaCad')
-    
-        if (inputSenha.getAttribute('type') == 'password') {
-            inputSenha.setAttribute('type', 'text')
-        } else {
-            inputSenha.setAttribute('type', 'password')
-        }
-    })
-}
-
 let iconeConfirmSenhaCad = document.querySelector('#iconeConfirmSenha')
 
-if (iconeConfirmSenhaCad) {
-    iconeConfirmSenhaCad.addEventListener('click', () => {
-        let inputConfirmSenha = document.querySelector('#confirmarSenha')
-    
-        if (inputConfirmSenha.getAttribute('type') == 'password') {
-            inputConfirmSenha.setAttribute('type', 'text')
-        } else {
-            inputConfirmSenha.setAttribute('type', 'password')
-        }
-    })
+function mostrarSenha() {
+    let inputSenha = document.querySelector('#senhaCad')
+
+    if (inputSenha.getAttribute('type') == 'password') {
+        inputSenha.setAttribute('type', 'text')
+    } else {
+        inputSenha.setAttribute('type', 'password')
+    }
+}
+
+function mostrarConfirmarSenha() {
+    let inputConfirmSenha = document.querySelector('#confirmarSenha')
+
+    if (inputConfirmSenha.getAttribute('type') == 'password') {
+        inputConfirmSenha.setAttribute('type', 'text')
+    } else {
+        inputConfirmSenha.setAttribute('type', 'password')
+    }
 }

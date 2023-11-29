@@ -62,30 +62,41 @@
             <section id="configuracoes">
                 <div id="editarPerfil">
                     <p class="titulo-lista">Editar perfil</p>
-                    <p><a href="#">Trocar imagem de perfil</a></p>
                     <p><a href="#" onclick="abrirMenuNovoEndereco()">Redefinir Endereço</a></p>
                     <div id="blocoNovoEndereco">
                         <label id="labelNovoEndereco" for="novoEndereco">Novo endereço: </label>
                         <input type="text" name="novoEnderecoName" id="novoEndereco">
                         <button onclick="atualizaEndereco()">Enviar</button>
-                        <p class="mensagem"></p>
+                        <p id="mensagemEndereco"></p>
                     </div>
                 </div>
                 <div id="configurarPerfil">
-                    <p class="titulo-lista">Configurações</p>
                     <p><a href="#" onclick="abrirMenuNovoEmail()">Redefinir E-mail</a></p>
                     <div id="blocoNovoEmail">
                         <label id="labelNovoEmail" for="novoEmail">Novo e-mail: </label>
                         <input type="text" name="novoEmailName" id="novoEmail">
-                        <button onclick="atualizaEndereco()">Enviar</button>
-                        <p class="mensagem"></p>
+                        <button onclick="atualizaEmail()">Enviar</button>
+                        <p id="mensagemEmail"></p>
                     </div>
                     <p><a href="#" onclick="abrirMenuNovaSenha()">Redefinir Senha</a></p>
                     <div id="blocoNovaSenha">
                         <label id="labelNovaSenha" for="novaSenha">Nova senha: </label>
                         <input type="password" name="novaSenhaName" id="novaSenha">
-                        <button>Enviar</button>
-                        <p class="mensagem"></p>
+                        <button onclick="atualizaSenha()">Enviar</button>
+                        <p id="mensagemSenha"></p>
+                    </div>
+                </div>
+            </section>
+            <section id="delete">
+                <p><a href="#" onclick="aparecerConfirmacao()" id="deletar">Deletar perfil</a></p>
+                <div class="div-confirmacao" id="confirmacao">
+                    <div class="tela-confirmacao">
+                        <p>Realmente deseja encerrar sua conta?</p>
+                        <div>
+                            <button onclick="confirmarDelete()">Deletar</button>
+                            <button onclick="cancelarDelete()">Cancelar</button>
+                        </div>
+                        <p id="mensagemDelete"></p>
                     </div>
                 </div>
             </section>
@@ -94,7 +105,11 @@
 
     <script src="js/funcoesBasicas.js"></script>
     <script src="js/perfilFuncoes.js"></script>
-    <script src="js/atualizaPerfil.js"></script>
+    <script src="js/atualizaEndereco.js"></script>
+    <script src="js/atualizaEmail.js"></script>
+    <script src="js/atualizaSenha.js"></script>
+    <script src="js/deletarConta.js"></script>
     <script src="js/valid.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
 </html>

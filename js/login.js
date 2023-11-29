@@ -34,9 +34,9 @@ async function logar() {
                 const emailUsuario = data.email
                 const senhaUsuario = data.senha
                 
-                localStorage.setItem("nome", nomeUsuario)
-                localStorage.setItem("email", emailUsuario)
-                localStorage.setItem("senha", senhaUsuario)
+                localStorage.setItem('nome', nomeUsuario)
+                localStorage.setItem('email', emailUsuario)
+                localStorage.setItem('senha', senhaUsuario)
                 msg.innerHTML = 'Entrando...' 
                 msg.style.color = 'green' 
 
@@ -54,6 +54,27 @@ async function logar() {
     }
 }
 
-function abrirCadastrar() {
-    location.href = 'pagina-cadastro.html'
+function mudarLoginECadastro() {
+    let formCadastro = document.querySelector('#container-cadastro')
+    let formLogin = document.querySelector('#container')
+
+    if (formLogin.style.opacity === '1' || formLogin.style.opacity === '') {
+        formLogin.style.transition = 'opacity 1s ease'
+        formLogin.style.opacity = '0'
+        formLogin.style.pointerEvents = 'none'
+
+        formCadastro.style.transition = 'opacity 1s ease'
+        formCadastro.style.opacity = '1'
+        formCadastro.style.pointerEvents = 'auto'
+        formCadastro.style.display = 'block'
+    } else {
+        formCadastro.style.transition = 'opacity 1s ease'
+        formCadastro.style.opacity = '0'
+        formCadastro.style.pointerEvents = 'none'
+
+        formLogin.style.transition = 'opacity 1s ease'
+        formLogin.style.opacity = '1'
+        formLogin.style.pointerEvents = 'auto'
+        formLogin.style.display = 'block'
+    }
 }

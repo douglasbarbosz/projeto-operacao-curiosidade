@@ -33,7 +33,18 @@ body {
     background-size: cover;
 }
 
+#container-cadastro {
+    display: none;
+    transform: rotateY(-180deg);
+}
+
 #container {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+#container,
+#container-cadastro {
     box-shadow: var(--sombra);
     background-color: rgba(255, 255, 255, 0.1);
     position: absolute;
@@ -44,7 +55,7 @@ body {
     height: 570px;
     border-radius: 10px;
     text-align: center;
-    transition: .1s;
+    transition: opacity 2s ease-in-out;
 }
 
 div#logo {
@@ -82,7 +93,8 @@ div#logo > span#subtitulo {
     color: white;
 }
 
-form#form input {
+form#form input,
+form#form-cadastro input {
     background-color: var(--cor-fundo-input);
     border: none;
     margin: 15px;
@@ -91,7 +103,8 @@ form#form input {
     text-indent: 17px;
 }
 
-form#form input::placeholder {
+form#form input::placeholder,
+form#form-cadastro input::placeholder {
     line-height: 17.58px;
     color: var(--vermelho-escuro);
     opacity: .8;
@@ -102,8 +115,12 @@ input:focus {
 } 
 
 #mensagem {
-    color: #bd1b1b;
     font-size: 12px;
+}
+
+#mensagem,
+#mensagem-cadastro {
+    color: #bd1b1b;
     padding: 0px;
     position: absolute;
     left: 50%;
@@ -111,14 +128,29 @@ input:focus {
     background-color: pink;
 }
 
+#mensagem-cadastro {
+    font-size: 10px;
+    width: 400px;
+}
+
 #campo-senha {
     position: relative;
 }
 
-.material-icons {
+.mostrarSenha {
     color: #bd1b1b;
     position: absolute;
     top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.mostrarSenhaCadastro {
+    color: #bd1b1b;
+    position: absolute;
+    top: 45%;
     right: 50px;
     transform: translateY(-50%);
     cursor: pointer;
@@ -135,7 +167,8 @@ button[type=submit] {
     height: 40px;
 }
 
-form#form button[type=submit]:hover {
+form#form button[type=submit]:hover,
+form#form-cadastro button[type=submit]:hover {
     background-color: var(--cor-botao-hover);
     color: white;
     transform: scale(1.01);
@@ -185,12 +218,17 @@ hr {
         width: 100vw;
         position: relative;
     }
+
+    #container,
+    #container-cadastro {
+        width: 600px;
+        height: 590px;
+    }
     
-    section#container {
+    #container,
+    #container-cadastro {
         transition: .3s;
         padding-top: 15px;
-        width: 580px;
-        height: 560px;
     }
     
     div#logo {
@@ -199,17 +237,20 @@ hr {
         margin: auto;
     }
 
-    form#form input {
+    form#form input,
+    form#form-cadastro input {
         margin: 20px;
         width: 343px;
         height: 52px;
     }
     
-    form#form input:hover {
+    form#form input:hover, 
+    form#form-cadastro input:hover {
         background-color: rgba(255, 176, 176, 0.575);
     }
     
-    form#form > input::placeholder {
+    form#form > input::placeholder,
+    form#form-cadastro > input::placeholder {
         font-size: 15px;
         line-height: 17.58px;
         opacity: .6;
@@ -221,8 +262,13 @@ hr {
         background-color: transparent;
     }
     
-    .material-icons {
-        right: 130px;
+    .mostrarSenha {
+        right: 140px;
+    }
+
+    .mostrarSenhaCadastro {
+        right: 140px;
+        top: 48.5%;
     }
 
     button[type=submit] {

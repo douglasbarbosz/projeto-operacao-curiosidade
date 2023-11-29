@@ -5,6 +5,8 @@
 #perfil {
     display: flex;
     align-items: center;
+    border-bottom: var(--borda-caixas);
+    padding: 30px;
 }
 
 #nome {
@@ -105,4 +107,68 @@
     font-size: 12px;
     padding: 0px;
     background-color: pink;
+}
+
+.div-confirmacao {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tela-confirmacao {
+    background-color: var(--cor-fundo-main);
+    border: var(--borda-caixas);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
+
+.tela-confirmacao p {
+    margin-top: -10px;
+}
+
+.tela-confirmacao button {
+    width: 100px;
+    height: 39px;
+    background-color: var(--cor-botao);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 19px;
+    border: none;
+    text-align: center;
+    margin: 10px 10px 0 0;
+}
+
+.tela-confirmacao button:hover {
+    transition: .3s;
+    background-color: var(--cor-botao-hover);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: var(--sombra);
+    transition: .6s;
+}
+
+#deletar {
+    font-size: 14px;
+    color: var(--vermelho-escuro);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#deletar:hover {
+    color: var(--vermelho-claro);
 }

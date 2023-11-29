@@ -90,6 +90,22 @@ namespace ApiOperacaoCuriosidade.Controllers {
                 new { id = usuario.UsuarioId }, usuario);
         }
 
+        [HttpPost("mini-cadastrar")]
+        public ActionResult MiniCadastrar(string email, string senha, string nome) {
+            if (EmailJaCadastrado(email)) {
+                return BadRequest(new { message = "E-mail já cadastrado." });
+            }
+
+            Usuario usuario = new Usuario(email, senha, nome);
+
+
+            _dbContext.Usuarios.Add(usuario);
+            _dbContext.SaveChanges();
+
+            return new CreatedAtRouteResult(
+                new { id = usuario.UsuarioId }, usuario);
+        }
+
         [HttpPost("logar")]
         [AllowAnonymous]
         public async Task<ActionResult<AutenticacaoResposta>> Autenticacao(string email, string senha) {
@@ -100,12 +116,13 @@ namespace ApiOperacaoCuriosidade.Controllers {
             }
 
             var token = TokenService.GeradorToken(user);
+            var senhaParaPassar = user.Senha;
             user.Senha = "";
 
             var resposta = new AutenticacaoResposta {
                 Nome = user.Nome,
                 Email = user.Email,
-                Senha = user.Senha ?? "",
+                Senha = senhaParaPassar ?? "",
                 Token = token
             };
 
@@ -130,7 +147,7 @@ namespace ApiOperacaoCuriosidade.Controllers {
 
         [HttpPatch("atualizar-endereco")]
         public ActionResult AtualizarEndereco(string email, string senha, string endereco) {
-            var user = UsuarioRepositorio.Get(email, senha, _dbContext);
+            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
 
             if (user == null) {
                 return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
@@ -143,46 +160,50 @@ namespace ApiOperacaoCuriosidade.Controllers {
         }
 
         [HttpPatch("atualizar-email")]
-        public ActionResult AtualizarEmail(int id, Usuario usuario) {
-            var user = _dbContext.Usuarios.Find(id);
-
-            if (user == null)
-            {
-                return NotFound("Usuário não encontrado.");
+        public ActionResult AtualizarEmail(string email, string senha, string novoEmail) {
+            if (_dbContext.Usuarios.Any(u => u.Email == novoEmail)) {
+                return BadRequest(new { message = "E-mail já utilizado." });
             }
 
-            user.Email = usuario.Email;
+            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
+
+            if (user == null)  {
+                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
+            }
+
+            user.Email = novoEmail;
             _dbContext.SaveChanges();
-            return Ok(user);
+
+            return Ok(new { message = "E-mail atualizado com sucesso." });
         }
+
 
         [HttpPatch("atualizar-senha")]
-        public ActionResult AtualizarSenha(int id, Usuario usuario) {
-            var user = _dbContext.Usuarios.Find(id);
+        public ActionResult AtualizarSenha(string email, string senha, string novaSenha) {
+            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
 
-            if (user == null)
-            {
-                return NotFound("Usuário não encontrado.");
+            if (user == null) {
+                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
             }
 
-            user.Senha = usuario.Senha;
+            user.Senha = novaSenha;
             _dbContext.SaveChanges();
-            return Ok(user);
+
+            return Ok(new { message = "Senha atualizada com sucesso." });
         }
 
-        [HttpDelete("{id:int}")]
-        public ActionResult Deletar(int id) {
-            var usuario = _dbContext.Usuarios.FirstOrDefault
-                (u => u.UsuarioId == id);
+        [HttpDelete("deletar")]
+        public ActionResult Deletar(string email, string senha) {
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
 
-            if (usuario is null) {
-                return NotFound();
+            if (user == null) {
+                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
             }
 
-            _dbContext.Usuarios.Remove(usuario);
+            _dbContext.Usuarios.Remove(user);
             _dbContext.SaveChanges();
 
-            return Ok(usuario);
+            return Ok(new { message = "Conta deletada. "} );
         }
         private bool EmailJaCadastrado(string email) {
             if (_dbContext.Usuarios.Any(u => u.Email == email)) {

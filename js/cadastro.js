@@ -70,11 +70,13 @@ async function cadastrar() {
 
             if (response.ok) {
                 setTimeout(() => {
-                    location.href = 'index.html'
+                    history.pushState(null, '', location.href = 'login.html')
+                    localStorage.setItem('email', '')
+                    localStorage.setItem('senha', '')
                 }, 1000)
 
                 caixaSucesso.setAttribute('style', 'display: block')
-                caixaSucesso.innerHTML = 'Usuário cadastrado com sucesso'
+                caixaSucesso.innerHTML = 'Cadastrando usuário...'
                 caixaErro.setAttribute('style', 'display: none')
                 caixaErro.innerHTML = ''
             } else {
@@ -94,3 +96,4 @@ async function cadastrar() {
         caixaSucesso.innerHTML = ''
     }
 }
+
