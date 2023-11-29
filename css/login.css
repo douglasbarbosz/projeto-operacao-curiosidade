@@ -191,7 +191,8 @@ hr {
     margin: auto;
 }
 
-#nova-conta {
+#nova-conta,
+#voltar-login {
     padding: 20px;
     display: inline-block;
     cursor: pointer;
@@ -199,9 +200,11 @@ hr {
     margin: 15px;
     background-color: var(--cor-botao-hover);
     border-radius: 30px;
+    width: 140px;
 }
 
-#nova-conta:hover {
+#nova-conta:hover,
+#voltar-login:hover {
     background-color: var(--cor-botao);
     box-shadow: var(--sombra);
     transform: scale(1.10);
