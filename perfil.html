@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
-    <title>Home</title>
+    <title>Perfil</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/geral.css">
@@ -48,67 +48,134 @@
             <input type="text" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
             <div>
                 <div id="foto"></div>
-                <span class="perfil" id="nomeLogado" onclick="abrirPerfil()">Meu Perfil</span>
+                <span class="perfil" id="nomeLogado">Meu Perfil</span>
                 <div id="linha"></div>
                 <input class="perfil" id="sair" type="submit" value="Sair" onclick="sair()">
             </div>
         </section>
-
-        <div id="ultimos-cadastros" class="conjunto-perfil">
-            <section id="perfil">
-                <img src="imagens/icone-foto-perfil.avif" id="fotoPerfil" alt="Foto Perfil">
-                <p class="nomeLogado">Nome</p>
-            </section>
-            <section id="configuracoes">
-                <div id="editarPerfil">
-                    <p class="titulo-lista">Editar perfil</p>
-                    <p><a href="#" onclick="abrirMenuNovoEndereco()">Redefinir Endereço</a></p>
-                    <div id="blocoNovoEndereco">
-                        <label id="labelNovoEndereco" for="novoEndereco">Novo endereço: </label>
-                        <input type="text" name="novoEnderecoName" id="novoEndereco">
-                        <button onclick="atualizaEndereco()">Enviar</button>
-                        <p id="mensagemEndereco"></p>
-                    </div>
-                </div>
-                <div id="configurarPerfil">
-                    <p><a href="#" onclick="abrirMenuNovoEmail()">Redefinir E-mail</a></p>
-                    <div id="blocoNovoEmail">
-                        <label id="labelNovoEmail" for="novoEmail">Novo e-mail: </label>
-                        <input type="text" name="novoEmailName" id="novoEmail">
-                        <button onclick="atualizaEmail()">Enviar</button>
-                        <p id="mensagemEmail"></p>
-                    </div>
-                    <p><a href="#" onclick="abrirMenuNovaSenha()">Redefinir Senha</a></p>
-                    <div id="blocoNovaSenha">
-                        <label id="labelNovaSenha" for="novaSenha">Nova senha: </label>
-                        <input type="password" name="novaSenhaName" id="novaSenha">
-                        <button onclick="atualizaSenha()">Enviar</button>
-                        <p id="mensagemSenha"></p>
-                    </div>
-                </div>
-            </section>
-            <section id="delete">
-                <p><a href="#" onclick="aparecerConfirmacao()" id="deletar">Deletar perfil</a></p>
-                <div class="div-confirmacao" id="confirmacao">
-                    <div class="tela-confirmacao">
-                        <p>Realmente deseja encerrar sua conta?</p>
-                        <div>
-                            <button onclick="confirmarDelete()">Deletar</button>
-                            <button onclick="cancelarDelete()">Cancelar</button>
+        <section id="formulario">
+            <div id="topo">
+                <span id="topo-titulo" class="nomeLogado">Meu perfil</span>
+            </div>
+            <form id="form" method="post">
+                <div id="fatos-dados">
+                    <span id="spanFatos">Dados</span> <hr>
+                    <div id="idade-email">
+                        <div id="bloco-idade">
+                            <label id="labelIdadePerfil" for="idade">Idade</label> <br>
+                            <input type="number" name="idade" id="idade" min="18" step="1" disabled="">
+                        </div> 
+                        <div id="bloco-email">
+                            <div>
+                                <label id="labelEmailAtual" for="emailAtual">E-mail atual</label> <br>
+                                <input type="email" name="emailAtual" id="emailAtual" autocomplete="email" disabled="">
+                            </div>
                         </div>
-                        <p id="mensagemDelete"></p>
+                    </div>
+                    <div id="bloco-endereco">
+                        <label id="labelEndereco" for="endereco">Endereço</label> <br>
+                        <input type="text" name="endereco" id="endereco" disabled="">
                     </div>
                 </div>
-            </section>
-        </div>
+                <div class="interesses" id="bloco-interesses">
+                    <label id="labelInteresses" for="interesses">Interesses</label> <hr>
+                    <textarea name="interesses" id="interesses" disabled=""></textarea>
+                </div>
+                <div class="sentimentos" id="bloco-sentimentos">
+                    <label id="labelSentimentos" for="sentimentos">Sentimentos</label> <hr>
+                    <textarea name="sentimentos" id="sentimentos" disabled=""></textarea>
+                </div>
+                <div class="valores" id="bloco-valores">
+                    <label id="labelValores" for="valores">Valores</label> <hr>
+                    <textarea name="valores" id="valores" disabled=""></textarea>
+                </div>
+                <div class="botao">
+                    <button id="abrir-editar" type="submit" onclick="abrirEditar(); return false">Editar perfil</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="formularioEdicao" class="formulario-edicao">
+            <div id="topo-edicao">
+                <span id="topo-titulo-edicao" class="nomeLogado">Meu perfil</span>
+            </div>
+            <form id="form-edicao" method="post">
+                <div id="fatos-dados-edicao">
+                    <span id="spanFatosEdicao">Editar Perfil</span> <hr>
+                    <div id="idade-email-edicao">
+                        <div id="bloco-idade">
+                            <label id="labelIdadeEdicao" for="idadeEdicao">Idade</label> <br>
+                            <input type="number" name="idadeEdicao" id="idadeEdicao" min="18" step="1" required>
+                        </div> 
+                        <div id="bloco-email-edicao">
+                            <div>
+                                <label id="labelEmailEdicao" for="emailEdicao">E-mail</label> <br>
+                                <input type="email" name="emailEdicao" id="emailEdicao" autocomplete="email" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bloco-endereco-edicao">
+                        <label id="labelEnderecoEdicao" for="enderecoEdicao">Endereço</label> <br>
+                        <input type="text" name="enderecoEdicao" id="enderecoEdicao">
+                    </div>
+                    <div id="bloco-senhas">
+                        <div id="bloco-senha">
+                            <label id="labelSenha" for="senhaCad">Senha atual</label> <br>
+                            <div class="campo-senha">
+                                <input type="password" name="senha" id="senhaCad" autocomplete="new-password">
+                                <span class="material-icons icone" id="iconeSenha" onclick="mostrarSenha()">visibility</span>
+                            </div>
+                        </div>
+                        <div id="bloco-confirmar-senha">
+                            <label id="labelConfirmarSenha" for="confirmarSenha">Nova senha</label> <br>
+                            <div class="campo-senha">
+                                <input type="password" name="confirmarSenha" id="confirmarSenha">
+                                <span class="material-icons icone" id="iconeConfirmSenha" onclick="mostrarConfirmarSenha()">visibility</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="interesses" id="bloco-interesses-edicao">
+                    <label id="labelInteressesEdicao" for="interessesEdicao">Interesses</label> <hr>
+                    <textarea name="interessesEdicao" id="interessesEdicao"></textarea>
+                </div>
+                <div class="sentimentos" id="bloco-sentimentos-edicao">
+                    <label id="labelSentimentosEdicao" for="sentimentosEdicao">Sentimentos</label> <hr>
+                    <textarea name="sentimentosEdicao" id="sentimentosEdicao"></textarea>
+                </div>
+                <div class="valores" id="bloco-valores-edicao">
+                    <label id="labelValoresEdicao" for="valoresEdicao">Valores</label> <hr>
+                    <textarea name="valoresEdicao" id="valoresEdicao"></textarea>
+                </div>
+                <div id="msgErro"></div>
+                <div id="msgSucesso"></div>
+                <div class="botao">
+                    <button id="botao-salvar" type="submit" onclick="atualizarDados(); return false">Salvar</button>
+                </div>
+                <section id="delete">
+                    <p class="botao">
+                        <a href="#" onclick="aparecerConfirmacao()" id="deletar">Deletar perfil</a>
+                    </p>
+                    <div class="div-confirmacao" id="confirmacao">
+                        <div class="tela-confirmacao">
+                            <p>Realmente deseja encerrar sua conta?</p>
+                            <div>
+                                <button onclick="deletar(); return false">Deletar</button>
+                                <button onclick="esconderTela(); return false">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </section>
     </main>
 
     <script src="js/funcoesBasicas.js"></script>
-    <script src="js/perfilFuncoes.js"></script>
-    <script src="js/atualizaEndereco.js"></script>
-    <script src="js/atualizaEmail.js"></script>
-    <script src="js/atualizaSenha.js"></script>
-    <script src="js/deletarConta.js"></script>
+    <script src="js/mostraSenha.js"></script>
+    <script src="js/perfil/perfilFuncoes.js"></script>
+    <script src="js/perfil/validacoesPerfil.js"></script>
+    <script src="js/perfil/atualizaDados.js"></script>
+    <script src="js/perfil/deletarConta.js"></script>
     <script src="js/valid.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>

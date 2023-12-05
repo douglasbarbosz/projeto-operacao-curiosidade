@@ -22,8 +22,13 @@ async function addTabela() {
                 tr.classList.add('tr')
                 tdNome.classList.add('nome')
                 tdEmail.classList.add('email')
+                tdEmail.classList.add('abrirPerfil')
                 tdStatus.classList.add('status')
     
+                tdNome.onclick = function() {
+                    abrirPerfilUsuario(user.email)
+                }
+
                 tdNome.textContent = user.nome
                 tdEmail.textContent = user.email
                 if (user.status == 0) {
@@ -40,3 +45,4 @@ async function addTabela() {
         console.error('Erro na requisição:', error);
     }
 }
+

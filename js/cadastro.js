@@ -1,48 +1,3 @@
-let nome = document.querySelector('#inome')
-let labelNome = document.querySelector('#labelNome')
-let validNome = false
-
-let idade = document.querySelector('#idade')
-let labelIdade = document.querySelector('#labelIdade')
-let validIdade = false
-
-let email = document.querySelector('#email')
-let labelEmail = document.querySelector('#labelEmail')
-let validEmail = false
-
-let statusInput = document.querySelector('#status')
-let validStatus = false
-
-let endereco = document.querySelector('#endereco')
-let labelEndereco = document.querySelector('#labelEndereco')
-let validEndereco = false
-
-let senha = document.querySelector('#senhaCad')
-let labelSenha = document.querySelector('#labelSenha')
-let validSenha = false
-
-let confirmarSenha = document.querySelector('#confirmarSenha')
-let labelConfirmarSenha = document.querySelector('#labelConfirmarSenha')
-let validConfirmarSenha = false
-
-let interesses = document.querySelector('#interesses')
-let labelInteresses = document.querySelector('#labelInteresses')
-let validInteresses = false
-
-let sentimentos = document.querySelector('#sentimentos')
-let labelSentimentos = document.querySelector('#labelSentimentos')
-let validSentimentos = false
-
-let valores = document.querySelector('#valores')
-let labelValores = document.querySelector('#labelValores')
-let validValores = false
-
-let caixaErro = document.querySelector('#msgErro')
-let caixaSucesso = document.querySelector('#msgSucesso')
-
-let statusRes = document.querySelector('#status')
-let statusResposta = ''
-
 async function cadastrar() {
     let data = new Date()
     if (validNome && validIdade && validEmail && validEndereco && validSenha && validConfirmarSenha && validInteresses && validSentimentos && validValores && statusResposta) {
@@ -71,8 +26,13 @@ async function cadastrar() {
             if (response.ok) {
                 setTimeout(() => {
                     history.pushState(null, '', location.href = 'login.html')
-                    localStorage.setItem('email', '')
-                    localStorage.setItem('senha', '')
+                    localStorage.setItem('nome', nome.value)
+                    localStorage.setItem('idade', idade.value)
+                    localStorage.setItem('email', email.value)
+                    localStorage.setItem('senha', senha.value)
+                    localStorage.setItem('interesses', interesses.value)
+                    localStorage.setItem('sentimentos', sentimentos.value)
+                    localStorage.setItem('valores', valores.value)
                 }, 1000)
 
                 caixaSucesso.setAttribute('style', 'display: block')

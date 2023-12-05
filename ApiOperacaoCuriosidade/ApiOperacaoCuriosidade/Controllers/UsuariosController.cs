@@ -11,7 +11,10 @@ using Microsoft.EntityFrameworkCore;
 namespace ApiOperacaoCuriosidade.Controllers {
     [Route("api/[controller]")]
     [ApiController]
+
     public class UsuariosController : ControllerBase {
+
+        private static int contMiniCadastros = 0;
 
         public readonly UsuariosListaContext _dbContext;
         public UsuariosController(UsuariosListaContext usuariosListaContext) {
@@ -35,21 +38,6 @@ namespace ApiOperacaoCuriosidade.Controllers {
                 .OrderByDescending(u => u.DataCad).Take(13).ToList());
         }
 
-        [HttpGet("{int id}")]
-        public ActionResult<Usuario> BuscarUsuarioPorId(int id) {
-            try {
-                var usuario = _dbContext.Usuarios.FirstOrDefault(u => u.UsuarioId == id);
-                if (usuario == null) {
-                    return NotFound();
-                }
-                return Ok(usuario);
-            }
-            catch (Exception) {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    "Ocorreu um problema ao tratar a sua solicitação.");
-            }
-        }
-
         [HttpGet("total-cadastros")]
         public ActionResult<int> GetTotalCadastros() {
             return Ok(_dbContext.Usuarios.Count());
@@ -66,11 +54,32 @@ namespace ApiOperacaoCuriosidade.Controllers {
                 .Count());
         }
 
+        [HttpGet("exibir-perfil-pessoa")]
+        public ActionResult<int> ExibirPerfilPessoa(string email) {
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email);
+
+
+            if (user is null) {
+                return BadRequest(new { message = "Usuário inválido." });
+            }
+
+            return Ok(user);
+        }
+
         [HttpGet("verificar")]
         public ActionResult VerificaEmail(string email) {
             var emailExiste = _dbContext.Usuarios.Any(u => u.Email == email);
 
-            return Ok(emailExiste);
+            if (emailExiste) {
+                return BadRequest(new { message = "E-mail já utilizado." });
+            }
+
+            return Ok(new { message = "E-mail válido. "});
+        }
+
+        [HttpGet("contador-de-mini-cadastros")]
+        public ActionResult ContadorMiniCadastros() {
+            return Ok(contMiniCadastros);
         }
 
         [HttpPost("cadastrar")]
@@ -98,9 +107,10 @@ namespace ApiOperacaoCuriosidade.Controllers {
 
             Usuario usuario = new Usuario(email, senha, nome);
 
-
             _dbContext.Usuarios.Add(usuario);
             _dbContext.SaveChanges();
+
+            contMiniCadastros++;
 
             return new CreatedAtRouteResult(
                 new { id = usuario.UsuarioId }, usuario);
@@ -120,76 +130,46 @@ namespace ApiOperacaoCuriosidade.Controllers {
             user.Senha = "";
 
             var resposta = new AutenticacaoResposta {
+                Id = user.UsuarioId,
+                Idade = (int) user.Idade,
                 Nome = user.Nome,
                 Email = user.Email,
                 Senha = senhaParaPassar ?? "",
+                Endereco = user.Endereco,
+                Sentimentos = user.Sentimentos,
+                Interesses = user.Interesses,
+                Valores = user.Valores,
                 Token = token
             };
 
             return Ok(resposta);
         }
 
-        [HttpPut("{id:int}")]
-        public ActionResult AtualizarDados(int id, Usuario usuario) {
-            if (id != usuario.UsuarioId) {
-                return BadRequest();
-            }
-
-            if (!_dbContext.Usuarios.Any(u => u.UsuarioId == id)) {
-                return NotFound("Usuário não encontrado.");
-            }
-
-            _dbContext.Entry(usuario).State = EntityState.Modified;
-            _dbContext.SaveChanges();
-
-            return Ok(usuario);
-        }
-
-        [HttpPatch("atualizar-endereco")]
-        public ActionResult AtualizarEndereco(string email, string senha, string endereco) {
-            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
+        [HttpPut("atualizar-dados")]
+        public ActionResult AtualizarDados(string email, string senha, Usuario usuario) {
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
 
             if (user == null) {
-                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
+                return BadRequest(new { message = "Usuário não encontrado." });
             }
 
-            user.Endereco = endereco;
+            if (user.Email != usuario.Email && EmailJaCadastrado(usuario.Email)) {
+                return BadRequest(new { message = "E-mail já utilizado. " });
+            }
+
+            user.Idade = usuario.Idade;
+            user.Email = usuario.Email;
+            user.Endereco = usuario.Endereco;
+            user.Senha = usuario.Senha;
+            user.Interesses = usuario.Interesses;
+            user.Sentimentos = usuario.Sentimentos;
+            user.Valores = usuario.Valores;
+
             _dbContext.SaveChanges();
 
-            return Ok(new { message = "Endereço atualizado com sucesso." });
-        }
+            usuario.Senha = "";
 
-        [HttpPatch("atualizar-email")]
-        public ActionResult AtualizarEmail(string email, string senha, string novoEmail) {
-            if (_dbContext.Usuarios.Any(u => u.Email == novoEmail)) {
-                return BadRequest(new { message = "E-mail já utilizado." });
-            }
-
-            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
-
-            if (user == null)  {
-                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
-            }
-
-            user.Email = novoEmail;
-            _dbContext.SaveChanges();
-
-            return Ok(new { message = "E-mail atualizado com sucesso." });
-        }
-
-
-        [HttpPatch("atualizar-senha")]
-        public ActionResult AtualizarSenha(string email, string senha, string novaSenha) {
-            var user = _dbContext.Usuarios.SingleOrDefault(u => u.Email == email && u.Senha == senha);
-
-            if (user == null) {
-                return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });
-            }
-
-            user.Senha = novaSenha;
-            _dbContext.SaveChanges();
-
-            return Ok(new { message = "Senha atualizada com sucesso." });
+            return Ok(new { message = "Dados atualizados com sucesso. " });
         }
 
         [HttpDelete("deletar")]

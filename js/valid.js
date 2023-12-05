@@ -1,3 +1,15 @@
+function isIdadeValid(idade) {
+    const idadeRegex = new RegExp(
+        /^(1[789]|[2-9][0-9]|110)$/
+    )
+
+    if (idadeRegex.test(idade)) {
+        return true
+    }
+
+    return false
+}
+
 function isEmailValid(email) {
     const emailRegex = new RegExp(
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+[a-zA-z]{2,}$/
@@ -23,13 +35,7 @@ function isSenhaValid(senha) {
 }
 
 function isNomeValid(nome) {
-    const nomeRegex =  new RegExp(
-        `^[a-zA-Z ]{3,70}$`
-    )
+    const nomeRegex = /^[a-zA-ZÀ-ÖØ-öø-ÿ ]{3,70}$/
     
-    if (nomeRegex.test(nome)) {
-        return true
-    }
-
-    return false
+    return nomeRegex.test(nome)
 }

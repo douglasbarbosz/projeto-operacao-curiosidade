@@ -34,11 +34,11 @@ namespace ApiOperacaoCuriosidade.Models {
             Email = email;
             Senha = senha;
             Nome = nome;
-            Idade = 50;
-            Endereco = "NULL";
-            Interesses = "NULL";
-            Sentimentos = "NULL";
-            Valores = "NULL";
+            Idade = 0;
+            Endereco = "Preencher";
+            Interesses = "Preencher";
+            Sentimentos = "Preencher";
+            Valores = "Preencher";
         }
     }
 }

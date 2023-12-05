@@ -44,9 +44,21 @@ async function totalCadastrosUltimoMes() {
     }
 }
 
-function cadastrosComPendencia() {
-    let valor3 = document.querySelector('#caixa3>p')
+async function cadastrosComPendencia() {
+    try {
+        const response = await fetch('https://localhost:7132/api/Usuarios/contador-de-mini-cadastros')
+        
+        if (response.ok) {
+            const data = await response.json()
+            const cont = data
 
-    valor3.style.color = '#e00371'
-    valor3.innerHTML = 0
+            let valor3 = document.querySelector('#caixa3>p')
+            valor3.style.color = '#e00371'
+            valor3.innerHTML = cont
+        } else {
+            console.error('Erro ao obter o número de cadastros:', response.status)
+        }
+    } catch (error) {
+        console.error('Erro na requisição:', error)
+    }
 }

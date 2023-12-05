@@ -30,13 +30,23 @@ async function logar() {
             
             if (response.ok) {
                 const data = await response.json()
+                const idadeUsuario = data.idade
                 const nomeUsuario = data.nome
                 const emailUsuario = data.email
                 const senhaUsuario = data.senha
-                
+                const enderecoUsuario = data.endereco
+                const interessesUsuario = data.interesses
+                const sentimentosUsuario = data.sentimentos
+                const valoresUsuario = data.valores
+
+                localStorage.setItem('idade', idadeUsuario)
                 localStorage.setItem('nome', nomeUsuario)
                 localStorage.setItem('email', emailUsuario)
                 localStorage.setItem('senha', senhaUsuario)
+                localStorage.setItem('endereco', enderecoUsuario)
+                localStorage.setItem('interesses', interessesUsuario)
+                localStorage.setItem('sentimentos', sentimentosUsuario)
+                localStorage.setItem('valores', valoresUsuario)
                 msg.innerHTML = 'Entrando...' 
                 msg.style.color = 'green' 
 

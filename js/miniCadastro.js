@@ -25,6 +25,10 @@ async function miniCadastrar() {
                     localStorage.setItem('nome', nome)
                     localStorage.setItem('email', email)
                     localStorage.setItem('senha', senha)
+                    localStorage.setItem('endereco', ' ')
+                    localStorage.setItem('interesses', ' ')
+                    localStorage.setItem('sentimentos', ' ')
+                    localStorage.setItem('valores', ' ')
                 }, 1000)
 
                 mensagem.innerHTML = 'Cadastrando...' 

@@ -52,6 +52,14 @@ function listarUsuarios() {
 function sair() {
     location.href = 'login.html'
     history.pushState(null, '', location.href = 'login.html')
+    localStorage.setItem('nome', ' ')
+    localStorage.setItem('idade', ' ')
+    localStorage.setItem('email', ' ')
+    localStorage.setItem('endereco', ' ')
+    localStorage.setItem('senha', ' ')
+    localStorage.setItem('interesses', ' ')
+    localStorage.setItem('sentimentos', ' ')
+    localStorage.setItem('valores', ' ')
 }
 
 function abrirHome() {

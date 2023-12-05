@@ -1,112 +1,275 @@
-.conjunto-perfil {
-    padding: 15px;
+:root {
+    --cor-fundo-input: #f7bdbd;
 }
 
-#perfil {
+#formulario,
+#formularioEdicao {
+    background-color: var(--cor-fundo-header);
+    border: var(--borda-caixas);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 70vw;
+    box-sizing: initial;
+}
+
+input,
+textarea {
+    font-size: 16px;
+    color: var(--vermelho-medio);
+}
+
+#topo,
+#topo-edicao {
     display: flex;
     align-items: center;
-    border-bottom: var(--borda-caixas);
-    padding: 30px;
+    justify-content: space-between;
+    padding-right: 15px;
+    margin-bottom: 30px;
 }
 
-#nome {
-    align-items: end;
-}
-
-#fotoPerfil {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-#configuracoes {
-    padding-top: 10px;
-}
-
-#configuracoes a {
-    text-decoration: none;
+#topo-titulo,
+#topo-titulo-edicao {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
     color: var(--vermelho-escuro);
-    font-size: 16px;
+    opacity: .8;
 }
 
-#configuracoes a:hover {
+#topo-titulo:hover,
+#topo-titulo-edicao:hover {
     color: var(--vermelho-claro);
 }
 
-#configuracoes div div {
-    padding-top: 10px;
-    margin-left: 10px;
+#check {
+    display: flex;
+}
+
+#status {
+    width: 15px;
+    height: 15px;
+    color: var(--vermelho-escuro);
+    margin-right: 10px;
+}
+
+#check > label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+
+#form,
+#form-edicao {
+    padding-left: 10px;
+}
+
+#labelInteresses,
+#labelSentimentos,
+#labelValores, 
+#labelFatos,
+#spanFatos,
+#labelInteressesEdicao,
+#labelSentimentosEdicao,
+#labelValoresEdicao, 
+#labelFatosEdicao,
+#spanFatosEdicao {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--vermelho-medio);
+}
+
+#labelInteresses:hover,
+#labelSentimentos:hover,
+#labelValores:hover, 
+#labelFatos:hover,
+#spanFatos:hover,
+#labelInteressesEdicao:hover,
+#labelSentimentosEdicao:hover,
+#labelValoresEdicao:hover, 
+#labelFatosEdicao:hover,
+#spanFatosEdicao:hover {
+    color: var(--vermelho-claro);
+}
+
+hr {
+    border: 1px solid var(--vermelho-medio);
+}
+
+#fatos-dados > div, 
+#fatos-dados > div > div,
+#fatos-dados-edicao > div,
+#fatos-dados-edicao > div > div {
+    margin-top: 10px;
+}
+
+#fatos-dados label,
+#fatos-dados-edicao label {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+main input {
+    text-indent: 10px;
+}
+
+#fatos-dados input, 
+#fatos-dados-edicao input {
+    height: 36px;
+    border: none;
+    background-color: var(--cor-fundo-input);
+}
+
+textarea {
+    resize: none;
+    margin-top: 10px;
+    width: 69.2vw;
+    height: 85px;
+    border: none;
+    background-color: var(--cor-fundo-input);
+    text-indent: 5px;
+    border-radius: 10px;
+}
+
+textarea:focus, 
+input:focus{
+    outline: 0;
+} 
+
+#fatos-dados input:hover,
+#fatos-dados-edicao input:hover, 
+textarea:hover {
+    border: 1px solid var(--vermelho-escuro);
+}
+
+#endereco,
+#enderecoEdicao,
+#bloco-senhas {
+    border-radius: 10px;
+    width: 69.2vw;
+}
+
+#idade-email,
+#idade-email-edicao {
+    display: flex;
+    justify-content: space-between;
+}
+
+#idade,
+#idadeEdicao {
+    border-radius: 10px;
+    width: 20vw;
+    margin-right: 10px;
+}
+
+#emailAtual,
+#emailEdicao {
+    border-radius: 10px;
+    width: 47vw;
+}
+
+.interesses, 
+.sentimentos, 
+.valores {
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+#bloco-senhas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.campo-senha {
+    position: relative;
+    display: flex;
+}
+
+.campo-senha input {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.icone {
+    color: #bd1b1b;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+.campo-senha #iconeSenha {
+    right: 27px;
+}
+
+#senhaCad {
+    margin-right: 20px;
+}
+
+#senhaCad, #confirmarSenha {
+    border-radius: 10px;
+    width: 32vw;
+}
+
+#msgErro,
+#msgSucesso {
     display: none;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
 }
 
-#blocoNovoEndereco div {
-    margin: 10px;
+#msgErro {
+    background-color: rgb(226, 122, 122);
 }
 
-#configuracoes div div button {
+#msgSucesso {
+    background-color: rgb(83, 199, 83);
+}
+
+.botao {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#abrir-editar,
+#botao-salvar,
+#deletar {
+    width: 239px;
+    height: 39px;
+    background-color: var(--cor-botao);
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+}
+
+#abrir-editar:hover,
+#botao-salvar:hover,
+#deletar:hover {
     transition: .3s;
     background-color: var(--cor-botao-hover);
     color: white;
     transform: scale(1.05);
     box-shadow: var(--sombra);
     transition: .6s;
-    border: none;
+}
+
+#deletar {
     padding: 10px;
-    border-radius: 10px;
-    margin: 0 20px;
 }
 
-#configuracoes div div button {
-    cursor: pointer;
-}
-
-#configuracoes div div label {
-    font-size: 14px;
-    line-height: 16px;
-    margin: 0 10px;
-}
-
-#configuracoes div div label:hover {
-    font-weight: 700;
-    line-height: 21px;
-    color: var(--vermelho-medio);
-}
-
-#configuracoes div div input {
-    height: 30px;
-    text-indent: 10px;
-    height: 36px;
-    width: 300px;
-    border: none;
-    border-radius: 10px;
-    margin: 0 20px;
-    background-color: lightcoral;
-}
-
-#configuracoes div div input:focus {
-    outline: 0;
-}
-
-#configuracoes div div input:hover {
-    border: 1px solid var(--vermelho-escuro);
-}
-
-#editarPerfil,
-#configurarPerfil {
-    display: flex;
-    flex-direction: column;
-}
-
-#configuracoes .titulo-lista {
-    font-size: 20px;
-    text-decoration: underline;
-}
-
-.mensagem {
-    color: #bd1b1b;
-    font-size: 12px;
-    padding: 0px;
-    background-color: pink;
+.formulario-edicao {
+    display: none;
 }
 
 .div-confirmacao {
@@ -124,8 +287,8 @@
     border: var(--borda-caixas);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 400px;
-    height: 150px;
+    width: 280px;
+    height: 120px;
     text-align: center;
     position: absolute;
     top: 50%;
@@ -136,6 +299,7 @@
 
 .tela-confirmacao p {
     margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .tela-confirmacao button {
@@ -150,7 +314,6 @@
     line-height: 19px;
     border: none;
     text-align: center;
-    margin: 10px 10px 0 0;
 }
 
 .tela-confirmacao button:hover {
@@ -167,8 +330,4 @@
     color: var(--vermelho-escuro);
     text-transform: uppercase;
     text-decoration: none;
-}
-
-#deletar:hover {
-    color: var(--vermelho-claro);
 }
