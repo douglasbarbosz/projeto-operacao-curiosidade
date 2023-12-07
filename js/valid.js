@@ -12,7 +12,7 @@ function isIdadeValid(idade) {
 
 function isEmailValid(email) {
     const emailRegex = new RegExp(
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+[a-zA-z]{2,}$/
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     )
 
     if (emailRegex.test(email)) {

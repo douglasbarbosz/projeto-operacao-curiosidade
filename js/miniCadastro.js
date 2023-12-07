@@ -21,7 +21,7 @@ async function miniCadastrar() {
 
             if (response.ok) {
                 setTimeout(() => {
-                    history.pushState(null, '', location.href = 'perfil.html')
+                    history.pushState(null, '', location.href = 'login.html')
                     localStorage.setItem('nome', nome)
                     localStorage.setItem('email', email)
                     localStorage.setItem('senha', senha)

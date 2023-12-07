@@ -1,12 +1,12 @@
 async function logar() {
     let pegaEmail = document.querySelector('#emailLogin').value
     let pegaSenha = document.querySelector('#senhaLogin').value
-    let msg = document.querySelector('#mensagem') 
+    let msg = document.querySelector('#mensagem')
 
     try {
         if (pegaEmail === '' || pegaSenha === '') {
-            msg.innerHTML = 'Um ou mais campos vazios.' 
-            msg.style.color = 'gray' 
+            msg.innerHTML = 'Um ou mais campos vazios.'
+            msg.style.color = 'gray'
         } else if (!isEmailValid(pegaEmail)) {
             msg.innerHTML = 'E-mail inválido. Tente novamente' 
             msg.style.color = 'red' 
@@ -16,16 +16,16 @@ async function logar() {
             msg.style.color = 'red' 
             pegaSenha.innerHTML = '' 
         } else {
-            const usuarioLogin = {
+            const credenciais = {
                 email: pegaEmail,
                 senha: pegaSenha
             }
-            const response = await fetch(`https://localhost:7132/api/Usuarios/logar?email=${pegaEmail}&senha=${pegaSenha} `, {
+            const response = await fetch('https://localhost:7132/api/Usuarios/logar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(usuarioLogin),
+                body: JSON.stringify(credenciais),
             }) 
             
             if (response.ok) {
@@ -38,6 +38,7 @@ async function logar() {
                 const interessesUsuario = data.interesses
                 const sentimentosUsuario = data.sentimentos
                 const valoresUsuario = data.valores
+                const tokenUsuario = data.token
 
                 localStorage.setItem('idade', idadeUsuario)
                 localStorage.setItem('nome', nomeUsuario)
@@ -47,8 +48,10 @@ async function logar() {
                 localStorage.setItem('interesses', interessesUsuario)
                 localStorage.setItem('sentimentos', sentimentosUsuario)
                 localStorage.setItem('valores', valoresUsuario)
+                localStorage.setItem('token', tokenUsuario)
+                
                 msg.innerHTML = 'Entrando...' 
-                msg.style.color = 'green' 
+                msg.style.color = 'green'
 
                 setTimeout(() => {
                     location.href = 'index.html' 

@@ -5,19 +5,22 @@ async function atualizarDados() {
         if (localStorage.getItem('senha') == senha.value) {
             const usuario = { 
                 idade: idadeEdicao.value,
-                email: emailEdicao.value,
+                email: localStorage.getItem('email'),
+                novoEmail: emailEdicao.value,
                 endereco: enderecoEdicao.value,
                 senha: confirmarSenha.value,
                 interesses: interessesEdicao.value,
                 sentimentos: sentimentosEdicao.value,
-                valores: valoresEdicao.value
+                valores: valoresEdicao.value,
+                token: localStorage.getItem('token')
             }
     
             try {
-                const response = await fetch(`https://localhost:7132/api/Usuarios/atualizar-dados?email=${localStorage.getItem('email')}&senha=${localStorage.getItem('senha')}`, {
+                const response = await fetch('https://localhost:7132/api/Usuarios/atualizar-dados', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${usuario.token}`
                     },
                     body: JSON.stringify(usuario)
                 })

@@ -10,12 +10,25 @@ function esconderTela() {
 
 async function deletar() {
     try {
+        const usuario = { 
+            idade: idadeEdicao.value,
+            email: emailEdicao.value,
+            endereco: enderecoEdicao.value,
+            senha: confirmarSenha.value,
+            interesses: interessesEdicao.value,
+            sentimentos: sentimentosEdicao.value,
+            valores: valoresEdicao.value,
+            token: localStorage.getItem('token')
+        }
+
         const mensagem = document.querySelector('#mensagemDelete')
-        const response = await fetch(`https://localhost:7132/api/Usuarios/deletar?email=${localStorage.getItem('email')}&senha=${localStorage.getItem('senha')}`, {
+        const response = await fetch('https://localhost:7132/api/Usuarios/deletar', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-            }
+                'Authorization': `Bearer ${usuario.token}`
+            },
+            body: JSON.stringify(usuario)
         })
 
         if (response.ok) {

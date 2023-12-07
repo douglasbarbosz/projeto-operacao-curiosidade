@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace ApiOperacaoCuriosidade.Controllers {
     [Route("api/[controller]")]
@@ -117,9 +118,13 @@ namespace ApiOperacaoCuriosidade.Controllers {
         }
 
         [HttpPost("logar")]
-        [AllowAnonymous]
-        public async Task<ActionResult<AutenticacaoResposta>> Autenticacao(string email, string senha) {
-            var user = UsuarioRepositorio.Get(email, senha, _dbContext);
+        public async Task<ActionResult<AutenticacaoResposta>> Autenticacao(Credenciais credenciais) {
+
+            if (credenciais == null || string.IsNullOrWhiteSpace(credenciais.Email) || string.IsNullOrWhiteSpace(credenciais.Senha)) {
+                return BadRequest(new { message = "Credenciais inválidas." });
+            }
+
+            var user = UsuarioRepositorio.Get(credenciais.Email, credenciais.Senha, _dbContext);
 
             if (user == null) {
                 return BadRequest(new { message = "Credenciais inválidas." });
@@ -145,36 +150,43 @@ namespace ApiOperacaoCuriosidade.Controllers {
             return Ok(resposta);
         }
 
+        [Authorize]
         [HttpPut("atualizar-dados")]
-        public ActionResult AtualizarDados(string email, string senha, Usuario usuario) {
-            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        public ActionResult AtualizarDados(UsuarioAtualizacao usuario) {
+            try {                 
+                var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
 
-            if (user == null) {
-                return BadRequest(new { message = "Usuário não encontrado." });
+                if (user == null) {
+                    return BadRequest(new { message = "Usuário não encontrado." });
+                }
+
+                if (user.Email != usuario.NovoEmail && EmailJaCadastrado(usuario.NovoEmail)) {
+                    return BadRequest(new { message = "E-mail já utilizado." });
+                }
+
+                user.Idade = usuario.Idade;
+                user.Email = usuario.NovoEmail;
+                user.Endereco = usuario.Endereco;
+                user.Senha = usuario.Senha; 
+                user.Interesses = usuario.Interesses;
+                user.Sentimentos = usuario.Sentimentos;
+                user.Valores = usuario.Valores;
+
+                _dbContext.SaveChanges();
+
+                usuario.Senha = "";
+
+                return Ok(new { message = "Dados atualizados com sucesso." });
             }
-
-            if (user.Email != usuario.Email && EmailJaCadastrado(usuario.Email)) {
-                return BadRequest(new { message = "E-mail já utilizado. " });
+            catch (Exception ex) {
+                return BadRequest(new { message = "Erro ao atualizar dados." });
             }
-
-            user.Idade = usuario.Idade;
-            user.Email = usuario.Email;
-            user.Endereco = usuario.Endereco;
-            user.Senha = usuario.Senha;
-            user.Interesses = usuario.Interesses;
-            user.Sentimentos = usuario.Sentimentos;
-            user.Valores = usuario.Valores;
-
-            _dbContext.SaveChanges();
-
-            usuario.Senha = "";
-
-            return Ok(new { message = "Dados atualizados com sucesso. " });
         }
 
+        [Authorize]
         [HttpDelete("deletar")]
-        public ActionResult Deletar(string email, string senha) {
-            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        public ActionResult Deletar(Usuario usuario) {
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
 
             if (user == null) {
                 return BadRequest(new { message = "Usuário não encontrado ou não autorizado." });

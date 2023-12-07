@@ -12,8 +12,8 @@ public class UsuarioRepositorio {
 
     public static Usuario Get(string email, string senha, UsuariosListaContext _dbContext) {
 
-        var usuario = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        var user = _dbContext.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         
-        return usuario;
+        return user;
     }
 }
